@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Paco Rabanne 1 Million Deo Spray",
+    "solidPrice": 25,
+    "retailPrice": 35,
+    "profit": 10,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/1qQrwT0/1million.jpg",
+    "description": "A luxurious deodorant spray that offers a long-lasting scent of Paco Rabanne 1 Million."
+  },
+  {
+    "name": "Fogg Master Cedar",
+    "solidPrice": 10,
+    "retailPrice": 15,
+    "profit": 5,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/N7YyWjW/foog-master1.jpg",
+    "description": "Fogg Master Cedar deodorant offers a fresh and intense fragrance for all-day confidence."
+  },
+  {
+    "name": "Fogg Master Oak",
+    "solidPrice": 10,
+    "retailPrice": 15,
+    "profit": 5,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/cwyb83d/fogg-master2.jpg",
+    "description": "A masculine fragrance with woody undertones, ideal for everyday wear."
+  },
+  {
+    "name": "Bellavita CEO Man Fine Fragrance Luxury Body Spray",
+    "solidPrice": 20,
+    "retailPrice": 28,
+    "profit": 8,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/McGrzVW/ceo.jpg",
+    "description": "Luxury body spray for the sophisticated man, featuring rich, aromatic notes."
+  },
+  {
+    "name": "Al Haramain Belle Rogue Spray",
+    "solidPrice": 18,
+    "retailPrice": 25,
+    "profit": 7,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/RBry2qw/al-haramain.jpg",
+    "description": "A delightful scent with a mix of floral and fruity notes, perfect for any occasion."
+  },
+  {
+    "name": "Jagler Men Deodorant Sport",
+    "solidPrice": 15,
+    "retailPrice": 22,
+    "profit": 7,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/YXwvDnx/jaglar.jpg",
+    "description": "A sporty fragrance for men with a dynamic and energetic scent."
+  },
+  {
+    "name": "Fogg Fine Rio Wave",
+    "solidPrice": 12,
+    "retailPrice": 18,
+    "profit": 6,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/Ky3qwz5/rio-wave.jpg",
+    "description": "An exotic fragrance inspired by the refreshing waves of Rio, perfect for daily use."
+  },
+  {
+    "name": "Fcuk Vintage Body Spray For Men",
+    "solidPrice": 14,
+    "retailPrice": 22,
+    "profit": 8,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/2WpbhTk/fcuk1.jpg",
+    "description": "A vintage body spray with bold and fresh notes, designed for the modern man."
+  },
+  {
+    "name": "Fcuk Sport Deodorising Body Spray For Men",
+    "solidPrice": 14,
+    "retailPrice": 22,
+    "profit": 8,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/V3VbTJs/fcuk.jpg",
+    "description": "Sporty deodorizing spray for men, with an active fragrance to keep you fresh all day."
+  },
+  {
+    "name": "Al Haramain Xplore Sapphire Spray",
+    "solidPrice": 18,
+    "retailPrice": 28,
+    "profit": 10,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/XzqVhq3/ploreX.jpg",
+    "description": "An adventurous fragrance that explores rich and luxurious scents."
+  },
+  {
+    "name": "HE Advanced Grooming Body Spray – Innovator",
+    "solidPrice": 12,
+    "retailPrice": 18,
+    "profit": 6,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/S6jhh6m/he-advance.webp",
+    "description": "A premium grooming spray for innovators, with a lasting and invigorating fragrance."
+  },
+  {
+    "name": "Adidas Pure Game Men - Deo Spray",
+    "solidPrice": 10,
+    "retailPrice": 16,
+    "profit": 6,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/9vN2D7Z/adidas-pure.jpg",
+    "description": "Pure performance fragrance by Adidas, offering a fresh and sporty scent."
+  },
+  {
+    "name": "Beardo Don Perfume Body Spray",
+    "solidPrice": 20,
+    "retailPrice": 30,
+    "profit": 10,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/4sTXWMW/beardo-mafia.jpg",
+    "description": "A strong and masculine body spray for the modern-day Don."
+  },
+  {
+    "name": "Hugo Boss Bottled deodorant spray",
+    "solidPrice": 28,
+    "retailPrice": 40,
+    "profit": 12,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/jWY72gH/boss.jpg",
+    "description": "Iconic Hugo Boss fragrance, now available as a deodorant spray for long-lasting freshness."
+  },
+  {
+    "name": "Pierre Cardin Lost Heaven Body Mist",
+    "solidPrice": 22,
+    "retailPrice": 32,
+    "profit": 10,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/x5MzrtC/flower.jpg",
+    "description": "A heavenly body mist with delicate floral notes, perfect for daily wear."
+  },
+  {
+    "name": "Jean Paul Gaultier Deodorant Spray For Men",
+    "solidPrice": 30,
+    "retailPrice": 45,
+    "profit": 15,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/xm0553q/jan.jpg",
+    "description": "A bold and daring fragrance from Jean Paul Gaultier, made for confident men."
+  },
+  {
+    "name": "Park Avenue Signature Collection Body Spray - Neo",
+    "solidPrice": 12,
+    "retailPrice": 18,
+    "profit": 6,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/LrBZqz5/park.jpg",
+    "description": "Signature body spray from Park Avenue, designed for the modern man with a fresh scent."
+  },
+  {
+    "name": "Romano Body Spray Force",
+    "solidPrice": 15,
+    "retailPrice": 22,
+    "profit": 7,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/vk7Gqn5/he-prass.jpg",
+    "description": "A powerful body spray with a masculine scent that lasts all day."
+  },
+  {
+    "name": "Adidas Premium Man Body Spray",
+    "solidPrice": 18,
+    "retailPrice": 25,
+    "profit": 7,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/JdjGhy8/adidas-fresh.jpg",
+    "description": "Premium body spray by Adidas, offering an exclusive fragrance for active men."
+  },
+  {
+    "name": "The Man Company Privilege Body Spray Legend",
+    "solidPrice": 22,
+    "retailPrice": 32,
+    "profit": 10,
+    "category": "Fragrance",
+    "image": "https://i.ibb.co.com/k3mJXQJ/premeum.jpg",
+    "description": "Legendary body spray for men, from The Man Company, with a strong and lasting fragrance."
+  }
+]
