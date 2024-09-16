@@ -4,7 +4,7 @@
     "solidPrice": 25,
     "retailPrice": 35,
     "profit": 10,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/1qQrwT0/1million.jpg",
     "description": "A luxurious deodorant spray that offers a long-lasting scent of Paco Rabanne 1 Million."
   },
@@ -13,7 +13,7 @@
     "solidPrice": 10,
     "retailPrice": 15,
     "profit": 5,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/N7YyWjW/foog-master1.jpg",
     "description": "Fogg Master Cedar deodorant offers a fresh and intense fragrance for all-day confidence."
   },
@@ -22,16 +22,16 @@
     "solidPrice": 10,
     "retailPrice": 15,
     "profit": 5,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/cwyb83d/fogg-master2.jpg",
     "description": "A masculine fragrance with woody undertones, ideal for everyday wear."
   },
   {
-    "name": "Bellavita CEO Man Fine Fragrance Luxury Body Spray",
+    "name": "Bellavita CEO Man Fine fragrance Luxury Body Spray",
     "solidPrice": 20,
     "retailPrice": 28,
     "profit": 8,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/McGrzVW/ceo.jpg",
     "description": "Luxury body spray for the sophisticated man, featuring rich, aromatic notes."
   },
@@ -40,7 +40,7 @@
     "solidPrice": 18,
     "retailPrice": 25,
     "profit": 7,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/RBry2qw/al-haramain.jpg",
     "description": "A delightful scent with a mix of floral and fruity notes, perfect for any occasion."
   },
@@ -49,7 +49,7 @@
     "solidPrice": 15,
     "retailPrice": 22,
     "profit": 7,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/YXwvDnx/jaglar.jpg",
     "description": "A sporty fragrance for men with a dynamic and energetic scent."
   },
@@ -58,7 +58,7 @@
     "solidPrice": 12,
     "retailPrice": 18,
     "profit": 6,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/Ky3qwz5/rio-wave.jpg",
     "description": "An exotic fragrance inspired by the refreshing waves of Rio, perfect for daily use."
   },
@@ -67,7 +67,7 @@
     "solidPrice": 14,
     "retailPrice": 22,
     "profit": 8,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/2WpbhTk/fcuk1.jpg",
     "description": "A vintage body spray with bold and fresh notes, designed for the modern man."
   },
@@ -76,7 +76,7 @@
     "solidPrice": 14,
     "retailPrice": 22,
     "profit": 8,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/V3VbTJs/fcuk.jpg",
     "description": "Sporty deodorizing spray for men, with an active fragrance to keep you fresh all day."
   },
@@ -85,7 +85,7 @@
     "solidPrice": 18,
     "retailPrice": 28,
     "profit": 10,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/XzqVhq3/ploreX.jpg",
     "description": "An adventurous fragrance that explores rich and luxurious scents."
   },
@@ -94,7 +94,7 @@
     "solidPrice": 12,
     "retailPrice": 18,
     "profit": 6,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/S6jhh6m/he-advance.webp",
     "description": "A premium grooming spray for innovators, with a lasting and invigorating fragrance."
   },
@@ -103,7 +103,7 @@
     "solidPrice": 10,
     "retailPrice": 16,
     "profit": 6,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/9vN2D7Z/adidas-pure.jpg",
     "description": "Pure performance fragrance by Adidas, offering a fresh and sporty scent."
   },
@@ -112,7 +112,7 @@
     "solidPrice": 20,
     "retailPrice": 30,
     "profit": 10,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/4sTXWMW/beardo-mafia.jpg",
     "description": "A strong and masculine body spray for the modern-day Don."
   },
@@ -121,7 +121,7 @@
     "solidPrice": 28,
     "retailPrice": 40,
     "profit": 12,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/jWY72gH/boss.jpg",
     "description": "Iconic Hugo Boss fragrance, now available as a deodorant spray for long-lasting freshness."
   },
@@ -130,7 +130,7 @@
     "solidPrice": 22,
     "retailPrice": 32,
     "profit": 10,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/x5MzrtC/flower.jpg",
     "description": "A heavenly body mist with delicate floral notes, perfect for daily wear."
   },
@@ -139,7 +139,7 @@
     "solidPrice": 30,
     "retailPrice": 45,
     "profit": 15,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/xm0553q/jan.jpg",
     "description": "A bold and daring fragrance from Jean Paul Gaultier, made for confident men."
   },
@@ -148,7 +148,7 @@
     "solidPrice": 12,
     "retailPrice": 18,
     "profit": 6,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/LrBZqz5/park.jpg",
     "description": "Signature body spray from Park Avenue, designed for the modern man with a fresh scent."
   },
@@ -157,7 +157,7 @@
     "solidPrice": 15,
     "retailPrice": 22,
     "profit": 7,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/vk7Gqn5/he-prass.jpg",
     "description": "A powerful body spray with a masculine scent that lasts all day."
   },
@@ -166,7 +166,7 @@
     "solidPrice": 18,
     "retailPrice": 25,
     "profit": 7,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/JdjGhy8/adidas-fresh.jpg",
     "description": "Premium body spray by Adidas, offering an exclusive fragrance for active men."
   },
@@ -175,8 +175,800 @@
     "solidPrice": 22,
     "retailPrice": 32,
     "profit": 10,
-    "category": "Fragrance",
+    "category": "fragrance",
     "image": "https://i.ibb.co.com/k3mJXQJ/premeum.jpg",
     "description": "Legendary body spray for men, from The Man Company, with a strong and lasting fragrance."
+  },
+  {
+    "name": "Nivea lipCare Berry Shine",
+    "solidPrice": 4,
+    "retailPrice": 6,
+    "profit": 2,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/yVmSmCD/nevia.png",
+    "description": "A moisturizing lip balm with a fruity berry shine for smooth lips."
+  },
+  {
+    "name": "Vaseline Rosy Lip Balm 4.8g",
+    "solidPrice": 3,
+    "retailPrice": 5,
+    "profit": 2,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/MsFCs6b/vaslin.png",
+    "description": "Vaseline's Rosy Lip Balm gives a light pink tint and nourishes your lips."
+  },
+  {
+    "name": "Neutrogena Norwegian Formula Lip Moisturizer SPF 15",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/482T56J/2.png",
+    "description": "This SPF 15 lip moisturizer provides long-lasting hydration and protection."
+  },
+  {
+    "name": "Lakme Lip Love Chapstick Pure Lip Balm SPF 15 4.5g",
+    "solidPrice": 4,
+    "retailPrice": 6,
+    "profit": 2,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/GF4VJnQ/1.png",
+    "description": "Lakme Lip Love Chapstick with SPF 15 offers soft and protected lips."
+  },
+  {
+    "name": "Cosrx Full Fit Honey Sugar Lip Scrub - 20g",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/XZLT3Tm/leep.jpg",
+    "description": "Exfoliate and nourish your lips with Cosrx Full Fit Honey Sugar Lip Scrub."
+  },
+  {
+    "name": "Palmer's Coconut Oil Formula Coconut Oil Lip Balm SPF 15",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/kcYcwx7/coconut.png",
+    "description": "Palmer's Coconut Oil Lip Balm hydrates and protects lips with SPF 15."
+  },
+  {
+    "name": "Laneige Lip Sleeping Mask 3g",
+    "solidPrice": 10,
+    "retailPrice": 15,
+    "profit": 5,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/XxGcZ6x/pink-lip.png",
+    "description": "A nourishing overnight lip mask that repairs dry and chapped lips."
+  },
+  {
+    "name": "Vaseline Lip Therapy Petroleum Jelly Rosy Lips 20g",
+    "solidPrice": 3,
+    "retailPrice": 5,
+    "profit": 2,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/9WqrnYC/vaslin-pink.jpg",
+    "description": "Vaseline Rosy Lips provides intense hydration with a light tint of pink."
+  },
+  {
+    "name": "Vaseline Lip Therapy Petroleum Jelly 20g - Aloe",
+    "solidPrice": 3,
+    "retailPrice": 5,
+    "profit": 2,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/xhP8ym5/vaslin-green.jpg",
+    "description": "Aloe-infused lip therapy from Vaseline for deep moisturization."
+  },
+  {
+    "name": "NIVEA Original Care Lip Balm 4.8g",
+    "solidPrice": 4,
+    "retailPrice": 6,
+    "profit": 2,
+    "category": "skinCare",
+    "subCategory": "lipCare",
+    "image": "https://i.ibb.co.com/WVFrh0c/nevia-blue.png",
+    "description": "NIVEA Original Care Lip Balm provides long-lasting moisture and care."
+  },
+
+  {
+    "name": "Round Lab 1025 Dokdo Cleanser-150ml",
+    "solidPrice": 12,
+    "retailPrice": 18,
+    "profit": 6,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/Cv2DTF2/EFAj-CBr-Pha-MP3j-Ld-RF7-Lqev-Qxb2jm-Rm8n-B3-Gk0-Wq.png",
+    "description": "A gentle cleanser that helps hydrate and smooth skin, perfect for daily use."
+  },
+  {
+    "name": "Heimish All Clean Gentle Exfoliating Gel Cleanser 130ml",
+    "solidPrice": 14,
+    "retailPrice": 22,
+    "profit": 8,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/XDxW6sN/p-St4ji-EXEq-VS6id-QZu6-Uo-BZg-Ww34-S3g-IKs1-Kpntb.png",
+    "description": "A mild exfoliating gel cleanser that leaves skin refreshed and radiant."
+  },
+  {
+    "name": "Mixsoon Bean Cleansing Oil 195ml",
+    "solidPrice": 20,
+    "retailPrice": 30,
+    "profit": 10,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/pz4P9Bx/hage1-Kyybz6-FVre-Wq-LQ2u3l-Jsc-YY6wse-Jg-XXy-JPt.png",
+    "description": "Cleansing oil that thoroughly removes impurities and makeup without stripping skin."
+  },
+  {
+    "name": "Haruharu Wonder Black Rice Moisture 5.5 Soft Cleansing Gel",
+    "solidPrice": 18,
+    "retailPrice": 28,
+    "profit": 10,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/TKd3nqX/19y8mrf7-LD8w-Pucx-M5-YSf-G2-Gfjp8-E1r-H5-Nbb-Ap8e.png",
+    "description": "A soft cleansing gel infused with black rice to hydrate and revitalize skin."
+  },
+  {
+    "name": "Beauty of Joseon Green Plum Refreshing Cleanser-100ml",
+    "solidPrice": 13,
+    "retailPrice": 20,
+    "profit": 7,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/zP5WJ2C/5-M9-D7-Hh-RIax-XXt-AG40-DTr4-LH4mb-IMHAFMJPi-AJ37.jpg",
+    "description": "A refreshing cleanser with green plum extracts that clears pores and smoothens skin."
+  },
+  {
+    "name": "Beauty of Joseon Radiance Cleansing Balm-100ml",
+    "solidPrice": 19,
+    "retailPrice": 30,
+    "profit": 11,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/jg4KcY9/o0tt-M9-MMYc-XVvn-Wh-C7q3bkk-FFy-Y3-Npm-Hg-L1m-XUb-F.png",
+    "description": "A rich cleansing balm that effectively removes makeup and impurities while nourishing the skin."
+  },
+  {
+    "name": "Ponds Instabright Tone Up Milk Facial Foam - 100g",
+    "solidPrice": 6,
+    "retailPrice": 10,
+    "profit": 4,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/7NHskPw/wk-Jj-H29-Dvj4-Lk-V0f-J63o-N2-Sld-Xskl-N8-Lz7-BP9-MVs.webp",
+    "description": "Facial foam that brightens and smooths skin with milk protein extracts."
+  },
+  {
+    "name": "Ponds Acne Clear Facial Foam (100gm)",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/Krjk0r7/n7xq-QVu8-ICX6-Ij-Qd-Jy9-BJp-B2x-NXUEz9ota-BRn-Wa-V.jpg",
+    "description": "An acne-fighting facial foam that helps clear up skin and prevent breakouts."
+  },
+  {
+    "name": "3W Clinic Charcoal Cleansing Foam 100ml",
+    "solidPrice": 4,
+    "retailPrice": 7,
+    "profit": 3,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/ZJ7Phck/Y8r-Rqp-Gw-W0szo-M6t9-Byq2mp-Js-Zdp-Jlgz7-Ct-GAqr-D.jpg",
+    "description": "A deep cleansing foam with charcoal to absorb excess oil and clear pores."
+  },
+  {
+    "name": "3W Clinic Aloe Clear Cleansing Foam 180ml",
+    "solidPrice": 7,
+    "retailPrice": 11,
+    "profit": 4,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/kQzx1qQ/Amb8-Wb3-Tww-CPLVwxpr-Ak-Zw-ABAi-Rv-GZl-Vc0n-Sn-UUk.png",
+    "description": "A soothing aloe cleansing foam that hydrates while cleansing sensitive skin."
+  },
+  {
+    "name": "Innisfree Jeju Cherry Blossom Jam Cleanser 150ml",
+    "solidPrice": 17,
+    "retailPrice": 26,
+    "profit": 9,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/4SKQjb7/A4-LEnc-Hb-ZOO3l-CFWTwf-Zob-Al-Ecomg-E0v2-TCKBvf-F.png",
+    "description": "A jam-textured cleanser with cherry blossom extracts that brightens and revitalizes skin."
+  },
+  {
+    "name": "JNH Whipping Cleansing Foam 150ml",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/d5Jrvv3/Lf8mc-WGVM72-EZ76-X83n8c-Fw-MSQFvk-UNfv9d-Ry6b1.png",
+    "description": "A rich, foamy cleanser that whips away dirt and impurities while moisturizing the skin."
+  },
+  {
+    "name": "The Derma Co 1% Salicylic Acid Gel Face Wash 100ml",
+    "solidPrice": 11,
+    "retailPrice": 18,
+    "profit": 7,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/VCF9xB7/ru-OY1s-Iujq-Vjmfj-Us6-Ht2-Xd-C1e-Zp-MWBYfmmyg-XMO.jpg",
+    "description": "A gel face wash with salicylic acid that deeply cleanses pores and prevents acne."
+  },
+  {
+    "name": "Cetaphil Hydrating Foaming Cream Cleanser 236ml",
+    "solidPrice": 10,
+    "retailPrice": 15,
+    "profit": 5,
+    "category": "skinCare",
+    "subCategory": "lotion",
+    "image": "https://i.ibb.co.com/jMB2G7P/s6e4-Ib5ej-Ox6-Rncj-Av0w-K4-XJd-EYxt-IUg-Hg-IB8-Krc.jpg",
+    "description": "A hydrating foaming cream cleanser that deeply cleanses while moisturizing sensitive skin."
+  },
+  {
+    "name": "3W Clinic Honey Gold Beauty soap 120g",
+    "solidPrice": 4,
+    "retailPrice": 7,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/bPJTQ6z/kz-Yld-Y2-Ccay-Fb-Bsfj-ZAk-GMq-QXn-JNts-SBz2-Krw5md.png",
+    "description": "A luxurious beauty soap infused with honey and gold, leaving skin soft and glowing."
+  },
+  {
+    "name": "Kojie San Skin Lightening soap 135g",
+    "solidPrice": 5,
+    "retailPrice": 9,
+    "profit": 4,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/9HLYZWW/Sed-PQay-Lc6-S6fg-T9z-Dwhji0g4-Moi-RWMv3-Vst-Mhc-X.png",
+    "description": "A skin lightening soap with Kojic Acid to help reduce dark spots and brighten skin."
+  },
+  {
+    "name": "CeraVe SA Cleanser Bar for Rough & Bumpy Skin-128g",
+    "solidPrice": 10,
+    "retailPrice": 15,
+    "profit": 5,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/3NZRtcV/Ndwzl-Mo-Juqyo8v-F3d5-WNZygwe-KGULM582-Eg-Sl3-Z7.png",
+    "description": "A gentle exfoliating cleanser bar for rough and bumpy skin, formulated with Salicylic Acid."
+  },
+  {
+    "name": "Kojie San Skin Lightening soap 65g x3",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/vh7hvC9/Wzz-W5-Qo4-EVxqk-Ahag-Psi-YVzc-Ik35lx-WUUi-WGq-ZHW.png",
+    "description": "A pack of 3 Kojie San skin lightening soaps for a clearer, brighter complexion."
+  },
+  {
+    "name": "Kojie San Skin Lightening soap 65g",
+    "solidPrice": 3,
+    "retailPrice": 5,
+    "profit": 2,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/1b1VDJh/UKCHb-XLMong-Km-XKO8wk-Kc-DYFAe4-Sxsjhl-ZX1rv3-D.png",
+    "description": "A lightening soap with Kojic Acid to help lighten dark spots and even out skin tone."
+  },
+  {
+    "name": "3W Clinic Cucumber Beauty soap 120g",
+    "solidPrice": 4,
+    "retailPrice": 6,
+    "profit": 2,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/vZGB2sF/Z67-Jr-YI74e-BTFng-C0-Ez-Klp-Edms6-GX5k07-T8-Wmze-O-1.png",
+    "description": "A refreshing cucumber-infused soap that helps moisturize and cleanse skin."
+  },
+  {
+    "name": "3W Clinic White Clay + Pearl Beauty soap 120g",
+    "solidPrice": 4,
+    "retailPrice": 7,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/LvK4H3c/P71-Sg2d5t-Ay-KDEUXIc6e-QUjcd-Mze-NT3-OYl-XYG8-LV.png",
+    "description": "A beauty soap with white clay and pearl to deeply cleanse and brighten skin."
+  },
+  {
+    "name": "3W Clinic Rose Hip Beauty soap 120g",
+    "solidPrice": 4,
+    "retailPrice": 7,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/GW0VSm5/TMUGCqw-FL1i-Cf-O0-DNglrc-Y9-Iz-RW2-Yz-Osz-De-Nb-Upl.png",
+    "description": "A rose hip-infused soap that helps moisturize and rejuvenate skin."
+  },
+  {
+    "name": "RiBANA Saffron Goat's Milk soap - 110g",
+    "solidPrice": 6,
+    "retailPrice": 10,
+    "profit": 4,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/cNwnpZD/xqx-IMVEewerq-Jl-E5-Gos-Yv-PGD8y-Lo-E2o-VSZu-EFRDq.png",
+    "description": "A natural soap with saffron and goat's milk to nourish and hydrate the skin."
+  },
+  {
+    "name": "Dove Beauty Bar White/Blanc",
+    "solidPrice": 2,
+    "retailPrice": 4,
+    "profit": 2,
+    "category": "dailyEssential",
+    "subCategory": "soap",
+    "image": "https://i.ibb.co.com/kKkT0QZ/sh-Ca-QT1afv-Iku6-Ua-PEe-THWu4f-BSy-Wi-Ty-Jl-Wef-Eb-P.png",
+    "description": "A classic Dove beauty bar that gently cleanses while maintaining skin’s natural moisture."
+  },
+  {
+    "name": "CeraVe Baby Wash & shampoo-237ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/zx129h3/Tylt-Tkzgdt-Fm-KHe-Gtm4-Wnkihuy-Ul-Rf-JN8aym-EJ4f.webp",
+    "description": "A gentle baby wash and shampoo designed to cleanse and nourish delicate baby skin."
+  },
+  {
+    "name": "Fasmc Bath Salts With Bamboo Body Massage Scrub-380g",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/GsHSmSW/h7mm09jj-Au-Ji-LRBOUeaz-TGg9p-Qpb-JAb-BYlp-QKs-Rc.png",
+    "description": "A bamboo-infused bath salt scrub that exfoliates and massages the skin."
+  },
+  {
+    "name": "CeraVe Baby Wash & shampoo-237ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/3WkwGf5/NN2o-IPE2f-Qmr27-Dfha-X6s-T6-ESHL3m-Rvq-LEf-Me-VNS.png",
+    "description": "A gentle baby wash and shampoo designed to cleanse and nourish delicate baby skin."
+  },
+  {
+    "name": "Fasmc Milk Bath Salts Body Massage Scrub-380g",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/L1JB2sj/s8-So0-RAd-BZB2zh-Jn70-GBWjm-Lu-AOk-IYYw-DVhdvd-W8.jpg",
+    "description": "Milk bath salts with a body massage scrub that exfoliates and rejuvenates the skin."
+  },
+  {
+    "name": "FASMC Milk Bath Salts Body Massage Scrub-380g",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/kgGZJSh/Dsp-Bm0-LRxth-B6zn7m-Ihkxl-I3w3e2uaa-Rgzzkcrg-Y.png",
+    "description": "A body massage scrub with milk bath salts to exfoliate and moisturize the skin."
+  },
+  {
+    "name": "Lux Botanicals Smooth Skin Velvet Jasmine bodyWash 250mL",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/B6WxxGf/e-CX24-IQy0wzmea-Vqk-MJd-JAy-Wzcoy-XESMJwk-TN5-Zm.webp",
+    "description": "A luxurious bodyWash with jasmine extract to leave your skin smooth and silky."
+  },
+  {
+    "name": "Fasmc Bath Salts Lavender Body Massage Scrub - 380g",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/KrL0Pqj/q3jk-Fh-Nqsuv-C0-UVg62l-LGIzbsj-XPx-L842t-DFLi-U7.png",
+    "description": "A lavender-infused bath salt body scrub that exfoliates and relaxes the skin."
+  },
+  {
+    "name": "Fasmc Bath Salts With Lemon Body Massage Scrub-380g",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/2v9HBgD/1-RPw8-H5-Iuwh-N7woeozx-UTfdj-W55-B8-Js2-T3t-JXg-QX.png",
+    "description": "A lemon-scented bath salt scrub that cleanses and refreshes the skin."
+  },
+  {
+    "name": "Fasmc Bath Salts With Rose Body Massage Scrub-380g",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/K7nM36G/SGbs-N8-Py-Btdj-QRCk-W9-MW9l54z-Cmew6y-JY2-AKuv1-T.png",
+    "description": "A rose-infused bath salt scrub for a soothing and nourishing body massage experience."
+  },
+  {
+    "name": "The Body Shop Argan Shower Gel 250ml",
+    "solidPrice": 9,
+    "retailPrice": 13,
+    "profit": 4,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/3NmNd2v/OS0-Bl-Tq8kz-DB7-Win-Tjubv-Wdft-Ma-KDvu8-K4v-TCSS9.png",
+    "description": "A luxurious shower gel infused with Argan oil to deeply moisturize and cleanse the skin."
+  },
+  {
+    "name": "The Body Shop Olive Shower Gel 250ml",
+    "solidPrice": 9,
+    "retailPrice": 13,
+    "profit": 4,
+    "category": "dailyEssential",
+    "subCategory": "bodyWash",
+    "image": "https://i.ibb.co.com/rkd03V5/1-Th-TXMLn-WFMXftes-Li9-UBg01-NY9-Bwk-DLg5-Nqnf-SS.png",
+    "description": "A hydrating shower gel enriched with olive oil to nourish and cleanse your skin."
+  },
+  {
+    "name": "Sunsilk Natural Coconut Hydration shampoo-450ml",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/Pm0cM0N/xh-OVBd-Tj-Hbphjgtn-Cyn-Pt-FJc-BUxk-Mqm0k-P2i1-Bjm.png",
+    "description": "Hydrating shampoo with coconut essence for natural moisture and softness."
+  },
+  {
+    "name": "Sunsilk Soft & Smooth shampoo 400ml",
+    "solidPrice": 4,
+    "retailPrice": 7,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/0VLZt2H/o-D7-K7-Uhvm-QWRPv-Iv-Nj-KMJr-Tqw-VBc-Ez3s-LDiltv-Fx.png",
+    "description": "shampoo designed to make hair soft and smooth with every wash."
+  },
+  {
+    "name": "Sunsilk Smooth and Manageable shampoo – 400ml",
+    "solidPrice": 4,
+    "retailPrice": 7,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/BBnQLjw/xg-Zb-Dhtz5sk-L1xq8rmx-FAg85-Teqqkrk-G1kh-JNDi9.png",
+    "description": "shampoo that helps manage frizzy hair and provides smoothness."
+  },
+  {
+    "name": "Sunsilk Co-Creations Damage Restore shampoo 300ml",
+    "solidPrice": 4,
+    "retailPrice": 6,
+    "profit": 2,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/gMqtPpk/6-Amp-Qfs0-Oc-GDmx-Rasl6t4-ORCJ7-NKNbnjtf5-VXj-XI.png",
+    "description": "Restorative shampoo that repairs damage and strengthens hair."
+  },
+  {
+    "name": "The Body Shop Fuji Green Tea™ Refreshingly Purifying shampoo",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/2KTQKL2/k-ZHMg-Z62qgtr0y-Vi-Owx-TKn-Pb-S32e-Wj-LCns6-U1027.png",
+    "description": "Purifying shampoo with green tea to refresh and cleanse hair."
+  },
+  {
+    "name": "Alpecin Caffeine shampoo C1 250ml(Recharger)",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/3zp96Dv/C2q1lgck-Fqba-C200sz-Ofrd-GI34w-FF9m-LSJw9-L67-R.webp",
+    "description": "Caffeine shampoo that stimulates hair growth and revitalizes the scalp."
+  },
+  {
+    "name": "Dabur Vatika Naturals Honey & Egg Repair & Restore shampoo",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/5k68t5x/Dv-E538b-Xra-Mv-Dg-P63-Og2-Xmeb-EXOKPn-Pc-Z0zt-HOHa.png",
+    "description": "Repair and restore shampoo enriched with honey and egg for damaged hair."
+  },
+  {
+    "name": "Dabur Vatika Naturals Lemon & Yoghurt Dandruff Guard shampoo",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/4KJv5Lz/0n-UC0-LUpy-BQWjh-Id9-CDKfw-Or-DXxw4j7e-RO45-Oo-TH.png",
+    "description": "Dandruff guard shampoo with lemon and yoghurt for a healthy scalp."
+  },
+  {
+    "name": "L'Oreal Silver Violet Dyes + Magnesium Professional",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/3SnT2CH/Pt-Oji-H7-Ein-ETwq-AZm91-SNJv-Pgz1-Uo4-Jpts-Quua-YG.png",
+    "description": "shampoo with silver violet dyes and magnesium for color-treated hair."
+  },
+  {
+    "name": "Nizoral Original 2% Ketoconazole Medicated Anti-Dandruff",
+    "solidPrice": 9,
+    "retailPrice": 14,
+    "profit": 5,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/d0H67LK/yv6n-UHm-DHu-WKYD8-Gt-E7b3f-Sn9t-GCARQr4i4-X7p-Y5.png",
+    "description": "Medicated anti-dandruff shampoo with 2% ketoconazole for severe dandruff."
+  },
+  {
+    "name": "Tresemme Botanique Nourish And Replenish shampoo – 400ml",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/xDQ5SBL/ej5-WFNv-L6vnbbz-Zf-EFx-O2-MKs-Rwr2xc5eal-Zy-BH5n.webp",
+    "description": "Nourishing and replenishing shampoo with botanical ingredients."
+  },
+  {
+    "name": "TRESemme Keratin Smooth shampoo, 400ml",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/SDkyy1b/zqa-XO4-YOO7mm-QUu6xv-GHa-P8tb-LKMfe-Zf-Rovb-Uf-Sx.jpg",
+    "description": "Keratin smooth shampoo for frizz-free and manageable hair."
+  },
+  {
+    "name": "Mielle Rosemary Mint Strengthening shampoo 355ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/tPy1GKJ/f-LPk-FF6l-R6ct-ATTq-PZSkg-QIq-Tnl-Jp-Oj-Q6-Bux0q-Py.webp",
+    "description": "Strengthening shampoo with rosemary and mint for healthy and strong hair."
+  },
+  {
+    "name": "TRESEMME 24 HOUR VOLUMIZING shampoo FOR FINE HAIR",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/51dR8yp/x-UXCULh-Ui-XKVa-X4-WT3-Aa-SYk-AW7-T6di-NS00-ZBXku-V.png",
+    "description": "Volume-boosting shampoo for fine hair to add fullness and body."
+  },
+  {
+    "name": "DOVE Straight & Silky shampoo 330ml",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/TqrnY6k/n-Eh-FKL98ui3h-J0-KPj6d5z9-A4-K0y-Mx-HX5-Jy-E6-C1v-Q.png",
+    "description": "shampoo designed for straight and silky hair with smoothness and shine."
+  },
+  {
+    "name": "L'oreal Elvive Hyaluron shampoo",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/6njr5FS/w0zin92vt8-HITis-WL04acr7-MRYK6668giqi-P2l52.png",
+    "description": "Hydrating shampoo with hyaluronic acid for moisture and softness."
+  },
+  {
+    "name": "Pantene Sheer Volume shampoo 375ml USA",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/GVCvtfD/w-BRLFu4jvlb-XWQMPis-NPXOGS9c2q5c-Obto1-VRdua.jpg",
+    "description": "Volume-enhancing shampoo for light and airy hair."
+  },
+  {
+    "name": "OGX Detoxifying + Pomegranate & Ginger shampoo",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/hXzcpcN/jseb-Satz-SCl4-UGnzs9c-OVLKNim6epjn-X2-NHSWHt-E.jpg",
+    "description": "Detoxifying shampoo with pomegranate and ginger for a fresh scalp."
+  },
+  {
+    "name": "TRESemme Keratin Smooth shampoo 400ml Thai",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/R40gVTw/t2-LDLSGw-EGPXZJi-Khx0-Rw-Hld-C9-Jgn-MVNWTv-Uc-XD3.png",
+    "description": "Keratin smooth shampoo for sleek and shiny hair."
+  },
+  {
+    "name": "L'Oréal Paris Xtenso Care Keratin Repair + Asta-Care",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "hairCare",
+    "subCategory": "shampoo",
+    "image": "https://i.ibb.co.com/3s9CXcC/BRM2-KWIMZSSMub0-Ihq3qk-Asy-IPyu3l8so-IMm5k-S3.webp",
+    "description": "Keratin repair shampoo with Asta-Care to strengthen and smooth hair."
+  },
+  {
+    "name": "L'oreal Elvive Extraordinary Oil 50ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/sgRLmp6/Ao-TU79-Xy-Fcz-Ihy-K8yq-Mb-Zpj-SJy-WSemt-Ys-QAFlsjb.png",
+    "description": "Luxurious hairOil with extraordinary nourishment for silky and shiny hair."
+  },
+  {
+    "name": "OGX Coconut Milk Anti-breakage Serum 100ml",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/5Y3r0cw/avr2-Tem-Yg-ZAi-MBM71fvn-GWOx-D14n-Of-YEw-WNNa-Ak-R.png",
+    "description": "Anti-breakage serum enriched with coconut milk for stronger and healthier hair."
+  },
+  {
+    "name": "Mielle Rosemary Mint Scalp & Hair Strengthening Oil 59ml",
+    "solidPrice": 8,
+    "retailPrice": 12,
+    "profit": 4,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/6ndXcwb/BW4fg-Au-Rn-Zj-Ilvwl-Gl3-S0e-XFOC8-Ytg-Gk5gm-H5-OYe.png",
+    "description": "Strengthening oil with rosemary and mint to invigorate the scalp and promote hair growth."
+  },
+  {
+    "name": "RiBANA Organic Olive Oil - 100ml",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/0cN3v4H/d7o-Y6-D95dgr96-Wxok-HVCVO6-N8-Dg7-Avbq4-J1h-Bl-Wq.jpg",
+    "description": "Pure organic olive oil for deep nourishment and conditioning of hair."
+  },
+  {
+    "name": "RiBANA Organic Castor Oil - 100ml",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/5r90FjX/Dz-D5-XD4k8yt97-Qqxn-Qlr-RLcii1-Zu-Dwn0k-Q4wvf-C2.png",
+    "description": "Organic castor oil for enhancing hair growth and reducing breakage."
+  },
+  {
+    "name": "RiBANA Organic Almond Oil - 100ml",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/6g3Gjr9/F0-X3-Rk6-T35ejlkd-Mq-Xw-Gk-Zg-UJj-E0-IPhrf-Ppzd-DL7.png",
+    "description": "Nourishing almond oil for soft and shiny hair with essential vitamins."
+  },
+
+  {
+    "name": "Vatika Cactus hairOil 300ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/SXqpH5h/gonii-R0-Bshe-Lsbn-Ze0a-YAvu-Dgc0z-PMQPQkm-Sz-Qq-I.png",
+    "description": "Cactus oil for hydration and strengthening of hair with a light texture."
+  },
+  {
+    "name": "Vatika Black Seed hairOil 300ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/zHp22rZ/Hhtiz9ei-XOl-Uyik2-DBg5-VHAWPmn-FXfya-PU1-FLlr-X.png",
+    "description": "Black seed oil for nourishing and revitalizing hair, reducing hair loss."
+  },
+  {
+    "name": "Vatika Argan hairOil 300ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/sv3X7V8/k2-T5j-RX2-Lsnr-A77-D3n-UEp-ZEq-TFumr-Z5x-Vp-ICpc-Sh.jpg",
+    "description": "Argan oil for smooth, shiny, and manageable hair with deep conditioning."
+  },
+  {
+    "name": "Vatika Coconut hairOil 300ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/hc3MN50/MGI25-Gqm0z7qadqg-Yy-J1qv1m3a-L0-RGZd1a-Pf9cd9.png",
+    "description": "Coconut oil for nourishing and conditioning hair with a natural fragrance."
+  },
+  {
+    "name": "Vatika Almond hairOil 300ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/7kq13LC/u-LCOra-Hyh-TRrjp-Ez2-V85-KB1f-Ddx-EH7-VPHDz-Ghr9-I.jpg",
+    "description": "Almond oil for strengthening and softening hair with essential nutrients."
+  },
+  {
+    "name": "Dabur Almond hairOil 200ml",
+    "solidPrice": 5,
+    "retailPrice": 8,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/3B0cQ3b/V4-Rsl-MXBKMOJUg-R96xiqv5l-JDdn-JRo1-VRd-Ebgrn-O.jpg",
+    "description": "Almond hairOil for deep nourishment and repair of damaged hair."
+  },
+  {
+    "name": "Dabur Vatika Naturals Nourish And Protect With Olive & Henna",
+    "solidPrice": 6,
+    "retailPrice": 9,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/cTK09j8/ZK8-Yzfefxkq-EM18-Duw6-B8-Za-Dh-V7w6k-Qnsrdyxaw-Q.png",
+    "description": "Olive and henna oil blend for nourishing and protecting hair from damage."
+  },
+  {
+    "name": "Tresemme Keratin Smooth With Marula Oil Conditioner 700ml",
+    "solidPrice": 7,
+    "retailPrice": 10,
+    "profit": 3,
+    "category": "hairCare",
+    "subCategory": "hairOil",
+    "image": "https://i.ibb.co.com/jhwrLFw/Xvjx-Ke-UHk-PYDq33-Ah-H26h-Ux-Iijea-LM6i2c8uajw8.png",
+    "description": "Conditioner with marula oil and keratin for smooth, frizz-free hair."
   }
 ]
