@@ -1,19 +1,42 @@
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const ProductsCard = ({ product }) => {
   const { name, retailPrice, image } = product;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a data fetch
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
       <figure className="px-10 pt-10">
-        <img src={image} alt="product img" className="rounded-xl" />
+        {loading ? (
+          <Skeleton height={200} width={200} />
+        ) : (
+          <img src={image} alt="product img" className="rounded-xl" />
+        )}
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">{name}</h2>
-        <p>{retailPrice}</p>
+        <h2 className="card-title">
+          {loading ? <Skeleton width={150} /> : name}
+        </h2>
+        <p>{loading ? <Skeleton width={100} /> : retailPrice}</p>
         <div className="card-actions">
-          <button className="btn bg-[#185519] text-white ">Add To Cart</button>
-          <button className="btn bg-[#E8B86D]  text-white">
-            <FaEye className="text-lg" />
+          <button className="btn bg-[#185519] text-white">
+            {loading ? <Skeleton width={80} height={30} /> : "Add To Cart"}
+          </button>
+          <button className="btn bg-[#E8B86D] text-white">
+            {loading ? (
+              <Skeleton width={30} height={30} />
+            ) : (
+              <FaEye className="text-lg" />
+            )}
           </button>
         </div>
       </div>

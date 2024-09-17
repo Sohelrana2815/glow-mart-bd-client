@@ -1,10 +1,13 @@
+import Banner from "../Banner/Banner";
+import ProductCategory from "../ProductCategory/ProductCategory";
 
 const Home = () => {
-    return (
-        <div>
-            <h2 className="text-3xl font-semibold">Glow Mart Bd</h2>
-        </div>
-    );
+  return (
+    <div>
+      <Banner />
+      <ProductCategory />
+    </div>
+  );
 };
 
 export default Home;
