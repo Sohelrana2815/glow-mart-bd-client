@@ -1,77 +1,54 @@
 import { FaList } from "react-icons/fa";
 import useProducts from "../../Hooks/useProducts";
 import ProductsCard from "./ProductsCard";
-import { useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
+import { useState } from "react";
 
 const Products = () => {
   const [products] = useProducts();
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
-  const handleLipCare = () => {
-    setSelectedSubCategory("lipCare");
-  };
-  const handleLotion = () => {
-    setSelectedSubCategory("lotion");
-  };
-  const handleShampoo = () => {
-    setSelectedSubCategory("shampoo");
-  };
-  const handleHairOil = () => {
-    setSelectedSubCategory("hairOil");
+
+  // Select Products by Subcategory and reset the Fragrance category
+  const handleSubCategory = (category) => {
+    setSelectedSubCategory(category);
+    setSelectedCategory("");
   };
 
-  const handleSoap = () => {
-    setSelectedSubCategory("soap");
-  };
-
-  const handleBodyWash = () => {
-    setSelectedSubCategory("bodyWash");
-  };
+  // Select Products by only Fragrance Category and reset the Subcategory
 
   const handleFragrance = () => {
     setSelectedCategory("fragrance");
     setSelectedSubCategory("");
   };
 
+  // Reset or Show All products event handler
+
   const handleReset = () => {
     setSelectedCategory("");
     setSelectedSubCategory("");
   };
 
+  // Logic for filter products by category and subcategory
   const filteredProducts = products.filter((product) => {
-    if (selectedSubCategory === "lipCare") {
-      return product.subCategory === "lipCare";
-    }
-    if (selectedSubCategory === "lotion") {
-      return product.subCategory === "lotion";
-    }
-    if (selectedSubCategory === "shampoo") {
-      return product.subCategory === "shampoo";
-    }
-    if (selectedSubCategory === "hairOil") {
-      return product.subCategory === "hairOil";
-    }
-
-    if (selectedSubCategory === "soap") {
-      return product.subCategory === "soap";
-    }
-
-    if (selectedSubCategory === "bodyWash") {
-      return product.subCategory === "bodyWash";
-    }
     if (selectedCategory === "fragrance") {
       return product.category === "fragrance";
+    }
+
+    if (selectedSubCategory) {
+      return product.subCategory === selectedSubCategory;
     } else {
+      // show all products if any filter is not applied
       return true;
     }
   });
 
   return (
     <>
-      <div className=" fixed z-10  lg:-ml-56 mt-20">
+      <div className="fixed z-10 lg:-ml-56 mt-20">
         <details className="dropdown">
-          <summary className="btn  m-1 bg-primary text-white lg:text-xl">
+          <summary className="btn m-1 bg-primary text-white lg:text-xl">
             <FaList /> Category ({filteredProducts.length})
           </summary>
 
@@ -79,12 +56,12 @@ const Products = () => {
             <li>
               <details>
                 <summary>Skin Care</summary>
-                <ul className="menu bg-base-100 rounded-box p-2  ml-8 shadow ">
+                <ul className="menu bg-base-100 rounded-box p-2 ml-8 shadow">
                   <li>
-                    <a onClick={handleLipCare}>Lip Care</a>
+                    <a onClick={() => handleSubCategory("lipCare")}>Lip Care</a>
                   </li>
                   <li>
-                    <a onClick={handleLotion}>Lotion</a>
+                    <a onClick={() => handleSubCategory("lotion")}>Lotion</a>
                   </li>
                 </ul>
               </details>
@@ -92,12 +69,12 @@ const Products = () => {
             <li>
               <details>
                 <summary>Hair Care</summary>
-                <ul className="menu bg-base-100 rounded-box p-2  ml-8 shadow">
+                <ul className="menu bg-base-100 rounded-box p-2 ml-8 shadow">
                   <li>
-                    <a onClick={handleShampoo}>Shampoo</a>
+                    <a onClick={() => handleSubCategory("shampoo")}>Shampoo</a>
                   </li>
                   <li>
-                    <a onClick={handleHairOil}>Hair Oil</a>
+                    <a onClick={() => handleSubCategory("hairOil")}>Hair Oil</a>
                   </li>
                 </ul>
               </details>
@@ -105,21 +82,24 @@ const Products = () => {
             <li>
               <details>
                 <summary>Daily Essentials</summary>
-                <ul className="menu bg-base-100 rounded-box p-2  ml-8 shadow">
+                <ul className="menu bg-base-100 rounded-box p-2 ml-8 shadow">
                   <li>
-                    <a onClick={handleSoap}>Soap</a>
+                    <a onClick={() => handleSubCategory("soap")}>Soap</a>
                   </li>
                   <li>
-                    <a onClick={handleBodyWash}>Body Wash</a>
+                    <a onClick={() => handleSubCategory("bodyWash")}>
+                      Body Wash
+                    </a>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <a onClick={handleFragrance}>Fragrance</a>
+              <a onClick={() => handleFragrance("fragrance")}>Fragrance</a>
             </li>
           </ul>
         </details>
+
         <div>
           <button
             onClick={handleReset}
@@ -127,15 +107,18 @@ const Products = () => {
           >
             <p className="font-semibold text-base">Show All Products</p>
           </button>
-          {/* small button */}
+
+          {/* Small button for mobile */}
           <button
             onClick={handleReset}
-            className="btn block md:hidden  mt-8 bg-red-600"
+            className="btn block md:hidden mt-8 bg-red-600"
           >
             <FaTrashCan className="font-semibold text-white" />
           </button>
         </div>
       </div>
+
+      {/* Display filtered products */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
         {filteredProducts.map((product) => (
           <ProductsCard key={product._id} product={product} />

@@ -28,16 +28,18 @@ const ProductsCard = ({ product }) => {
         </h2>
         <p>{loading ? <Skeleton width={100} /> : retailPrice}</p>
         <div className="card-actions">
-          <button className="btn bg-[#185519] text-white">
-            {loading ? <Skeleton width={80} height={30} /> : "Add To Cart"}
-          </button>
-          <button className="btn bg-[#E8B86D] text-white">
-            {loading ? (
-              <Skeleton width={30} height={30} />
-            ) : (
+          {loading ? (
+            <Skeleton width={90} height={40} />
+          ) : (
+            <button className="btn bg-[#185519] text-white">Add to Cart</button>
+          )}
+          {loading ? (
+            <Skeleton width={50} height={40} />
+          ) : (
+            <button className="btn bg-[#E8B86D] text-white">
               <FaEye className="text-lg" />
-            )}
-          </button>
+            </button>
+          )}
         </div>
       </div>
     </div>
