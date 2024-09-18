@@ -2,8 +2,9 @@ import { useForm } from "react-hook-form";
 import loginImg from "../../assets/login/login.svg";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { FcGoogle } from "react-icons/fc";
 const Login = () => {
-  const { loginUser } = useAuth();
+  const { loginUser, googleSignIn, updateUserProfile } = useAuth();
 
   const {
     register,
@@ -15,6 +16,28 @@ const Login = () => {
     const { email, password } = data;
 
     loginUser(email, password)
+      .then((result) => {
+        updateUserProfile();
+        console.log(result.user);
+        if (result.user) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Logged in Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  //  google Login event
+
+  const handleGoogleLogin = () => {
+    googleSignIn()
       .then((result) => {
         console.log(result.user);
         if (result.user) {
@@ -42,7 +65,7 @@ const Login = () => {
           <h1 className="text-4xl p-4 mt-4 font-bold text-center">
             Login now!
           </h1>
-          <form onClick={handleSubmit(onSubmit)} className="card-body">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -52,6 +75,9 @@ const Login = () => {
                 {...register("email", { required: true })}
                 className="input input-bordered"
               />
+              {errors.email && (
+                <span className="text-red-600">Email field is required</span>
+              )}
             </div>
             <div className="form-control">
               <label className="label">
@@ -62,10 +88,17 @@ const Login = () => {
                 {...register("password", { required: true })}
                 className="input input-bordered"
               />
+              {errors.password && (
+                <span className="text-red-600">Password field is required</span>
+              )}
             </div>
             <div className="form-control mt-6">
               <input type="submit" value="Login" className="btn btn-primary" />
             </div>
+            <p className="text-center">-----OR------</p>
+            <button className="btn btn-outline" onClick={handleGoogleLogin}>
+              <FcGoogle className="text-lg " /> Sign in with Google
+            </button>
           </form>
         </div>
       </div>
