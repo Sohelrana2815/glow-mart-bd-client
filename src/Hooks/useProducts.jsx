@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
+import useAxiosPublic from "./useAxiosPublic";
 
 const useProducts = () => {
+  const axiosPublic = useAxiosPublic();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
-
+    axiosPublic.get("/products").then((res) => {
+      setProducts(res.data);
+    });
+  }, [axiosPublic]);
   return [products];
 };
 

@@ -9,6 +9,7 @@ const Products = () => {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
+  
 
   // Select Products by Subcategory and reset the Fragrance category
   const handleSubCategory = (category) => {
@@ -119,11 +120,11 @@ const Products = () => {
       </div>
 
       {/* Display filtered products */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+     {  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20">
         {filteredProducts.map((product) => (
           <ProductsCard key={product._id} product={product} />
         ))}
-      </div>
+      </div>}
     </>
   );
 };

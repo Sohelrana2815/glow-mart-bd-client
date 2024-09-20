@@ -1,21 +1,23 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
+import useLoading from "../../Hooks/useLoading";
 const ProductsCard = ({ product }) => {
   const { name, retailPrice, image, _id } = product;
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
+  const loading = useLoading();
 
-  useEffect(() => {
-    // Simulate a data fetch
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   // Simulate a data fetch
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, []);
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card bg-base-100 lg:w-80 shadow-xl">
       <figure className="px-10 pt-10">
         {loading ? (
           <Skeleton height={200} width={200} />
