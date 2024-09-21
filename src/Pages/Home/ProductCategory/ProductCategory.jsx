@@ -63,18 +63,7 @@ const ProductCategory = () => {
             alt="PRODUCT IMAGE"
           />
         </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/cwyb83d/fogg-master2.jpg"
-            alt="PRODUCT IMAGE"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://i.ibb.co.com/ZJ7Phck/Y8r-Rqp-Gw-W0szo-M6t9-Byq2mp-Js-Zdp-Jlgz7-Ct-GAqr-D.jpg"
-            alt="PRODUCT IMAGE"
-          />
-        </SwiperSlide>
+
         <SwiperSlide>
           <img
             src="https://i.ibb.co.com/4sTXWMW/beardo-mafia.jpg"

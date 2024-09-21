@@ -1,27 +1,20 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
+import img1 from "../../../assets/Banner/img1.jpg";
+import img2 from "../../../assets/Banner/img2.jpg";
+import img3 from "../../../assets/Banner/img3.jpg";
 import { Carousel } from "react-responsive-carousel";
 const Banner = () => {
   return (
     <div className="mt-20">
-      <Carousel autoPlay infiniteLoop interval={2500}>
+      <Carousel>
         <div>
-          <img
-            src="https://i.ibb.co.com/9GCJGQQ/img1.jpg"
-            className="rounded-xl"
-          />
+          <img src={img1} className="rounded-xl" />
         </div>
         <div>
-          <img
-            src="https://i.ibb.co.com/FD6RN9N/img2.jpg"
-            className="rounded-xl"
-          />
+          <img src={img2} className="rounded-xl" />
         </div>
         <div>
-          <img
-            src="https://i.ibb.co.com/tPfSgx2/img3.jpg"
-            className="rounded-xl"
-          />
+          <img src={img3} className="rounded-xl" />
         </div>
       </Carousel>
     </div>
