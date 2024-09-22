@@ -1,16 +1,16 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import featured from '../../../assets/Parallax/shop.jpg'
+import featured from "../../../assets/Parallax/shop.jpg";
 import "./Parallax.css";
 const Parallax = () => {
   return (
     <div className="featured-item relative bg-fixed text-white pt-10 mt-10">
       {/* Ensure the SectionTitle is above the overlay */}
       <div className="relative z-10">
-        <SectionTitle subHeading={"Our Shop"} heading={"Featured Items"} />
+        <SectionTitle subHeading="Checkout" heading={"Featured Items"} />
       </div>
 
       {/* Overlay for darkening the background */}
-      <div className="absolute inset-0 bg-[#151515] bg-opacity-70"></div>
+      <div className="absolute inset-0 bg-[#151515] bg-opacity-50"></div>
 
       <div className="relative z-10 md:flex justify-center items-center px-36 pb-20 pt-12">
         <div>

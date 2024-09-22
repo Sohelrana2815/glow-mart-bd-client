@@ -9,11 +9,10 @@ const Products = () => {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
-  
 
   // Select Products by Subcategory and reset the Fragrance category
-  const handleSubCategory = (category) => {
-    setSelectedSubCategory(category);
+  const handleSubCategory = (subCategory) => {
+    setSelectedSubCategory(subCategory);
     setSelectedCategory("");
   };
 
@@ -120,11 +119,13 @@ const Products = () => {
       </div>
 
       {/* Display filtered products */}
-     {  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20">
-        {filteredProducts.map((product) => (
-          <ProductsCard key={product._id} product={product} />
-        ))}
-      </div>}
+      {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20">
+          {filteredProducts.map((product) => (
+            <ProductsCard key={product._id} product={product} />
+          ))}
+        </div>
+      }
     </>
   );
 };
