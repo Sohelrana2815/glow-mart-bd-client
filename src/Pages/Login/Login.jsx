@@ -3,8 +3,14 @@ import loginImg from "../../assets/login/login.svg";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
+import { useLocation, useNavigate } from "react-router-dom";
+
 const Login = () => {
   const { loginUser, googleSignIn, updateUserProfile } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -27,6 +33,7 @@ const Login = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate(from, { replace: true });
         }
       })
       .catch((error) => {
@@ -48,6 +55,7 @@ const Login = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate(from, { replace: true });
         }
       })
       .catch((error) => {

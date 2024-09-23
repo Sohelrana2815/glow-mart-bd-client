@@ -49,8 +49,11 @@ const AuthProvider = ({ children }) => {
       console.log(currenUser);
 
       setUser(currenUser);
+      setLoading(false);
     });
-    return unsubscribe;
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const authInfo = {

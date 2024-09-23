@@ -13,7 +13,7 @@ const ProductsDetails = () => {
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row w-full justify-evenly ">
         {loading ? (
-          <Skeleton  height={350} width={400} />
+          <Skeleton height={350} width={400} />
         ) : (
           <img
             src={image}

@@ -16,6 +16,11 @@ const ProductsCard = ({ product }) => {
   //     setLoading(false);
   //   }, 2000);
   // }, []);
+
+  const handleAddToCart = () => {
+    console.log("Add To Cart");
+  };
+
   return (
     <div className="card bg-base-100 lg:w-80 shadow-xl">
       <figure className="px-10 pt-10">
@@ -38,7 +43,12 @@ const ProductsCard = ({ product }) => {
           {loading ? (
             <Skeleton width={90} height={40} />
           ) : (
-            <button className="btn bg-[#185519] text-white">Add to Cart</button>
+            <button
+              className="btn bg-[#185519] text-white"
+              onClick={handleAddToCart}
+            >
+              Add to Cart
+            </button>
           )}
           {loading ? (
             <Skeleton width={50} height={40} />
