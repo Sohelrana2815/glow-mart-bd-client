@@ -3,22 +3,55 @@ import PropTypes from "prop-types";
 import { FaEye } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useLoading from "../../Hooks/useLoading";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 const ProductsCard = ({ product }) => {
   const { name, retailPrice, image, _id } = product;
-  // const [loading, setLoading] = useState(true);
   const loading = useLoading();
-
-  // useEffect(() => {
-  //   // Simulate a data fetch
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, []);
+  const axiosPublic = useAxiosPublic();
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
-    console.log("Add To Cart");
+    if (user && user?.email) {
+      const cartItem = {
+        productId: _id,
+        userEmail: user.email,
+        productName: name,
+        productPrice: retailPrice,
+        ProductImg: image,
+      };
+
+      axiosPublic.post("/carts", cartItem).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${name} Added successfully!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "You are not logged in",
+        text: "Please Login to Add To Cart Products",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Login!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    }
   };
 
   return (
