@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
-
+import useCart from "../../Hooks/useCart";
+import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
   const { user, logout } = useAuth();
+  const [cart] = useCart();
 
   const handleLogout = () => {
     Swal.fire({
@@ -31,6 +33,12 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/products">All Products</NavLink>
+      </li>
+      <li>
+        <button className="btn btn-sm">
+          <FaShoppingCart />
+          <div className="badge badge-secondary">+{cart.length}</div>
+        </button>
       </li>
     </>
   );
