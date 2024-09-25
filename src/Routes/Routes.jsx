@@ -7,6 +7,9 @@ import SignUp from "../Pages/SignUp/SignUp";
 import ProductsDetails from "../Pages/ProductsDetails/ProductsDetails";
 import CategoryPage from "../Pages/CategoryPage/CategoryPage";
 import PrivateRoute from "./Private/PrivateRoute";
+import Dashboard from "../Layout/DashboardLayout/Dashboard";
+import Cart from "../Pages/Dashboard/Cart/Cart";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +45,20 @@ const router = createBrowserRouter([
       {
         path: "categoryPage/:category",
         element: <CategoryPage />,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "userHome",
+        element: <UserHome />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
     ],
   },

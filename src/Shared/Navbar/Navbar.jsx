@@ -36,10 +36,12 @@ const Navbar = () => {
         <NavLink to="/products">All Products</NavLink>
       </li>
       <li>
-        <button className="btn btn-sm">
-          <FaShoppingCart />
-          <div className="badge badge-secondary">+{cart.length}</div>
-        </button>
+        <Link to="/dashboard/cart">
+          <button className="btn btn-sm">
+            <FaShoppingCart />
+            <div className="badge badge-secondary">+{cart.length}</div>
+          </button>
+        </Link>
       </li>
     </>
   );
