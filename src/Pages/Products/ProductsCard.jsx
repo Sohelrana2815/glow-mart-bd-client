@@ -3,29 +3,32 @@ import PropTypes from "prop-types";
 import { FaEye } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useLoading from "../../Hooks/useLoading";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useCart from "../../Hooks/useCart";
 const ProductsCard = ({ product }) => {
   const { name, retailPrice, image, _id } = product;
   const loading = useLoading();
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [, refetch] = useCart();
 
   const handleAddToCart = () => {
     if (user && user?.email) {
       const cartItem = {
         productId: _id,
-        userEmail: user.email,
+        email: user.email,
         productName: name,
         productPrice: retailPrice,
         ProductImg: image,
       };
 
-      axiosPublic.post("/carts", cartItem).then((res) => {
+      axiosSecure.post("/carts", cartItem).then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
           Swal.fire({
@@ -35,6 +38,7 @@ const ProductsCard = ({ product }) => {
             showConfirmButton: false,
             timer: 1500,
           });
+          refetch();
         }
       });
     } else {
@@ -48,7 +52,7 @@ const ProductsCard = ({ product }) => {
         confirmButtonText: "Yes, Login!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login");
+          navigate("/login", { state: { from: location } });
         }
       });
     }

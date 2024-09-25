@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
   const { user, logout } = useAuth();
   const [cart] = useCart();
+  console.log(cart);
 
   const handleLogout = () => {
     Swal.fire({

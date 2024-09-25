@@ -1,10 +1,9 @@
-import Swal from "sweetalert2";
 import signUpImg from "../../assets/login/login.svg";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
 const SignUp = () => {
-  const { createNewUser, updateUserProfile, googleSignIn } = useAuth();
+  const { createNewUser, updateUserProfile } = useAuth();
 
   const {
     register,
@@ -23,24 +22,6 @@ const SignUp = () => {
       .then(() => {
         console.log("UpdateProfile successfully");
         alert("UpdateProfile successfully");
-      });
-  };
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((result) => {
-        console.log(result.user);
-        if (result.user) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Logged in Successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      })
-      .catch((error) => {
-        console.error(error);
       });
   };
 
@@ -102,9 +83,7 @@ const SignUp = () => {
               />
             </div>
             <p className="text-center">-----OR------</p>
-            <button className="btn btn-outline" onClick={handleGoogleSignIn}>
-              <FcGoogle className="text-lg " /> Sign up with Google
-            </button>
+            <SocialLogin />
           </form>
         </div>
       </div>

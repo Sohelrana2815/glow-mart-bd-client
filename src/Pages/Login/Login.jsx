@@ -2,15 +2,16 @@ import { useForm } from "react-hook-form";
 import loginImg from "../../assets/login/login.svg";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
-import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Login = () => {
-  const { loginUser, googleSignIn, updateUserProfile } = useAuth();
+  const { loginUser, updateUserProfile } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
+  console.log(location.state);
 
   const {
     register,
@@ -42,26 +43,6 @@ const Login = () => {
   };
 
   //  google Login event
-
-  const handleGoogleLogin = () => {
-    googleSignIn()
-      .then((result) => {
-        console.log(result.user);
-        if (result.user) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Logged in Successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          navigate(from, { replace: true });
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -104,9 +85,7 @@ const Login = () => {
               <input type="submit" value="Login" className="btn btn-primary" />
             </div>
             <p className="text-center">-----OR------</p>
-            <button className="btn btn-outline" onClick={handleGoogleLogin}>
-              <FcGoogle className="text-lg " /> Sign in with Google
-            </button>
+            <SocialLogin />
           </form>
         </div>
       </div>
