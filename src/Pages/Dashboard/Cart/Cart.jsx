@@ -49,7 +49,6 @@ const Cart = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Email</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -69,9 +68,6 @@ const Cart = () => {
                     <p>{product.productName}</p>
                   </th>
                   <th className="text-base">$ {product.productPrice}</th>
-                  <th className="text-lg">
-                    <p>{product.email}</p>
-                  </th>
                   <th>
                     <button onClick={() => handleDelete(product._id)}>
                       <FaTrashCan className=" text-red-600 text-lg" />

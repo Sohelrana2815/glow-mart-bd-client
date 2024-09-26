@@ -1,28 +1,31 @@
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaShoppingCart } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useCart from "../../Hooks/useCart";
 
 const CategoryPageCard = ({ product }) => {
   const { name, image, _id, retailPrice } = product;
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [, refetch] = useCart();
 
   const handleAddToCart = () => {
     if (user && user?.email) {
       const cartItem = {
         productId: _id,
-        userEmail: user.email,
+        email: user.email,
         productName: name,
         productPrice: retailPrice,
         ProductImg: image,
       };
 
-      axiosPublic.post("/carts", cartItem).then((res) => {
+      axiosSecure.post("/carts", cartItem).then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
+          refetch();
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -49,24 +52,30 @@ const CategoryPageCard = ({ product }) => {
     }
   };
   return (
-    <div className="card card-compact bg-base-100 w-3/4 shadow-xl">
-      <figure>
-        <img src={image} alt="Shoes" />
-      </figure>
-      <div className="card-body text-center">
-        <h2 className="card-title">{name}</h2>
-        <div className="card-actions justify-center ">
-          <button className="btn btn-md btn-primary" onClick={handleAddToCart}>
-            Add to Cart
-          </button>
-          <Link to={`/productInfo/${_id}`}>
-            <button className="btn bg-[#E8B86D] text-white">
-              <FaEye className="text-lg" />
+    <>
+    
+      <div className="card card-compact bg-base-100 w-3/4 shadow-xl">
+        <figure>
+          <img src={image} alt="Shoes" />
+        </figure>
+        <div className="card-body text-center">
+          <h2 className="card-title">{name}</h2>
+          <div className="card-actions justify-center ">
+            <button
+              className="btn btn-md btn-primary"
+              onClick={handleAddToCart}
+            >
+              Add to Cart
             </button>
-          </Link>
+            <Link to={`/productInfo/${_id}`}>
+              <button className="btn bg-[#E8B86D] text-white">
+                <FaEye className="text-lg" />
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

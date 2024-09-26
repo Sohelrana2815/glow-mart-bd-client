@@ -1,11 +1,14 @@
-import { FaList } from "react-icons/fa";
+import { FaList, FaShoppingCart } from "react-icons/fa";
 import useProducts from "../../Hooks/useProducts";
 import ProductsCard from "./ProductsCard";
 import { FaTrashCan } from "react-icons/fa6";
 import { useState } from "react";
+import useCart from "../../Hooks/useCart";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products] = useProducts();
+  const [cart] = useCart();
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
@@ -107,7 +110,11 @@ const Products = () => {
           >
             <p className="font-semibold text-base">Show All Products</p>
           </button>
-
+          <Link to="/dashboard/cart">
+            <button className="btn fixed btn-secondary my-4 text-lg text-white">
+              <FaShoppingCart /> ({cart.length})
+            </button>
+          </Link>
           {/* Small button for mobile */}
           <button
             onClick={handleReset}

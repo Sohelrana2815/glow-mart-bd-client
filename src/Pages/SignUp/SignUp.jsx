@@ -2,12 +2,17 @@ import signUpImg from "../../assets/login/login.svg";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const { createNewUser, updateUserProfile } = useAuth();
-
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -16,8 +21,26 @@ const SignUp = () => {
     createNewUser(email, password)
       .then((result) => {
         console.log(result.user);
-
-        return updateUserProfile(name);
+        updateUserProfile(name).then(() => {
+          const userInfo = {
+            name: name,
+            email: email,
+          };
+          axiosPublic.post("/users", userInfo)
+          .then((res) => {
+            if (res.data.insertedId) {
+              reset();
+              Swal.fire({
+                icon: "success",
+                title: "NEW USER CREATED SUCCESSFULLY!",
+                text: "Welcome back!",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate("/");
+            }
+          });
+        });
       })
       .then(() => {
         console.log("UpdateProfile successfully");
