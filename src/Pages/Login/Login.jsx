@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useForm } from "react-hook-form";
 import loginImg from "../../assets/login/login.svg";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -11,7 +12,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
-  console.log(location.state);
 
   const {
     register,
@@ -86,6 +86,12 @@ const Login = () => {
             </div>
             <p className="text-center">-----OR------</p>
             <SocialLogin />
+            <p className="text-center font-medium">
+              Don't have an account ?{" "}
+              <Link to="/signUp">
+                <span className="text-primary">Sign up</span>
+              </Link>
+            </p>
           </form>
         </div>
       </div>

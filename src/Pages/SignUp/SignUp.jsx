@@ -4,7 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const SignUp = () => {
   const { createNewUser, updateUserProfile } = useAuth();
   const axiosPublic = useAxiosPublic();
@@ -26,8 +26,7 @@ const SignUp = () => {
             name: name,
             email: email,
           };
-          axiosPublic.post("/users", userInfo)
-          .then((res) => {
+          axiosPublic.post("/users", userInfo).then((res) => {
             if (res.data.insertedId) {
               reset();
               Swal.fire({
@@ -107,6 +106,12 @@ const SignUp = () => {
             </div>
             <p className="text-center">-----OR------</p>
             <SocialLogin />
+            <p className="text-center font-medium">
+              Already have an account ?{" "}
+              <Link to="/login">
+                <span className="text-primary">Login</span>
+              </Link>
+            </p>
           </form>
         </div>
       </div>
