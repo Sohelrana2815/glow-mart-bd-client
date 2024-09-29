@@ -1,0 +1,163 @@
+import { useForm } from "react-hook-form";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import { FaUtensils } from "react-icons/fa6";
+
+const AddItems = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <>
+      <SectionTitle heading="Add An Item" subHeading="Wat's New?" />
+
+      <div className="w-3/4 mx-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          {/* Grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {/* 1st */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Product name*</span>
+              </label>
+              <input
+                type="text"
+                {...register("name", { required: true })}
+                placeholder="Product name"
+                className="input input-bordered"
+              />
+              {errors.name && (
+                <span className="text-red-600">Product name is required</span>
+              )}
+            </div>
+            {/* 2nd */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Solid Price*</span>
+              </label>
+              <input
+                type="number"
+                {...register("solidPrice", { required: true })}
+                placeholder="Enter Solid Price"
+                className="input input-bordered"
+              />
+              {errors.name && (
+                <span className="text-red-600">
+                  Solid Price field is required
+                </span>
+              )}
+            </div>
+            {/* 3rd */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Retail Price*</span>
+              </label>
+              <input
+                type="number"
+                {...register("retailPrice", { required: true })}
+                placeholder="Enter Retail Price"
+                className="input input-bordered"
+              />
+              {errors.name && (
+                <span className="text-red-600">
+                  Retail Price field is required
+                </span>
+              )}
+            </div>
+            {/* 4th */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Profit*</span>
+              </label>
+              <input
+                type="text"
+                {...register("profit", { required: true })}
+                placeholder="Enter The Profit"
+                className="input input-bordered"
+              />
+              {errors.name && (
+                <span className="text-red-600">Profit field is required</span>
+              )}
+            </div>
+            {/* 5th */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Category*</span>
+              </label>
+              <select
+                {...register("category", { required: true })}
+                className="select select-bordered"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select a category
+                </option>
+                <option value="fragrance">Fragrance</option>
+                <option value="skinCare">Skin Care</option>
+                <option value="hairCare">Hair Care</option>
+                <option value="dailyEssential">Daily Essential</option>
+              </select>
+              {errors.name && (
+                <span className="text-red-600">Category field is required</span>
+              )}
+            </div>
+            {/* 6th */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Sub Category (Optional)*</span>
+              </label>
+              <select
+                defaultValue=""
+                {...register("subCategory")}
+                className="select select-bordered"
+              >
+                <option value="" disabled>
+                  Select a sub category
+                </option>
+                <option value="lipCare">Skin Care (Lip Care)</option>
+                <option value="lotion">Skin Care (Lotion)</option>
+                <option value="hairOil">Hair Care (Hair Oil)</option>
+                <option value="shampoo">Hair Care (Shampoo)</option>
+                <option value="soap">Daily Essential (Soap)</option>
+                <option value="bodyWash">Daily Essential (Body Wash)</option>
+              </select>
+            </div>
+          </div>
+          {/* Text area */}
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Description*</span>
+            </label>
+            <textarea
+              {...register("description")}
+              placeholder="Enter short description"
+              className="textarea textarea-bordered textarea-md w-full"
+            ></textarea>
+            {errors.name && (
+              <span className="text-red-600">Description is required</span>
+            )}
+            <input
+              type="file"
+              {...register("image")}
+              className="file-input file-input-bordered w-full max-w-xs my-4"
+            />
+          </div>
+          <div>
+            <button type="submit" className="btn  btn-primary">
+              Add Item
+              <FaUtensils />
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
+  );
+};
+
+export default AddItems;

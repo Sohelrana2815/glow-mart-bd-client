@@ -86,6 +86,7 @@ const Login = () => {
             </div>
             <p className="text-center">-----OR------</p>
             <SocialLogin />
+
             <p className="text-center font-medium">
               Don't have an account ?{" "}
               <Link to="/signUp">

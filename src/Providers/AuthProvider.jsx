@@ -59,7 +59,6 @@ const AuthProvider = ({ children }) => {
           }
         });
       } else {
-        // Do something , remove token after if no user
         localStorage.removeItem("access-token");
       }
 

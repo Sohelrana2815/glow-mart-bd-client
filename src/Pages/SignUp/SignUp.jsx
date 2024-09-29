@@ -4,11 +4,14 @@ import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const SignUp = () => {
   const { createNewUser, updateUserProfile } = useAuth();
   const axiosPublic = useAxiosPublic();
+  const location = useLocation();
   const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
@@ -36,7 +39,7 @@ const SignUp = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
-              navigate("/");
+              navigate(from, { replace: true });
             }
           });
         });
@@ -107,7 +110,7 @@ const SignUp = () => {
             <p className="text-center">-----OR------</p>
             <SocialLogin />
             <p className="text-center font-medium">
-              Already have an account ?{" "}
+              Already have an account ?
               <Link to="/login">
                 <span className="text-primary">Login</span>
               </Link>

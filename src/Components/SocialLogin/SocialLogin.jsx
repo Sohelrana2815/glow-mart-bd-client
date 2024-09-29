@@ -1,20 +1,19 @@
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
-import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
-  const navigate = useNavigate();
   const location = useLocation();
-  const axiosPublic = useAxiosPublic();
-
+  const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
-
+  const axiosPublic = useAxiosPublic();
   const { googleSignIn } = useAuth();
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
+        navigate(from, { replace: true });
         // console.log(result.user);
         const userInfo = {
           name: result.user?.displayName,
@@ -30,7 +29,6 @@ const SocialLogin = () => {
               showConfirmButton: false,
               timer: 1500,
             });
-            navigate(from, { replace: true });
           }
         });
       })

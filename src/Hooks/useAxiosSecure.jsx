@@ -10,13 +10,13 @@ const useAxiosSecure = () => {
 
   // Add authorization headers for every secure call using interceptors
   axiosSecure.interceptors.request.use(
-    function (config) {
+    (config) => {
       const token = localStorage.getItem("access-token");
       // console.log("Request stopped by interceptors", token);
       config.headers.authorization = `Bearer ${token}`;
       return config;
     },
-    function (error) {
+    (error) => {
       return Promise.reject(error);
     }
   );
@@ -30,11 +30,11 @@ const useAxiosSecure = () => {
     async function (error) {
       if (error.response) {
         const status = error.response.status;
+        // console.log("Response Status code error ", status);
         if (status === 401 || status === 403) {
           await logout();
           navigate("/login");
         }
-        console.log("Response Status code error ", status);
       } else {
         console.log("Network error");
       }
