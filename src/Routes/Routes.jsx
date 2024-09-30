@@ -14,6 +14,8 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
+import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
+import UpdateProducts from "../Pages/Dashboard/UpdateProducts/UpdateProducts";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  
   {
     path: "dashboard",
     element: (
@@ -75,18 +78,32 @@ const router = createBrowserRouter([
         element: <AdminHome />,
       },
       {
-        path: "allUsers",
-        element: (
-          <AdminRoute>
-            <AllUsers />
-          </AdminRoute>
-        ),
-      },
-      {
         path: "addItems",
         element: (
           <AdminRoute>
             <AddItems />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageItems",
+        element: (
+          <AdminRoute>
+            <ManageItems />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "updateProducts/:id",
+        element: <UpdateProducts />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "allUsers",
+        element: (
+          <AdminRoute>
+            <AllUsers />
           </AdminRoute>
         ),
       },

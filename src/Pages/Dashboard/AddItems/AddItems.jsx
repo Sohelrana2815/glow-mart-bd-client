@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { FaUtensils } from "react-icons/fa6";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 
@@ -12,21 +14,50 @@ const AddItems = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
 
   const onSubmit = async (data) => {
-    // Upload image file in image bb then get the url
-    // const
-    console.log(data);
-    const imageFile = { image: data.image[0] };
-    const res = await axiosPublic.post(image_hosting_api, imageFile, {
-      headers: {
-        "content-type": "multipart/form-data",
-      },
-    });
-    console.log(res.data);
+    try {
+      // Upload image file in image bb then get the url
+      // const
+      console.log(data);
+      const imageFile = { image: data.image[0] };
+      const res = await axiosPublic.post(image_hosting_api, imageFile, {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      });
+      if (res.data.success) {
+        const product = {
+          name: data.name,
+          solidPrice: parseFloat(data.solidPrice),
+          retailPrice: parseFloat(data.retailPrice),
+          profit: parseFloat(data.profit),
+          category: data.category,
+          subCategory: data.subCategory,
+          image: res.data.data.display_url,
+          description: data.description,
+        };
+
+        const productRes = await axiosSecure.post("/products", product);
+        console.log(productRes.data);
+
+        if (productRes.data.insertedId) {
+          reset();
+          Swal.fire({
+            title: "Added New Product",
+            text: "Your product has been added successfully.",
+            icon: "success",
+          });
+        }
+      }
+    } catch (error) {
+      console.error("Error uploading product", error);
+    }
   };
 
   return (
@@ -59,6 +90,8 @@ const AddItems = () => {
               </label>
               <input
                 type="number"
+                step="any"
+                min="0"
                 {...register("solidPrice", { required: true })}
                 placeholder="Enter Solid Price"
                 className="input input-bordered"
@@ -76,6 +109,8 @@ const AddItems = () => {
               </label>
               <input
                 type="number"
+                step="any"
+                min="0"
                 {...register("retailPrice", { required: true })}
                 placeholder="Enter Retail Price"
                 className="input input-bordered"
@@ -92,7 +127,9 @@ const AddItems = () => {
                 <span className="label-text">Profit*</span>
               </label>
               <input
-                type="text"
+                type="number"
+                step="any"
+                min="0"
                 {...register("profit", { required: true })}
                 placeholder="Enter The Profit"
                 className="input input-bordered"
