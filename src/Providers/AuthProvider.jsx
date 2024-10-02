@@ -45,6 +45,7 @@ const AuthProvider = ({ children }) => {
       displayName: name,
     });
   };
+// const gateway = 0;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currenUser) => {
