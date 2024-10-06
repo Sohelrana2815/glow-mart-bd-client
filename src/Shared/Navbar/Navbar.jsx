@@ -3,10 +3,11 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useCart from "../../Hooks/useCart";
 import { FaShoppingCart } from "react-icons/fa";
+import useAdmin from "../../Hooks/useAdmin";
 const Navbar = () => {
   const { user, logout } = useAuth();
   const [cart] = useCart();
-
+  const [isAdmin] = useAdmin();
   const handleLogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -34,6 +35,20 @@ const Navbar = () => {
       <li>
         <NavLink to="/products">All Products</NavLink>
       </li>
+      {user && isAdmin ? (
+        <li>
+          <NavLink to="/dashboard/adminHome">Admin Home</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
+      {user && !isAdmin ? (
+        <li>
+          <NavLink to="/dashboard/userHome">User Home</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
       <li>
         <Link to="/dashboard/cart">
           <button className="btn btn-sm">

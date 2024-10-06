@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useCart from "../../../Hooks/useCart";
 import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [clientSecret, setClientSecret] = useState("");
@@ -12,19 +14,21 @@ const Checkout = () => {
   const elements = useElements();
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const [cart] = useCart();
-
+  const [cart, refetch] = useCart();
+  const navigate = useNavigate();
   const totalPrice = cart.reduce((acc, curr) => acc + curr.productPrice, 0);
 
   useEffect(() => {
-    axiosSecure
-      .post("/create-payment-intent", {
-        price: totalPrice,
-      })
-      .then((res) => {
-        console.log(res.data.clientSecret);
-        setClientSecret(res.data.clientSecret);
-      });
+    if (totalPrice > 0) {
+      axiosSecure
+        .post("/create-payment-intent", {
+          price: totalPrice,
+        })
+        .then((res) => {
+          console.log(res.data.clientSecret);
+          setClientSecret(res.data.clientSecret);
+        });
+    }
   }, [axiosSecure, totalPrice]);
 
   const handleSubmit = async (event) => {
@@ -72,22 +76,31 @@ const Checkout = () => {
       if (paymentIntent.status === "succeeded") {
         setTransactionId(paymentIntent.id);
         console.log("Transaction Id", paymentIntent.id);
+        // now save the payment in the database
+        const payment = {
+          email: user?.email,
+          price: totalPrice,
+          transactionId: paymentIntent.id,
+          date: new Date(), // utc date convert. use moment js to convert the live time
+          cartIds: cart.map((product) => product._id),
+          productIds: cart.map((product) => product.productId),
+          status: "pending",
+        };
+
+        const res = await axiosSecure.post("/payments", payment);
+        console.log("payment saved", res.data);
+        refetch();
+        if (res.data.paymentResult.insertedId) {
+          Swal.fire({
+            title: "Payment Success!",
+            text: "Thank you for ordering",
+            icon: "success",
+          });
+          navigate("/dashboard/paymentHistory");
+        }
       }
     }
   };
-
-  // stripe
-  // .confirmCardPayment('{PAYMENT_INTENT_CLIENT_SECRET}', {
-  //   payment_method: {
-  //     card: cardElement,
-  //     billing_details: {
-  //       name: 'Jenny Rosen',
-  //     },
-  //   },
-  // })
-  // .then(function(result) {
-  //   // Handle result.error or result.paymentIntent
-  // });
 
   return (
     <form className="w-1/2 mx-auto" onSubmit={handleSubmit}>
@@ -115,7 +128,9 @@ const Checkout = () => {
         Pay
       </button>
       <p className="text-red-600">{error}</p>
-      {transactionId && <p className="text-green-600 my-5">Transaction Id : {transactionId}</p>}
+      {transactionId && (
+        <p className="text-green-600 my-5">Transaction Id : {transactionId}</p>
+      )}
     </form>
   );
 };

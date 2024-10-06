@@ -45,11 +45,11 @@ const AuthProvider = ({ children }) => {
       displayName: name,
     });
   };
-// const gateway = 0;
+  // const gateway = 0;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currenUser) => {
-      console.log(currenUser);
+      // console.log(currenUser);
       // Grantee user info will stored here
       if (currenUser) {
         //  get token and store it . (http only cookie, local storage , in memory)'
@@ -57,14 +57,14 @@ const AuthProvider = ({ children }) => {
         axiosPublic.post("/jwt", userInfo).then((res) => {
           if (res.data.token) {
             localStorage.setItem("access-token", res.data.token);
+            setLoading(false);
           }
         });
       } else {
         localStorage.removeItem("access-token");
+        setLoading(false);
       }
-
       setUser(currenUser);
-      setLoading(false);
     });
     return () => {
       unsubscribe();
