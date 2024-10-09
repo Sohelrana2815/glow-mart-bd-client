@@ -18,6 +18,28 @@ import {
 } from "recharts";
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "purple"];
+const getPath = (x, y, width, height) => {
+  return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
+    y + height / 3
+  }
+  ${x + width / 2}, ${y}
+  C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
+    x + width
+  }, ${y + height}
+  Z`;
+};
+const TriangleBar = (props) => {
+  const { fill, x, y, width, height } = props;
+
+  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
+};
+TriangleBar.propTypes = {
+  fill: PropTypes.string.isRequired,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+};
 const AdminHome = () => {
   const axiosSecure = useAxiosSecure();
   const { data: stats = {} } = useQuery({
@@ -37,22 +59,6 @@ const AdminHome = () => {
   });
 
   // Custom Shape For The BarCart
-
-  const getPath = (x, y, width, height) => {
-    return `M${x},${y + height}C${x + width / 3},${y + height} ${
-      x + width / 2
-    },${y + height / 3}
-    ${x + width / 2}, ${y}
-    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
-      x + width
-    }, ${y + height}
-    Z`;
-  };
-  const TriangleBar = (props) => {
-    const { fill, x, y, width, height } = props;
-
-    return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-  };
 
   // Custom pie chart
 
@@ -182,11 +188,4 @@ const AdminHome = () => {
   );
 };
 
-AdminHome.propTypes = {
-  fill: PropTypes.string.isRequired,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
-};
 export default AdminHome;

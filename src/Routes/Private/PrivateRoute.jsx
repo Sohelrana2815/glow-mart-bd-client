@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   const location = useLocation();
@@ -11,6 +11,10 @@ const PrivateRoute = ({ children }) => {
     return children;
   }
   return <Navigate to="/login" state={{ from: location }} />;
+};
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default PrivateRoute;
