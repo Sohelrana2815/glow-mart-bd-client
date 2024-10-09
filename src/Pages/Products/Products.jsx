@@ -125,7 +125,7 @@ const Products = () => {
         </div>
       </div>
 
-      {/* Display filtered products */}
+      {/* Display filtered products using card */}
       {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20">
           {filteredProducts.map((product) => (

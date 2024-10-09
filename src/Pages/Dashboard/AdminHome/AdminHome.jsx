@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import PropTypes from "prop-types";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { FaDollarSign, FaUsers } from "react-icons/fa";
 import { FaBasketShopping } from "react-icons/fa6";
@@ -181,4 +182,11 @@ const AdminHome = () => {
   );
 };
 
+AdminHome.propTypes = {
+  fill: PropTypes.string.isRequired,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+};
 export default AdminHome;

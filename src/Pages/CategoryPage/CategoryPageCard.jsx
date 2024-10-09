@@ -1,4 +1,5 @@
-import { FaEye, FaShoppingCart } from "react-icons/fa";
+import PropTypes from "prop-types";
+import { FaEye } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
@@ -53,7 +54,6 @@ const CategoryPageCard = ({ product }) => {
   };
   return (
     <>
-    
       <div className="card card-compact bg-base-100 w-3/4 shadow-xl">
         <figure>
           <img src={image} alt="Shoes" />
@@ -77,6 +77,15 @@ const CategoryPageCard = ({ product }) => {
       </div>
     </>
   );
+};
+
+CategoryPageCard.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    _id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    retailPrice: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default CategoryPageCard;
