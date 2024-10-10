@@ -88,7 +88,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/">
-          <p className="btn btn-ghost text-xl">Glow Mart BD</p>
+          <p className="btn btn-ghost text-base lg:text-xl">Glow Mart BD</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -119,15 +119,6 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
                 <a onClick={handleLogout}>Logout</a>
               </li>
             </ul>
@@ -135,10 +126,14 @@ const Navbar = () => {
         ) : (
           <>
             <Link to="/login">
-              <button className="btn btn-outline">Login</button>
+              <button className="btn lg:btn-md btn-outline  btn-sm ">
+                Login
+              </button>
             </Link>
             <Link to="/signUp">
-              <button className="btn btn-outline ml-4">Sign UP</button>
+              <button className="btn lg:btn-md btn-outline  btn-sm ml-4">
+                Sign UP
+              </button>
             </Link>
           </>
         )}

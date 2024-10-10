@@ -167,12 +167,12 @@ const AddItems = () => {
               </label>
               <select
                 defaultValue=""
-                {...register("subCategory")}
+                {...register("subCategory", {
+                  setValueAs: (value) => value || undefined,
+                })}
                 className="select select-bordered"
               >
-                <option value="" disabled>
-                  Select a sub category
-                </option>
+                <option value="">Select a sub category (Optional)*</option>
                 <option value="lipCare">Skin Care (Lip Care)</option>
                 <option value="lotion">Skin Care (Lotion)</option>
                 <option value="hairOil">Hair Care (Hair Oil)</option>

@@ -41,11 +41,6 @@ const ProductsDetails = () => {
           ) : (
             <p className="py-6 font-normal  text-4xl">$ {retailPrice}</p>
           )}
-          {loading ? (
-            <Skeleton height={50} width={100} />
-          ) : (
-            <button className="btn btn-primary">Get Started</button>
-          )}
         </div>
       </div>
     </div>

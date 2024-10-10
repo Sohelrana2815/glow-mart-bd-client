@@ -18,6 +18,7 @@ import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import UpdateProducts from "../Pages/Dashboard/UpdateProducts/UpdateProducts";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import ManageBookings from "../Pages/Dashboard/ManageBookings/ManageBookings";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://glow-mart-bd-server.vercel.app/products/${params.id}`),
       },
       {
         path: "categoryPage/:category",
@@ -108,10 +109,18 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "manageBookings",
+        element: (
+          <AdminRoute>
+            <ManageBookings />
+          </AdminRoute>
+        ),
+      },
+      {
         path: "updateProducts/:id",
         element: <UpdateProducts />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://glow-mart-bd-server.vercel.app/products/${params.id}`),
       },
       {
         path: "allUsers",

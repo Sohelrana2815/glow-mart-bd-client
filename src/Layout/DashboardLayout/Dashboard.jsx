@@ -1,4 +1,5 @@
 import {
+  FaBook,
   FaHome,
   FaList,
   FaShoppingCart,
@@ -35,6 +36,12 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/manageItems">
                   <FaList />
                   Manage Items
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageBookings">
+                  <FaBook />
+                  Manage Bookings
                 </NavLink>
               </li>
               <li>

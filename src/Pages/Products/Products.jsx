@@ -1,7 +1,6 @@
 import { FaList, FaShoppingCart } from "react-icons/fa";
 import useProducts from "../../Hooks/useProducts";
 import ProductsCard from "./ProductsCard";
-import { FaTrashCan } from "react-icons/fa6";
 import { useState } from "react";
 import useCart from "../../Hooks/useCart";
 import { Link } from "react-router-dom";
@@ -12,6 +11,7 @@ const Products = () => {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
+  const [visibleProducts, setVisibleProducts] = useState(6);
 
   // Select Products by Subcategory and reset the Fragrance category
   const handleSubCategory = (subCategory) => {
@@ -46,13 +46,17 @@ const Products = () => {
       return true;
     }
   });
-
+  const productsToShow = filteredProducts.slice(0, visibleProducts);
+  // Function to handle "Show More" click
+  const handleShowMore = () => {
+    setVisibleProducts((prevVisible) => prevVisible + 6); // Show 9 more products each time
+  };
   return (
     <>
       <div className="fixed z-10 lg:-ml-56 mt-20">
         <details className="dropdown">
-          <summary className="btn m-1 bg-primary text-white lg:text-xl">
-            <FaList /> Category ({filteredProducts.length})
+          <summary className="btn m-1 bg-primary text-white lg:text-xl mt-28">
+            <FaList /> Category ({productsToShow.length})
           </summary>
 
           <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow space-y-5">
@@ -115,24 +119,28 @@ const Products = () => {
               <FaShoppingCart /> ({cart.length})
             </button>
           </Link>
-          {/* Small button for mobile */}
-          <button
-            onClick={handleReset}
-            className="btn block md:hidden mt-8 bg-red-600"
-          >
-            <FaTrashCan className="font-semibold text-white" />
-          </button>
         </div>
       </div>
 
       {/* Display filtered products using card */}
-      {
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20">
-          {filteredProducts.map((product) => (
-            <ProductsCard key={product._id} product={product} />
-          ))}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20">
+        {productsToShow.map((product) => (
+          <ProductsCard key={product._id} product={product} />
+        ))}
+      </div>
+
+      {/* Show More Button */}
+      {visibleProducts < filteredProducts.length && (
+        <div className="text-center mt-8">
+          <button
+            className="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+            onClick={handleShowMore}
+          >
+            Show More
+          </button>
         </div>
-      }
+      )}
     </>
   );
 };

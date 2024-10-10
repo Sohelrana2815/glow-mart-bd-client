@@ -1,19 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../Hooks/useAuth";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { LuClock2 } from "react-icons/lu";
+import usePayment from "../../../Hooks/usePayment";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 const PaymentHistory = () => {
-  const { user } = useAuth();
-  const axiosSecure = useAxiosSecure();
-
-
-  const { data: payments = [] } = useQuery({
-    queryKey: ["payments", user.email],
-    queryFn: async () => {
-      const res = await axiosSecure.get(`/payments/${user.email}`);
-      return res.data;
-    },
-  });
+  const [payments] = usePayment();
 
   return (
     <div>
@@ -38,7 +28,29 @@ const PaymentHistory = () => {
                   <td>{payment.email}</td>
                   <td>${payment.price}</td>
                   <td>{payment.transactionId}</td>
-                  <td>{payment.status}</td>
+                  <td>
+                    {payment.status === "pending" ? (
+                      <>
+                        <div className="flex items-center  space-x-4">
+                          <span className="text-lg  text-red-600">Pending</span>
+
+                          <LuClock2 />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className=" flex items-center 
+                       space-x-2"
+                        >
+                          <span className="text-green-500 text-lg">
+                            Delivered
+                          </span>
+                          <FaRegCheckCircle className="text-green-500 text-lg" />
+                        </div>
+                      </>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>

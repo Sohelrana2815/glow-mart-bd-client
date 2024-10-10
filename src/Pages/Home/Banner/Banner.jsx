@@ -2,11 +2,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import img1 from "../../../assets/Banner/img1.jpg";
 import img2 from "../../../assets/Banner/img2.jpg";
 import img3 from "../../../assets/Banner/img3.jpg";
+
 import { Carousel } from "react-responsive-carousel";
+
 const Banner = () => {
   return (
     <div className="mt-20">
-      <Carousel>
+      <Carousel infiniteLoop>
         <div>
           <img src={img1} className="rounded-xl" />
         </div>

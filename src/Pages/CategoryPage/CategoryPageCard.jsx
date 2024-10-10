@@ -54,7 +54,7 @@ const CategoryPageCard = ({ product }) => {
   };
   return (
     <>
-      <div className="card card-compact bg-base-100 w-3/4 shadow-xl">
+      <div className="card card-compact bg-base-100 w-3/4 mx-auto shadow-xl">
         <figure>
           <img src={image} alt="Shoes" />
         </figure>
