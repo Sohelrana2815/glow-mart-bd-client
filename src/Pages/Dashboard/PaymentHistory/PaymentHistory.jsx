@@ -49,7 +49,7 @@ const PaymentHistory = () => {
                             className=" flex items-center 
                        space-x-2"
                           >
-                            <span className="text-green-500 text-lg">
+                            <span className="text-green-600 text-lg">
                               Delivered
                             </span>
                             <FaRegCheckCircle className="text-green-500 text-lg" />
