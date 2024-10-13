@@ -121,7 +121,7 @@ const AllUsers = () => {
         </div>
       </div>
       {/* for small devices */}
-      <div className="px-2">
+      <div className="px-2 block md:hidden lg:hidden">
         <p className="my-4 font-medium text-lg">Total Users : {users.length}</p>
         <div className="my-4">
           {users.map((user) => (
