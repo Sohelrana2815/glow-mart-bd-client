@@ -8,7 +8,7 @@ Glow Mart BD is an e-commerce platform that helps my brother's wholesale cosmeti
 
 ## Wbsite Live URL
 
-[Glow Mart BD Application](https://glow-mart-bd.web.app/) 
+[Glow Mart BD Web Application](https://glow-mart-bd.web.app/) 
 
 
 ## Glow Mart BD Repository Link
