@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currenUser) => {
-      // console.log(currenUser);
+      console.log(currenUser);
       // Grantee user info will stored here
       if (currenUser) {
         //  get token and store it . (http only cookie, local storage , in memory)'
