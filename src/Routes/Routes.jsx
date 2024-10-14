@@ -49,7 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://glow-mart-bd-server.vercel.app/products/${params.id}`),
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "categoryPage/:category",
@@ -120,7 +120,7 @@ const router = createBrowserRouter([
         path: "updateProducts/:id",
         element: <UpdateProducts />,
         loader: ({ params }) =>
-          fetch(`https://glow-mart-bd-server.vercel.app/products/${params.id}`),
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "allUsers",
