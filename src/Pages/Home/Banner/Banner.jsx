@@ -8,7 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 const Banner = () => {
   return (
     <div className="mt-20">
-      <Carousel infiniteLoop>
+      <Carousel infiniteLoop autoPlay interval={2000}>
         <div>
           <img src={img1} className="rounded-xl" />
         </div>
