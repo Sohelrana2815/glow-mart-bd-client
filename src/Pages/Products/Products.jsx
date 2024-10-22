@@ -60,7 +60,7 @@ const Products = () => {
       <div className="fixed z-10 lg:-ml-56 mt-20">
         <details className="dropdown">
           <summary className="btn m-1 bg-primary text-white lg:text-xl mt-28">
-            <FaList /> Category ({productsToShow.length})
+            <FaList /> Category
           </summary>
 
           <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow space-y-5">
