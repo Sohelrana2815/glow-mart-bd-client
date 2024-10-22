@@ -5,11 +5,14 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
+import useLoading from "../../Hooks/useLoading";
+import Skeleton from "react-loading-skeleton";
 
 const CategoryPageCard = ({ product }) => {
   const { name, image, _id, retailPrice } = product;
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
+  const { loading } = useLoading();
   const navigate = useNavigate();
   const [, refetch] = useCart();
 
@@ -57,22 +60,36 @@ const CategoryPageCard = ({ product }) => {
     <>
       <div className="card card-compact bg-base-100 w-3/4 mx-auto shadow-xl">
         <figure>
-          <img src={image} alt="Shoes" />
+          {loading ? (
+            <Skeleton height={200} width={200} />
+          ) : (
+            <img src={image} alt="Shoes" />
+          )}
         </figure>
         <div className="card-body text-center">
-          <h2 className="card-title">{name}</h2>
+          <h2 className="card-title">
+            {loading ? <Skeleton width={150} /> : name}
+          </h2>
           <div className="card-actions justify-center ">
-            <button
-              className="btn btn-md btn-primary"
-              onClick={handleAddToCart}
-            >
-              Add to Cart
-            </button>
-            <Link to={`/productInfo/${_id}`}>
-              <button className="btn bg-[#E8B86D] text-white">
-                <FaEye className="text-lg" />
+            {loading ? (
+              <Skeleton width={90} height={40} />
+            ) : (
+              <button
+                className="btn btn-md btn-primary"
+                onClick={handleAddToCart}
+              >
+                Add to Cart
               </button>
-            </Link>
+            )}
+            {loading ? (
+              <Skeleton width={50} height={40} />
+            ) : (
+              <Link to={`/productInfo/${_id}`}>
+                <button className="btn bg-[#E8B86D] text-white">
+                  <FaEye className="text-lg" />
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -4,8 +4,14 @@ import img2 from "../../../assets/Banner/img2.jpg";
 import img3 from "../../../assets/Banner/img3.jpg";
 
 import { Carousel } from "react-responsive-carousel";
+import useAuth from "../../../Hooks/useAuth";
 
 const Banner = () => {
+  const { loading } = useAuth();
+  if (loading) {
+    return <span className="loading loading-bars loading-lg"></span>;
+  }
+
   return (
     <div className="mt-20">
       <Carousel infiniteLoop autoPlay interval={2000}>

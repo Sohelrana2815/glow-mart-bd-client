@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 // import useAdmin from "../../Hooks/useAdmin";
 import { IoMenuSharp } from "react-icons/io5";
 const Navbar = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, loading } = useAuth();
   const [cart] = useCart();
   // const [isAdmin] = useAdmin();
   const handleLogout = () => {
@@ -36,21 +36,6 @@ const Navbar = () => {
       <li>
         <NavLink to="/products">All Products</NavLink>
       </li>
-      {/* {user && isAdmin ? (
-        <li>
-          <NavLink to="/dashboard/adminHome">Admin Home</NavLink>
-        </li>
-      ) : (
-        ""
-      )}
-      {user && !isAdmin ? (
-        <li>
-          <NavLink to="/dashboard/userHome">User Home</NavLink>
-        </li>
-      ) : (
-        ""
-      )} */}
-
       <li>
         <NavLink to="/dashboard/userHome">User Home</NavLink>
       </li>
@@ -69,6 +54,9 @@ const Navbar = () => {
     </>
   );
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -107,7 +95,7 @@ const Navbar = () => {
               ) : (
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content w-10 rounded-full">
-                    <span>{user.displayName.charAt(0).toUpperCase()}</span>
+                    <span>{user.displayName.slice(0, 1).toUpperCase()}</span>
                   </div>
                 </div>
               )}
