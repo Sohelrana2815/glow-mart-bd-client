@@ -77,7 +77,7 @@ const AdminHome = () => {
       {/* Charts */}
       <div className="flex flex-col lg:flex-row md:flex-row mt-10 gap-6">
         {/* Triangle Bar Chart */}
-        <div className="md:w-full lg:w-1/2">
+        <div className="md:w-full">
           <ResponsiveContainer width="100%" height={300}>
             <BarChart
               data={chartData}
