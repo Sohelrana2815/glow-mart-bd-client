@@ -4,9 +4,13 @@ import useProducts from "../../../Hooks/useProducts";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import useLoading from "../../../Hooks/useLoading";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const ManageItems = () => {
   const { totalProducts } = useLoaderData();
+  const loading = useLoading();
   // console.log(totalProducts);
   const [category, setCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,11 +25,13 @@ const ManageItems = () => {
 
   console.log(products);
   const handleCategory = (e) => {
+    refetch();
     // console.log(e.target.value);
     setCategory(e.target.value);
     setCurrentPage(1);
   };
   const handleProductsPerPage = (e) => {
+    refetch();
     const value = parseInt(e.target.value);
     setProductsPerPage(value);
     setCurrentPage(1);
@@ -82,31 +88,49 @@ const ManageItems = () => {
           {products.map((product) => (
             <div key={product._id} className="card bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="rounded-xl"
-                />
+                {loading ? (
+                  <Skeleton height={200} width={200} />
+                ) : (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="rounded-xl"
+                  />
+                )}
               </figure>
               <div className="card-body">
-                <h2 className="card-title">{product.name}</h2>
-                <p className="text-lg font-bold text-center">
-                  ${product.price}
-                </p>
+                <h2 className="card-title">
+                  {loading ? <Skeleton width={150} /> : product.name}
+                </h2>
+                {loading ? (
+                  <Skeleton width={100} />
+                ) : (
+                  <p className="text-lg font-bold text-center">
+                    ${product.price}
+                  </p>
+                )}
                 <div className="card-actions justify-between">
                   <Link to={`/dashboard/updateProducts/${product._id}`}>
-                    <button className="btn bg-gradient-to-r from-[#0d6efd] to-black text-white">
-                      <FaPen />
-                      Edit
-                    </button>
+                    {loading ? (
+                      <Skeleton width={90} height={40} />
+                    ) : (
+                      <button className="btn bg-gradient-to-r from-[#0d6efd] to-black text-white">
+                        <FaPen />
+                        Edit
+                      </button>
+                    )}
                   </Link>
-                  <button
-                    onClick={() => handleDeleteProduct(product)}
-                    className="btn bg-gradient-to-r from-[#C62E2E] to-black text-white"
-                  >
-                    <FaPen />
-                    Delete
-                  </button>
+                  {loading ? (
+                    <Skeleton width={50} height={40} />
+                  ) : (
+                    <button
+                      onClick={() => handleDeleteProduct(product)}
+                      className="btn bg-gradient-to-r from-[#C62E2E] to-black text-white"
+                    >
+                      <FaPen />
+                      Delete
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
