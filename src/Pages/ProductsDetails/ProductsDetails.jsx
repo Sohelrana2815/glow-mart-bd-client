@@ -4,8 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import useLoading from "../../Hooks/useLoading";
 const ProductsDetails = () => {
   const products = useLoaderData();
-  const { name, description, image, retailPrice, category, subCategory } =
-    products;
+  const { name, description, image, price, category } = products;
   const id = useParams();
   const loading = useLoading();
   console.log(products, id);
@@ -42,14 +41,14 @@ const ProductsDetails = () => {
           ) : (
             <p className=" md:text-2xl text-base font-normal">
               <span className="font-bold "> Category :</span>{" "}
-              {subCategory ? subCategory : category}
+              {category ? category : category}
             </p>
           )}
           {loading ? (
             <Skeleton width={50} height={50} />
           ) : (
             <p className="py-6 font-medium text-orange-600  md:font-normal text-lg  md:text-4xl">
-              $ {retailPrice}
+              $ {price}
             </p>
           )}
         </div>

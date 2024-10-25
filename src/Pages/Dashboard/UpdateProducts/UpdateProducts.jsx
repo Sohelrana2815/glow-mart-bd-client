@@ -10,8 +10,7 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const UpdateProducts = () => {
-  const { name, solidPrice, retailPrice, profit, category, description, _id } =
-    useLoaderData();
+  const { name, category, description, _id, price } = useLoaderData();
 
   const {
     register,
@@ -35,16 +34,13 @@ const UpdateProducts = () => {
       if (res.data.success) {
         const product = {
           name: data.name,
-          solidPrice: parseFloat(data.solidPrice),
-          retailPrice: parseFloat(data.retailPrice),
-          profit: parseFloat(data.profit),
+          price: parseFloat(data.price),
           category: data.category,
-          subCategory: data.subCategory,
           image: res.data.data.display_url,
           description: data.description,
         };
 
-        const productRes = await axiosSecure.patch(`/products/${_id}`, product);
+        const productRes = await axiosSecure.patch(`/updateSpecificProducts/${_id}`, product);
         console.log(productRes.data);
         if (productRes.data.modifiedCount > 0) {
           // reset();
@@ -83,64 +79,26 @@ const UpdateProducts = () => {
                 <span className="text-red-600">Product name is required</span>
               )}
             </div>
-            {/* 2nd */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Solid Price*</span>
-              </label>
-              <input
-                type="number"
-                step="any"
-                min="0"
-                defaultValue={solidPrice}
-                {...register("solidPrice", { required: true })}
-                placeholder="Enter Solid Price"
-                className="input input-bordered"
-              />
-              {errors.name && (
-                <span className="text-red-600">
-                  Solid Price field is required
-                </span>
-              )}
-            </div>
+
             {/* 3rd */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Retail Price*</span>
+                <span className="label-text">Price*</span>
               </label>
               <input
                 type="number"
                 step="any"
                 min="0"
-                defaultValue={retailPrice}
-                {...register("retailPrice", { required: true })}
-                placeholder="Enter Retail Price"
+                defaultValue={price}
+                {...register("price", { required: true })}
+                placeholder="Enter Price"
                 className="input input-bordered"
               />
               {errors.name && (
-                <span className="text-red-600">
-                  Retail Price field is required
-                </span>
+                <span className="text-red-600">Price field is required</span>
               )}
             </div>
-            {/* 4th */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Profit*</span>
-              </label>
-              <input
-                type="number"
-                step="any"
-                min="0"
-                defaultValue={profit}
-                {...register("profit", { required: true })}
-                placeholder="Enter The Profit"
-                className="input input-bordered"
-              />
-              {errors.name && (
-                <span className="text-red-600">Profit field is required</span>
-              )}
-            </div>
+
             {/* 5th */}
             <div className="form-control">
               <label className="label">
@@ -155,35 +113,16 @@ const UpdateProducts = () => {
                   Select a category
                 </option>
                 <option value="fragrance">Fragrance</option>
-                <option value="skinCare">Skin Care</option>
-                <option value="hairCare">Hair Care</option>
-                <option value="dailyEssential">Daily Essential</option>
+                <option value="lotion">Lotion</option>
+                <option value="shampoo">Shampoo</option>
+                <option value="lipCare">Lip Care</option>
+                <option value="hairOil">Hair Oil</option>
+                <option value="bodyWash">Body Wash</option>
+                <option value="soap">Soap</option>
               </select>
               {errors.name && (
                 <span className="text-red-600">Category field is required</span>
               )}
-            </div>
-            {/* 6th */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Sub Category (Optional)*</span>
-              </label>
-              <select
-                defaultValue=""
-                {...register("subCategory", {
-                  setValueAs: (value) => value || undefined,
-                })}
-                className="select select-bordered"
-              >
-                <option disabled>Select a sub category</option>
-                <option value="">None</option>
-                <option value="lipCare">Skin Care (Lip Care)</option>
-                <option value="lotion">Skin Care (Lotion)</option>
-                <option value="hairOil">Hair Care (Hair Oil)</option>
-                <option value="shampoo">Hair Care (Shampoo)</option>
-                <option value="soap">Daily Essential (Soap)</option>
-                <option value="bodyWash">Daily Essential (Body Wash)</option>
-              </select>
             </div>
           </div>
           {/* Text area */}

@@ -26,7 +26,7 @@ Glow Mart BD is an e-commerce platform that helps my brother's wholesale cosmeti
 
 ● Responsive Design
 
-● Category and Subcategory Filtering
+● Category and category Filtering
 
 ● Stripe Payment Method : TEST
 

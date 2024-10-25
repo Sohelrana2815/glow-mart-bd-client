@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
 const ProductsCard = ({ product }) => {
-  const { name, retailPrice, image, _id } = product;
+  const { name, price, image, _id } = product;
   const loading = useLoading();
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
@@ -24,7 +24,7 @@ const ProductsCard = ({ product }) => {
         productId: _id,
         email: user.email,
         productName: name,
-        productPrice: retailPrice,
+        productPrice: price,
         ProductImg: image,
       };
 
@@ -59,55 +59,57 @@ const ProductsCard = ({ product }) => {
   };
 
   return (
-    <div className="card bg-base-100 w-72 mx-auto md:w-80 shadow-xl">
-      <figure className="px-10 pt-10">
-        {loading ? (
-          <Skeleton height={200} width={200} />
-        ) : (
-          <img src={image} alt="product img" className="rounded-xl" />
-        )}
-      </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="md:card-title font-medium">
-          {loading ? <Skeleton width={150} /> : name}
-        </h2>
-        {loading ? (
-          <Skeleton width={100} />
-        ) : (
-          <p className="lg:card-title text-lg font-medium text-info">
-            $ {retailPrice}
-          </p>
-        )}
-        <div className="card-actions">
+    <>
+      <div className="card bg-base-100 w-72 mx-auto md:w-80 shadow-xl">
+        <figure className="px-10 pt-10">
           {loading ? (
-            <Skeleton width={90} height={40} />
+            <Skeleton height={200} width={200} />
           ) : (
-            <button
-              className="btn md:btn-md btn-sm py-2 px-4 lg:btn-md  bg-[#185519] md:py-0  text-white"
-              onClick={handleAddToCart}
-            >
-              Add to Cart
-            </button>
+            <img src={image} alt="product img" className="rounded-xl" />
           )}
+        </figure>
+        <div className="card-body items-center text-center">
+          <h2 className="md:card-title font-medium">
+            {loading ? <Skeleton width={150} /> : name}
+          </h2>
           {loading ? (
-            <Skeleton width={50} height={40} />
+            <Skeleton width={100} />
           ) : (
-            <Link to={`/productInfo/${_id}`}>
-              <button className="btn md:btn-md btn-sm lg:btn-md bg-[#E8B86D] text-white">
-                <FaEye className="text-lg" />
+            <p className="lg:card-title text-lg font-medium text-info">
+              $ {price}
+            </p>
+          )}
+          <div className="card-actions">
+            {loading ? (
+              <Skeleton width={90} height={40} />
+            ) : (
+              <button
+                className="btn md:btn-md btn-sm py-2 px-4 lg:btn-md  bg-[#185519] md:py-0  text-white"
+                onClick={handleAddToCart}
+              >
+                Add to Cart
               </button>
-            </Link>
-          )}
+            )}
+            {loading ? (
+              <Skeleton width={50} height={40} />
+            ) : (
+              <Link to={`/productInfo/${_id}`}>
+                <button className="btn md:btn-md btn-sm lg:btn-md bg-[#E8B86D] text-white">
+                  <FaEye className="text-lg" />
+                </button>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 // Define propTypes
 ProductsCard.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    retailPrice: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired,
   }).isRequired,

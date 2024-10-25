@@ -34,11 +34,8 @@ const AddItems = () => {
       if (res.data.success) {
         const product = {
           name: data.name,
-          solidPrice: parseFloat(data.solidPrice),
-          retailPrice: parseFloat(data.retailPrice),
-          profit: parseFloat(data.profit),
+          price: parseFloat(data.price),
           category: data.category,
-          subCategory: data.subCategory,
           image: res.data.data.display_url,
           description: data.description,
         };
@@ -86,58 +83,21 @@ const AddItems = () => {
             {/* 2nd */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Solid Price*</span>
+                <span className="label-text">Price*</span>
               </label>
               <input
                 type="number"
                 step="any"
                 min="0"
-                {...register("solidPrice", { required: true })}
-                placeholder="Enter Solid Price"
+                {...register("price", { required: true })}
+                placeholder="Enter Price"
                 className="input input-bordered w-full"
               />
-              {errors.solidPrice && (
-                <span className="text-red-600">
-                  Solid Price field is required
-                </span>
+              {errors.price && (
+                <span className="text-red-600">Price field is required</span>
               )}
             </div>
-            {/* 3rd */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Retail Price*</span>
-              </label>
-              <input
-                type="number"
-                step="any"
-                min="0"
-                {...register("retailPrice", { required: true })}
-                placeholder="Enter Retail Price"
-                className="input input-bordered w-full"
-              />
-              {errors.retailPrice && (
-                <span className="text-red-600">
-                  Retail Price field is required
-                </span>
-              )}
-            </div>
-            {/* 4th */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Profit*</span>
-              </label>
-              <input
-                type="number"
-                step="any"
-                min="0"
-                {...register("profit", { required: true })}
-                placeholder="Enter The Profit"
-                className="input input-bordered w-full"
-              />
-              {errors.profit && (
-                <span className="text-red-600">Profit field is required</span>
-              )}
-            </div>
+
             {/* 5th */}
             <div className="form-control">
               <label className="label">
@@ -152,34 +112,16 @@ const AddItems = () => {
                   Select a category
                 </option>
                 <option value="fragrance">Fragrance</option>
-                <option value="skinCare">Skin Care</option>
-                <option value="hairCare">Hair Care</option>
-                <option value="dailyEssential">Daily Essential</option>
+                <option value="lipCare">Lip Care</option>
+                <option value="lotion">Lotion</option>
+                <option value="hairOil">Hair Oil</option>
+                <option value="shampoo">Shampoo</option>
+                <option value="soap">Soap</option>
+                <option value="bodyWash">Body Wash</option>
               </select>
               {errors.category && (
                 <span className="text-red-600">Category field is required</span>
               )}
-            </div>
-            {/* 6th */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Sub Category (Optional)</span>
-              </label>
-              <select
-                defaultValue=""
-                {...register("subCategory", {
-                  setValueAs: (value) => value || undefined,
-                })}
-                className="select select-bordered w-full"
-              >
-                <option value="">Select a sub category (Optional)</option>
-                <option value="lipCare">Skin Care (Lip Care)</option>
-                <option value="lotion">Skin Care (Lotion)</option>
-                <option value="hairOil">Hair Care (Hair Oil)</option>
-                <option value="shampoo">Hair Care (Shampoo)</option>
-                <option value="soap">Daily Essential (Soap)</option>
-                <option value="bodyWash">Daily Essential (Body Wash)</option>
-              </select>
             </div>
           </div>
           {/* Text area */}

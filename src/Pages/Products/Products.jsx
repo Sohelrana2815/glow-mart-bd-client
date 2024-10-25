@@ -1,150 +1,102 @@
-import { FaList, FaShoppingCart } from "react-icons/fa";
 import useProducts from "../../Hooks/useProducts";
-import ProductsCard from "./ProductsCard";
-import { useState } from "react";
 import useCart from "../../Hooks/useCart";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
+import ProductsCard from "./ProductsCard";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Products = () => {
-  const [products] = useProducts();
+  const { totalProducts } = useLoaderData();
+  // console.log(totalProducts);
+  const [category, setCategory] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage, setProductsPerPage] = useState(6);
+
+  const numberOfPages = Math.ceil(totalProducts / productsPerPage);
+  const pages = [...Array(numberOfPages).keys()].map((num) => num + 1);
+
+  const [products] = useProducts(category, currentPage, productsPerPage);
   const [cart] = useCart();
 
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedSubCategory, setSelectedSubCategory] = useState("");
-  const [visibleProducts, setVisibleProducts] = useState(6);
-
-  // Select Products by Subcategory and reset the Fragrance category
-  const handleSubCategory = (subCategory) => {
-    setSelectedSubCategory(subCategory);
-    setSelectedCategory("");
+  const handleCategory = (e) => {
+    // console.log(e.target.value);
+    setCategory(e.target.value);
+    setCurrentPage(1);
+  };
+  const handleProductsPerPage = (e) => {
+    const value = parseInt(e.target.value);
+    setProductsPerPage(value);
+    setCurrentPage(1);
   };
 
-  // Select Products by only Fragrance Category and reset the Subcategory
-
-  const handleFragrance = () => {
-    setSelectedCategory("fragrance");
-    setSelectedSubCategory("");
-  };
-
-  // Reset or Show All products event handler
-
-  const handleReset = () => {
-    setSelectedCategory("");
-    setSelectedSubCategory("");
-  };
-
-  // Logic for filter products by category and subcategory
-  const filteredProducts = products.filter((product) => {
-    if (selectedCategory === "fragrance") {
-      return product.category === "fragrance";
-    }
-
-    if (selectedSubCategory) {
-      return product.subCategory === selectedSubCategory;
-    } else {
-      // show all products if any filter is not applied
-      return true;
-    }
-  });
-  const productsToShow = filteredProducts.slice(0, visibleProducts);
-  // Function to handle "Show More" click
-  const handleShowMore = () => {
-    setVisibleProducts((prevVisible) => prevVisible + 6); // Show 9 more products each time
-  };
   return (
     <>
       <Helmet>
         <title>All Products Page</title>
       </Helmet>
-      <div className="fixed z-10 lg:-ml-56 mt-20">
-        <details className="dropdown">
-          <summary className="btn m-1 bg-primary text-white lg:text-xl mt-28">
-            <FaList /> Category
-          </summary>
 
-          <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow space-y-5">
-            <li>
-              <details>
-                <summary>Skin Care</summary>
-                <ul className="menu bg-base-100 rounded-box p-2 ml-8 shadow">
-                  <li>
-                    <a onClick={() => handleSubCategory("lipCare")}>Lip Care</a>
-                  </li>
-                  <li>
-                    <a onClick={() => handleSubCategory("lotion")}>Lotion</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Hair Care</summary>
-                <ul className="menu bg-base-100 rounded-box p-2 ml-8 shadow">
-                  <li>
-                    <a onClick={() => handleSubCategory("shampoo")}>Shampoo</a>
-                  </li>
-                  <li>
-                    <a onClick={() => handleSubCategory("hairOil")}>Hair Oil</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Daily Essentials</summary>
-                <ul className="menu bg-base-100 rounded-box p-2 ml-8 shadow">
-                  <li>
-                    <a onClick={() => handleSubCategory("soap")}>Soap</a>
-                  </li>
-                  <li>
-                    <a onClick={() => handleSubCategory("bodyWash")}>
-                      Body Wash
-                    </a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a onClick={() => handleFragrance("fragrance")}>Fragrance</a>
-            </li>
-          </ul>
-        </details>
+      {/*  Dropdown for Category */}
+      <div className="fixed z-10">
+        <span className="font-semibold">Filter by Category : </span>
 
-        <div>
-          <button
-            onClick={handleReset}
-            className="btn hidden lg:block w-full mt-8 btn-outline"
-          >
-            <p className="font-semibold text-base">Show All Products</p>
-          </button>
-          <Link to="/dashboard/cart">
-            <button className="btn fixed btn-secondary my-4 text-lg text-white">
-              <FaShoppingCart /> ({cart.length})
-            </button>
-          </Link>
-        </div>
+        <select
+          onChange={handleCategory}
+          value={category}
+          className="select bg-[#1A1A19] text-white select-sm"
+        >
+          <option value="">All</option>
+          <option value="fragrance">Fragrance</option>
+          <option value="lotion">Lotion</option>
+          <option value="shampoo">Shampoo</option>
+          <option value="hairOil">Hair Oil</option>
+          <option value="lipCare">Lip Care</option>
+          <option value="soap">Soap</option>
+          <option value="bodyWash">Body Wash</option>
+        </select>
+        <Link to="/dashboard/cart">
+          <div className="flex items-center gap-2 fixed text-xl">
+            <FaShoppingCart className="text-[#091057] text-2xl" />
+            {cart.length}
+          </div>
+        </Link>
       </div>
 
-      {/* Display filtered products using card */}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-6 mt-20 my-8">
-        {productsToShow.map((product) => (
+      {/* Show All Products using Card */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-40">
+        {products.map((product) => (
           <ProductsCard key={product._id} product={product} />
         ))}
       </div>
 
-      {/* Show More Button */}
-      {visibleProducts < filteredProducts.length && (
-        <div className="text-center mt-8">
+      <div className="text-center my-8 space-x-8 space-y-8">
+        <p>Current Page : {currentPage}</p>
+        {pages.map((page) => (
           <button
-            className="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded my-4"
-            onClick={handleShowMore}
+            key={page}
+            className={
+              currentPage === page
+                ? "btn mx-2 bg-[#091057] text-white"
+                : "btn mx-2"
+            }
+            onClick={() => setCurrentPage(page)}
           >
-            Show More
+            {page}
           </button>
-        </div>
-      )}
+        ))}
+
+        <select
+          className="select text-[#091057] select-bordered bg-[#EEEEEE] select-sm"
+          value={productsPerPage}
+          onChange={handleProductsPerPage}
+        >
+          <option value="6">6</option>
+          <option value="12">12</option>
+          <option value="18">18</option>
+          <option value="24">24</option>
+          <option value="30">30</option>
+        </select>
+      </div>
     </>
   );
 };

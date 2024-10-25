@@ -45,14 +45,13 @@ const AuthProvider = ({ children }) => {
       displayName: name,
     });
   };
-  // const gateway = 0;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currenUser) => {
       console.log(currenUser);
       // Grantee user info will stored here
       if (currenUser) {
-        //  get token and store it . (http only cookie, local storage , in memory)'
+        //  get token and set  it in local storage . (http only cookie, local storage , in memory)'
         const userInfo = { email: currenUser.email };
         axiosPublic.post("/jwt", userInfo).then((res) => {
           if (res.data.token) {

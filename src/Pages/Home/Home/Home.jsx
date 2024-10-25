@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
-import CategoryCollections from "../CategoryCard/CategoryCollections";
 import ProductCategory from "../ProductCategory/ProductCategory";
 import ShopMap from "../ShopMap/ShopMap";
 
@@ -16,7 +15,6 @@ const Home = () => {
       </Helmet>
       <Banner />
       <ProductCategory />
-      <CategoryCollections />
       <ShopMap />
     </div>
   );

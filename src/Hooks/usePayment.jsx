@@ -6,7 +6,7 @@ const usePayment = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const { data: payments = [], refetch } = useQuery({
-    queryKey: ["payments", user.email],
+    queryKey: ["payment", user.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/payments/${user.email}`);
       return res.data;
