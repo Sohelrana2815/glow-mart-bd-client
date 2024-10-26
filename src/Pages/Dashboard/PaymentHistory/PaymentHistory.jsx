@@ -5,6 +5,8 @@ import { FaRegCheckCircle } from "react-icons/fa";
 const PaymentHistory = () => {
   const [payments] = usePayment();
 
+  // console.log(paymentStatus);
+
   return (
     <>
       {/* This Code is for md and large devices */}
@@ -12,6 +14,7 @@ const PaymentHistory = () => {
         <h2 className="text-lg p-4 font-medium">
           Total Payments : {payments.length}
         </h2>
+
         <div>
           <div className="overflow-x-auto">
             <table className="table">

@@ -34,8 +34,7 @@ const ManageBookings = () => {
           if (res.data.modifiedCount > 0) {
             refetch();
             Swal.fire({
-              title: "Updated!",
-              text: ` is new admin`,
+              title: "Product successfully delivered!",
               icon: "success",
             });
           }
@@ -46,7 +45,7 @@ const ManageBookings = () => {
   return (
     <>
       <SectionTitle heading="Manage bookings" subHeading="At a Glance!" />
-      <div className="overflow-x-auto  hidden lg:block md:block">
+      <div className="overflow-x-auto  hidden lg:block md:block mt-20">
         <table className="table">
           {/* head */}
           <thead>
@@ -106,7 +105,7 @@ const ManageBookings = () => {
         {payments.map((payment, index) => (
           <div
             className="border-2 p-2 rounded-lg border-success space-y-3"
-            key={payment.key}
+            key={payment._id}
           >
             <p className="text-center">{index + 1}</p>
             <p> Email : {payment.email}</p>

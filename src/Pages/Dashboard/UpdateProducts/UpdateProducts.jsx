@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
@@ -11,6 +11,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const UpdateProducts = () => {
   const { name, category, description, _id, price } = useLoaderData();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -40,15 +41,20 @@ const UpdateProducts = () => {
           description: data.description,
         };
 
-        const productRes = await axiosSecure.patch(`/updateSpecificProducts/${_id}`, product);
+        const productRes = await axiosSecure.patch(
+          `/updateSpecificProducts/${_id}`,
+          product
+        );
         console.log(productRes.data);
         if (productRes.data.modifiedCount > 0) {
           // reset();
+
           Swal.fire({
             title: "Updated",
             text: "Your product has been updated successfully.",
             icon: "success",
           });
+          navigate("/dashboard/manageItems");
         }
       }
     } catch (error) {
