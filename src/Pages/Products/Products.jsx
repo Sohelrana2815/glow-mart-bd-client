@@ -11,7 +11,7 @@ const Products = () => {
   // console.log(totalProducts);
   const [category, setCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(6);
+  const [productsPerPage, setProductsPerPage] = useState(12);
 
   const numberOfPages = Math.ceil(totalProducts / productsPerPage);
   const pages = [...Array(numberOfPages).keys()].map((num) => num + 1);
@@ -90,7 +90,6 @@ const Products = () => {
           value={productsPerPage}
           onChange={handleProductsPerPage}
         >
-          <option value="6">6</option>
           <option value="12">12</option>
           <option value="18">18</option>
           <option value="24">24</option>
