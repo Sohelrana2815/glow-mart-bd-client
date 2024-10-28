@@ -6,8 +6,10 @@ import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const { loginUser, updateUserProfile } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -40,6 +42,7 @@ const Login = () => {
         }
       })
       .catch((error) => {
+        setError("Email or Password invalid please try again");
         console.error(error);
       });
   };
@@ -89,6 +92,7 @@ const Login = () => {
                     Password field is required
                   </span>
                 )}
+                {error && <p className="text-red-500">{error}</p>}
               </div>
               <div className="form-control mt-6">
                 <input
