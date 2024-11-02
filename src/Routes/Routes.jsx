@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
-        loader: () => fetch(" https://glow-mart-bd-server.vercel.app/totalProducts"),
+        loader: () => fetch(" http://localhost:5000/totalProducts"),
       },
       {
         path: "login",
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(` https://glow-mart-bd-server.vercel.app/getSpecificProduct/${params.id}`),
+          fetch(` http://localhost:5000/getSpecificProduct/${params.id}`),
       },
     ],
   },
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
             <ManageItems />
           </AdminRoute>
         ),
-        loader: () => fetch(" https://glow-mart-bd-server.vercel.app/totalProducts"),
+        loader: () => fetch(" http://localhost:5000/totalProducts"),
       },
       {
         path: "manageBookings",
@@ -117,7 +117,7 @@ const router = createBrowserRouter([
         path: "updateProducts/:id",
         element: <UpdateProducts />,
         loader: ({ params }) =>
-          fetch(` https://glow-mart-bd-server.vercel.app/getSpecificProduct/${params.id}`),
+          fetch(` http://localhost:5000/getSpecificProduct/${params.id}`),
       },
       {
         path: "allUsers",

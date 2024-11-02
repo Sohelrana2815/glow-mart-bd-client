@@ -7,7 +7,7 @@ import { Autoplay } from "swiper/modules";
 const ProductCategory = () => {
   return (
     <div className="my-56 md:mt-28 ">
-      <SectionTitle heading="Quality Products" subHeading="Checkout" />
+      <SectionTitle heading="Features Products" subHeading="Checkout" />
       <Swiper
         slidesPerView={2} // Default for small screens
         breakpoints={{

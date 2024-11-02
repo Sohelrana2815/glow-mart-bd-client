@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import ProductCategory from "../ProductCategory/ProductCategory";
 import ShopMap from "../ShopMap/ShopMap";
+import AboutUs from "../AboutUs/AboutUs";
+import ReviewsSection from "../StarRating/ReviewsSection";
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       </Helmet>
       <Banner />
       <ProductCategory />
+      <AboutUs />
+      <ReviewsSection />
       <ShopMap />
     </div>
   );
