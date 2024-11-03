@@ -44,97 +44,99 @@ const ManageBookings = () => {
   };
   return (
     <>
-      <SectionTitle heading="Manage bookings" subHeading="At a Glance!" />
-      <div className="overflow-x-auto  hidden lg:block md:block mt-20">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Email</th>
-              <th>Price</th>
-              <th>Transaction Id</th>
-              <th>Date</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {payments.map((payment, index) => (
-              <tr key={payment._id} className="hover">
-                <th>{index + 1}</th>
-                <td>{payment.email}</td>
-                <td>${payment.price}</td>
-                <td>{payment.transactionId}</td>
-                <td>{payment.date}</td>
-                <td>
-                  {payment.status === "pending" ? (
-                    <>
-                      <div className="flex items-center  space-x-4">
-                        <span className="lg:text-lg md:text-sm  text-red-600">
-                          Pending
-                        </span>
-                        <button
-                          className="lg:text-lg  btn btn-sm bg-red-600 text-white"
-                          onClick={() => handleDelivered(payment)}
-                        >
-                          <LuClock2 className="md:text-xs lg:text-lg" />
-                        </button>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div
-                        className=" flex items-center 
-                       space-x-2"
-                      >
-                        <span className="text-green-500 lg:text-lg md:text-xs  ">
-                          Delivered
-                        </span>
-                        <FaRegCheckCircle className="text-green-500 text-lg" />
-                      </div>
-                    </>
-                  )}
-                </td>
+      <div className="dark:bg-black dark:text-white min-h-screen">
+        <SectionTitle heading="Manage bookings" subHeading="At a Glance!" />
+        <div className="overflow-x-auto    hidden lg:block md:block mt-20">
+          <table className="table ">
+            {/* head */}
+            <thead className="">
+              <tr className="dark:text-white"> 
+                <th>#</th>
+                <th>Email</th>
+                <th>Price</th>
+                <th>Transaction Id</th>
+                <th>Date</th>
+                <th>Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {/* For small devices */}
-      <div className="p-2 space-y-4 block md:hidden lg:hidden ">
-        {payments.map((payment, index) => (
-          <div
-            className="border-2 p-2 rounded-lg border-success space-y-3"
-            key={payment._id}
-          >
-            <p className="text-center">{index + 1}</p>
-            <p> Email : {payment.email}</p>
-            <p> TransactionId : {payment.transactionId}</p>
-            <p> Data : {payment.date}</p>
-            <p>
-              {payment.status === "pending" ? (
-                <>
-                  <p className="flex items-center gap-2">
-                    Status
-                    <button
-                      onClick={() => handleDelivered(payment)}
-                      className="flex btn btn-sm flex-col items-center text-white bg-red-600 "
-                    >
-                      <LuClock2 />
-                    </button>
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p className="text-green-500 flex items-center gap-2 text-lg ">
-                    Delivered
-                    <FaRegCheckCircle />
-                  </p>
-                </>
-              )}
-            </p>
-          </div>
-        ))}
+            </thead>
+            <tbody>
+              {payments.map((payment, index) => (
+                <tr key={payment._id} className="dark:text-white">
+                  <th>{index + 1}</th>
+                  <td>{payment.email}</td>
+                  <td>${payment.price}</td>
+                  <td>{payment.transactionId}</td>
+                  <td>{payment.date}</td>
+                  <td>
+                    {payment.status === "pending" ? (
+                      <>
+                        <div className="flex items-center  space-x-4 dark:text-white">
+                          <span className="lg:text-lg md:text-sm  text-red-600">
+                            Pending
+                          </span>
+                          <button
+                            className="lg:text-lg  btn btn-sm bg-red-600 text-white"
+                            onClick={() => handleDelivered(payment)}
+                          >
+                            <LuClock2 className="md:text-xs lg:text-lg" />
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className=" flex items-center 
+                       space-x-2"
+                        >
+                          <span className="text-green-500 lg:text-lg md:text-xs  ">
+                            Delivered
+                          </span>
+                          <FaRegCheckCircle className="text-green-500 text-lg" />
+                        </div>
+                      </>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* For small devices */}
+        <div className="p-2 space-y-4 dark:bg-black block md:hidden lg:hidden ">
+          {payments.map((payment, index) => (
+            <div
+              className="border-2 p-2 rounded-lg border-success space-y-3 dark:text-white"
+              key={payment._id}
+            >
+              <p className="text-center">{index + 1}</p>
+              <p> Email : {payment.email}</p>
+              <p> TransactionId : {payment.transactionId}</p>
+              <p> Data : {payment.date}</p>
+              <p>
+                {payment.status === "pending" ? (
+                  <>
+                    <p className="flex items-center gap-2">
+                      Status
+                      <button
+                        onClick={() => handleDelivered(payment)}
+                        className="flex btn btn-sm flex-col items-center text-white bg-red-600 "
+                      >
+                        <LuClock2 />
+                      </button>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-green-500 flex items-center gap-2 text-lg ">
+                      Delivered
+                      <FaRegCheckCircle />
+                    </p>
+                  </>
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

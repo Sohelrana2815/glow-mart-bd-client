@@ -59,97 +59,111 @@ const AddItems = () => {
 
   return (
     <>
-      <SectionTitle heading="Add An Item" subHeading="Wat's New?" />
+      <div className="min-h-screen dark:bg-black dark:text-white">
+        <div>
+          <SectionTitle heading="Add An Item" subHeading="Wat's New?" />
+        </div>
 
-      <div className="w-full md:w-3/4 mx-auto p-4">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* 1st */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Product name*</span>
-              </label>
-              <input
-                type="text"
-                {...register("name", { required: true })}
-                placeholder="Product name"
-                className="input input-bordered w-full"
-              />
-              {errors.name && (
-                <span className="text-red-600">Product name is required</span>
-              )}
-            </div>
-            {/* 2nd */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Price*</span>
-              </label>
-              <input
-                type="number"
-                step="any"
-                min="0"
-                {...register("price", { required: true })}
-                placeholder="Enter Price"
-                className="input input-bordered w-full"
-              />
-              {errors.price && (
-                <span className="text-red-600">Price field is required</span>
-              )}
-            </div>
+        <div className="w-full md:w-3/4 mx-auto p-4 ">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4 dark:text-black"
+          >
+            {/* Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* 1st */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text dark:text-white">
+                    Product name*
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  {...register("name", { required: true })}
+                  placeholder="Product name"
+                  className="input input-bordered w-full"
+                />
+                {errors.name && (
+                  <span className="text-red-600">Product name is required</span>
+                )}
+              </div>
+              {/* 2nd */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text dark:text-white">Price*</span>
+                </label>
+                <input
+                  type="number"
+                  step="any"
+                  min="0"
+                  {...register("price", { required: true })}
+                  placeholder="Enter Price"
+                  className="input input-bordered w-full"
+                />
+                {errors.price && (
+                  <span className="text-red-600">Price field is required</span>
+                )}
+              </div>
 
-            {/* 5th */}
+              {/* 5th */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text dark:text-white">Category*</span>
+                </label>
+                <select
+                  {...register("category", { required: true })}
+                  className="select select-bordered w-full"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select a category
+                  </option>
+                  <option value="fragrance">Fragrance</option>
+                  <option value="lipCare">Lip Care</option>
+                  <option value="lotion">Lotion</option>
+                  <option value="hairOil">Hair Oil</option>
+                  <option value="shampoo">Shampoo</option>
+                  <option value="soap">Soap</option>
+                  <option value="bodyWash">Body Wash</option>
+                </select>
+                {errors.category && (
+                  <span className="text-red-600">
+                    Category field is required
+                  </span>
+                )}
+              </div>
+            </div>
+            {/* Text area */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Category*</span>
+                <span className="label-text dark:text-white">Description*</span>
               </label>
-              <select
-                {...register("category", { required: true })}
-                className="select select-bordered w-full"
-                defaultValue=""
+              <textarea
+                {...register("description")}
+                placeholder="Enter short description"
+                className="textarea textarea-bordered w-full"
+              ></textarea>
+              {errors.description && (
+                <span className="text-red-600">Description is required</span>
+              )}
+              <input
+                type="file"
+                {...register("image")}
+                className="file-input file-input-bordered w-full my-4"
+              />
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="btn btn-primary w-full md:w-auto"
               >
-                <option value="" disabled>
-                  Select a category
-                </option>
-                <option value="fragrance">Fragrance</option>
-                <option value="lipCare">Lip Care</option>
-                <option value="lotion">Lotion</option>
-                <option value="hairOil">Hair Oil</option>
-                <option value="shampoo">Shampoo</option>
-                <option value="soap">Soap</option>
-                <option value="bodyWash">Body Wash</option>
-              </select>
-              {errors.category && (
-                <span className="text-red-600">Category field is required</span>
-              )}
+                Add Item
+                <FaUtensils />
+              </button>
             </div>
-          </div>
-          {/* Text area */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Description*</span>
-            </label>
-            <textarea
-              {...register("description")}
-              placeholder="Enter short description"
-              className="textarea textarea-bordered w-full"
-            ></textarea>
-            {errors.description && (
-              <span className="text-red-600">Description is required</span>
-            )}
-            <input
-              type="file"
-              {...register("image")}
-              className="file-input file-input-bordered w-full my-4"
-            />
-          </div>
-          <div>
-            <button type="submit" className="btn btn-primary w-full md:w-auto">
-              Add Item
-              <FaUtensils />
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   );

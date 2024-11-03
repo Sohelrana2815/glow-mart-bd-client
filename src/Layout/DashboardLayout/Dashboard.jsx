@@ -94,10 +94,10 @@ const Dashboard = () => {
     <>
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content  flex flex-col">
+        <div className="drawer-content flex flex-col">
           {/* Navbar */}
           <div className="navbar bg-base-300 w-full dark:bg-black dark:text-white">
-            <div className="flex-none  lg:hidden">
+            <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
                 aria-label="open sidebar"
@@ -117,9 +117,11 @@ const Dashboard = () => {
             </div>
           </div>
           {/* Page content here */}
-          <Outlet />
+          <div>
+            <Outlet />
+          </div>
         </div>
-        <div className="drawer-side  ">
+        <div className="drawer-side">
           <label
             htmlFor="my-drawer-3"
             aria-label="close sidebar"

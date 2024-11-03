@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 const SectionTitle = ({ heading, subHeading }) => {
   return (
-    <div className="text-center  mt-8">
+    <div className="text-center py-8">
       <p className="text-orange-600  lg:text-2xl font-normal">
         ----{subHeading}----
       </p>
