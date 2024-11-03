@@ -60,7 +60,7 @@ const ProductsCard = ({ product }) => {
 
   return (
     <>
-      <div className="card bg-base-100 w-72 mx-auto md:w-80 shadow-xl">
+      <div className="card bg-base-100 w-72 mx-auto md:w-80 shadow-xl dark:bg-gray-900 dark:shadow-blue-600">
         <figure className="px-10 pt-10">
           {loading ? (
             <Skeleton height={200} width={200} />
@@ -84,7 +84,7 @@ const ProductsCard = ({ product }) => {
               <Skeleton width={90} height={40} />
             ) : (
               <button
-                className="btn md:btn-md btn-sm py-2 px-4 lg:btn-md  bg-[#185519] md:py-0  text-white"
+                className="btn md:btn-md btn-sm py-2 px-4 lg:btn-md dark:border-none bg-[#185519] md:py-0  text-white"
                 onClick={handleAddToCart}
               >
                 Add to Cart
@@ -94,7 +94,7 @@ const ProductsCard = ({ product }) => {
               <Skeleton width={50} height={40} />
             ) : (
               <Link to={`/productInfo/${_id}`}>
-                <button className="btn md:btn-md btn-sm lg:btn-md bg-[#E8B86D] text-white">
+                <button className="btn md:btn-md btn-sm lg:btn-md bg-[#E8B86D] text-white dark:border-none">
                   <FaEye className="text-lg" />
                 </button>
               </Link>

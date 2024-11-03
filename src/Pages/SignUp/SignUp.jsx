@@ -57,16 +57,19 @@ const SignUp = () => {
       <Helmet>
         <title>Sign Up Page</title>
       </Helmet>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-base-200 min-h-screen dark:bg-gray-900">
         <div className="hero-content flex-col lg:flex-row ">
           <div className="text-center lg:text-left">
             <img src={signUpImg} alt="" />
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl lg:ml-20">
-            <h1 className="text-4xl p-4 mt-4 font-bold text-center">
+            <h1 className="text-4xl p-4 mt-4 font-bold text-center dark:text-black">
               Sign Up now!
             </h1>
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="card-body dark:text-black"
+            >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>

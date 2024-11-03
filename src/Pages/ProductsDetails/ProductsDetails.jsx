@@ -10,7 +10,7 @@ const ProductsDetails = () => {
   console.log(products, id);
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 rounded-xl">
       <div className="hero-content flex-col  md:flex-row w-full justify-evenly ">
         {loading ? (
           <Skeleton height={350} width={400} />

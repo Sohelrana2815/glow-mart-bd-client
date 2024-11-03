@@ -43,7 +43,7 @@ const Products = () => {
         <select
           onChange={handleCategory}
           value={category}
-          className="select bg-[#1A1A19] text-white select-sm"
+          className="select bg-[#1A1A19] dark:bg-gray-900  text-white select-sm"
         >
           <option value="">All</option>
           <option value="fragrance">Fragrance</option>
@@ -56,7 +56,7 @@ const Products = () => {
         </select>
         <Link to="/dashboard/cart">
           <div className="flex items-center gap-2 fixed text-xl">
-            <FaShoppingCart className="text-[#091057] text-2xl" />
+            <FaShoppingCart className="text-[#091057] dark:text-white text-2xl" />
             {cart.length}
           </div>
         </Link>
