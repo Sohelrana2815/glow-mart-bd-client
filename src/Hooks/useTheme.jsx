@@ -1,11 +1,10 @@
-import React from 'react';
+import { useContext } from "react";
+import { ThemeContext } from "../ThemeProvider/ThemeProvider";
 
 const useTheme = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const themeContext = useContext(ThemeContext);
+
+  return themeContext;
 };
 
 export default useTheme;
