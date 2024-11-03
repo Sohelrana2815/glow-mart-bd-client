@@ -4,7 +4,7 @@ const UserHome = () => {
   const { user } = useAuth();
 
   return (
-    <div>
+    <div className="dark:bg-black">
       {/* Overlay */}
       <div
         className="hero min-h-screen  bg-fixed"
@@ -16,7 +16,11 @@ const UserHome = () => {
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
             <div className="flex justify-center my-5">
-              <img className="rounded-full" src={user?.photoURL ? user.photoURL : ""} alt="" />
+              <img
+                className="rounded-full"
+                src={user?.photoURL ? user.photoURL : ""}
+                alt=""
+              />
             </div>
             <h1 className="mb-5 text-5xl font-bold">
               Welcome,

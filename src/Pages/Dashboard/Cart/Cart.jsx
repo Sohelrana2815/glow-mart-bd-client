@@ -15,7 +15,7 @@ const Cart = () => {
     });
   };
   return (
-    <div>
+    <div className="dark:bg-black dark:text-white">
       <div className="flex justify-evenly">
         <h2 className="text-center md:text-xl my-4 lg:text-4xl">
           Total Cart Items : {cart.length}
