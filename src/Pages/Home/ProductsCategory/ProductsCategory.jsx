@@ -6,7 +6,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-// import CategoryCard from "./CategoryCard";
 
 const ProductsCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -43,7 +42,7 @@ const ProductsCategory = () => {
   return (
     <>
       <div>
-        <SectionTitle heading="Product Categories" />
+        <SectionTitle subHeading="" heading="Product Categories" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

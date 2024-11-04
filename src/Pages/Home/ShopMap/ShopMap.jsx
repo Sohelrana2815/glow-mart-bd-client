@@ -8,7 +8,7 @@ const ShopMap = () => {
   return (
     <>
       <div>
-        <SectionTitle heading="Shop Location" />
+        <SectionTitle subHeading="" heading="Shop Location" />
       </div>
 
       <MapContainer
