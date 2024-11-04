@@ -37,26 +37,30 @@ const Products = () => {
       </Helmet>
 
       {/*  Dropdown for Category */}
-      <div className="fixed z-10">
-        <span className="font-semibold">Filter by Category : </span>
+      <div className="fixed  z-10 py-5">
+        <div className="flex gap-2">
+          <span className="font-bold hidden dark:text-[#00FF9C] md:block lg:block text-xl">
+            Filter by Category :{" "}
+          </span>
 
-        <select
-          onChange={handleCategory}
-          value={category}
-          className="select bg-[#1A1A19] dark:bg-gray-900  text-white select-sm"
-        >
-          <option value="">All</option>
-          <option value="fragrance">Fragrance</option>
-          <option value="lotion">Lotion</option>
-          <option value="shampoo">Shampoo</option>
-          <option value="hairOil">Hair Oil</option>
-          <option value="lipCare">Lip Care</option>
-          <option value="soap">Soap</option>
-          <option value="bodyWash">Body Wash</option>
-        </select>
+          <select
+            onChange={handleCategory}
+            value={category}
+            className="select bg-[#1A1A19] dark:bg-white  text-white dark:text-black select-sm"
+          >
+            <option value="">All</option>
+            <option value="fragrance">Fragrance</option>
+            <option value="lotion">Lotion</option>
+            <option value="shampoo">Shampoo</option>
+            <option value="hairOil">Hair Oil</option>
+            <option value="lipCare">Lip Care</option>
+            <option value="soap">Soap</option>
+            <option value="bodyWash">Body Wash</option>
+          </select>
+        </div>
         <Link to="/dashboard/cart">
-          <div className="flex items-center gap-2 fixed text-xl">
-            <FaShoppingCart className="text-[#091057] dark:text-white text-2xl" />
+          <div className="flex items-center gap-2 py-5 fixed text-xl">
+            <FaShoppingCart className="text-[#091057] dark:text-[#00FF9C] text-2xl" />
             {cart.length}
           </div>
         </Link>

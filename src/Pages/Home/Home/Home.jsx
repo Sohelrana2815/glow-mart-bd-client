@@ -5,6 +5,8 @@ import AboutUs from "../AboutUs/AboutUs";
 import ReviewsSection from "../StarRating/ReviewsSection";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
 import ProductsCategory from "../ProductsCategory/ProductsCategory";
+import FAQSection from "../FAQSection/FAQSection";
+import BarIndicator from "../../../Components/BarIndicator/BarIndicator";
 
 const Home = () => {
   return (
@@ -16,12 +18,14 @@ const Home = () => {
           content="This is the home page of my website"
         />
       </Helmet>
+      <BarIndicator />
       <Banner />
       <ProductsCategory />
       <FeaturedProducts />
       <AboutUs />
       <ReviewsSection />
       <ShopMap />
+      <FAQSection />
     </div>
   );
 };

@@ -13,7 +13,7 @@ const ShopMap = () => {
 
       <MapContainer
         center={position}
-        zoom={13}
+        zoom={100}
         style={{ height: "400px", width: "100%" }}
       >
         <TileLayer

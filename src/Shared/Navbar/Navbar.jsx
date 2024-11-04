@@ -33,7 +33,7 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <div className="lg:flex gap-2  dark:bg-black">
+      <div className="lg:flex gap-2 dark:md:bg-black    dark:lg:bg-[#10375C] text-lg  dark:xs:bg-black font-serif dark:sm:bg-black ">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -63,7 +63,7 @@ const Navbar = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="navbar bg-base-100 dark:bg-black mt-10">
+    <div className="navbar px-5  bg-[#3D5300] text-white dark:bg-[#10375C] rounded-lg mt-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -80,7 +80,7 @@ const Navbar = () => {
           <p className="md:text-2xl text-base">Glow Mart BD</p>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex ">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
@@ -105,7 +105,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow dark:hover:bg-white dark:hover:text-black dark:bg-black"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow  text-black"
             >
               <li>
                 <a onClick={handleLogout}>Logout</a>
@@ -115,12 +115,12 @@ const Navbar = () => {
         ) : (
           <>
             <Link to="/login">
-              <button className="btn dark:text-white lg:btn-md btn-outline  btn-sm ">
+              <button className="btn text-white lg:btn-md btn-outline  btn-sm ">
                 Login
               </button>
             </Link>
             <Link to="/signUp">
-              <button className="btn hidden md:block dark:text-white lg:btn-md btn-outline  btn-sm ml-4">
+              <button className="btn hidden md:block text-white lg:btn-md btn-outline  btn-sm ml-4">
                 Sign UP
               </button>
             </Link>
@@ -136,8 +136,8 @@ const Navbar = () => {
             className="sr-only"
           />
           <div
-            className={`w-14 h-8 bg-gray-700 rounded-full p-1 flex items-center justify-between neon-border ${
-              isDarkMode ? "bg-blue-800" : "bg-green-500"
+            className={`w-14 h-8  rounded-full p-1 flex items-center justify-between neon-border ${
+              isDarkMode ? "bg-[#FF6500]" : "bg-green-500"
             }`}
           >
             <FaSun
