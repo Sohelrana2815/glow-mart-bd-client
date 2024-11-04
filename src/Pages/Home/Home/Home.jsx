@@ -4,6 +4,7 @@ import ShopMap from "../ShopMap/ShopMap";
 import AboutUs from "../AboutUs/AboutUs";
 import ReviewsSection from "../StarRating/ReviewsSection";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
+import ProductsCategory from "../ProductsCategory/ProductsCategory";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         />
       </Helmet>
       <Banner />
+      <ProductsCategory />
       <FeaturedProducts />
       <AboutUs />
       <ReviewsSection />
