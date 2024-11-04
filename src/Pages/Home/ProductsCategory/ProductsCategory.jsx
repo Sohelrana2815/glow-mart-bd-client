@@ -1,7 +1,6 @@
 // steps : 1. load data on database
 // steps : 2. Create get api to get all data by category
 // steps : 3. fetch data
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
@@ -44,7 +43,6 @@ const ProductsCategory = () => {
       <div>
         <SectionTitle subHeading="" heading="Product Categories" />
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* {categories.length} */}
         {categories.map((singleCategory) => (

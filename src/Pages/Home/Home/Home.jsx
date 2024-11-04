@@ -24,8 +24,8 @@ const Home = () => {
       <FeaturedProducts />
       <AboutUs />
       <ReviewsSection />
-      <ShopMap />
       <FAQSection />
+      <ShopMap />
     </div>
   );
 };
