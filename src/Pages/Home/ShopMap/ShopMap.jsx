@@ -13,7 +13,7 @@ const ShopMap = () => {
       </div>
 
       <div className="py-10 ">
-        <AnimatedComponent animation="fade-right" duration={2500} offset={100}>
+        <AnimatedComponent animation="fade-right">
           <MapContainer
             center={position}
             zoom={20}
