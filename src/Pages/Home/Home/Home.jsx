@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
-import ProductCategory from "../ProductCategory/ProductCategory";
 import ShopMap from "../ShopMap/ShopMap";
 import AboutUs from "../AboutUs/AboutUs";
 import ReviewsSection from "../StarRating/ReviewsSection";
+import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
         />
       </Helmet>
       <Banner />
-      <ProductCategory />
+      <FeaturedProducts />
       <AboutUs />
       <ReviewsSection />
       <ShopMap />

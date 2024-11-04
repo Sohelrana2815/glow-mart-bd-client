@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { Autoplay } from "swiper/modules";
-const ProductCategory = () => {
+const FeaturedProducts = () => {
   return (
     <div className="my-20 md:mt-28 ">
       <SectionTitle heading="Featured Products" subHeading="Checkout" />
@@ -83,4 +83,4 @@ const ProductCategory = () => {
   );
 };
 
-export default ProductCategory;
+export default FeaturedProducts;
