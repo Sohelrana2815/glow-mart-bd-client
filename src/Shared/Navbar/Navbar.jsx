@@ -3,7 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useCart from "../../Hooks/useCart";
 import { FaMoon, FaShoppingCart, FaSun } from "react-icons/fa";
-// import useAdmin from "../../Hooks/useAdmin";
+import useAdmin from "../../Hooks/useAdmin";
 import { IoMenuSharp } from "react-icons/io5";
 import useTheme from "../../Hooks/useTheme";
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const { user, logout, loading } = useAuth();
   const [cart] = useCart();
-  // const [isAdmin] = useAdmin();
+  const [isAdmin] = useAdmin();
   const handleLogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -33,7 +33,10 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <div className="lg:flex gap-2 dark:md:bg-black    dark:lg:bg-[#10375C] text-lg  dark:xs:bg-black font-serif dark:sm:bg-black ">
+      <div
+        className="lg:flex gap-2  
+       lg:bg-[#3D5300] md:bg-[#3D5300] xs:bg-[#3D5300] dark:lg:bg-[#10375C] dark:md:bg-[#10375C] dark:xs:bg-[#10375C]  text-lg font-serif "
+      >
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -43,9 +46,13 @@ const Navbar = () => {
         <li>
           <NavLink to="/dashboard/userHome">User Home</NavLink>
         </li>
-        <li>
-          <NavLink to="/dashboard/adminHome">Admin Home</NavLink>
-        </li>
+        {isAdmin ? (
+          <li>
+            <NavLink to="/dashboard/adminHome">Admin Home</NavLink>
+          </li>
+        ) : (
+          ""
+        )}
 
         <li>
           <Link to="/dashboard/cart">
@@ -63,7 +70,7 @@ const Navbar = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="navbar px-5  bg-[#3D5300] text-white dark:bg-[#10375C] rounded-lg mt-10">
+    <div className="navbar px-5  bg-[#3D5300] text-white  dark:bg-[#10375C] rounded-lg mt-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

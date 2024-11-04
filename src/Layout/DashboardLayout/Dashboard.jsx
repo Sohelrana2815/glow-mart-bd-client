@@ -11,50 +11,51 @@ import { IoMenuSharp } from "react-icons/io5";
 import { AiFillProduct } from "react-icons/ai";
 import { IoBagAdd } from "react-icons/io5";
 import useCart from "../../Hooks/useCart";
-// import useAdmin from "../../Hooks/useAdmin";
+import useAdmin from "../../Hooks/useAdmin";
 const Dashboard = () => {
   const [cart] = useCart();
-  // const [isAdmin] = useAdmin();
+  const [isAdmin] = useAdmin();
 
   const navLinks = (
     <>
-      {/* {isAdmin ? (
-     
+      {isAdmin ? (
+        <>
+          <li>
+            <NavLink to="/dashboard/adminHome">
+              <FaHome />
+              Admin Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/addItems">
+              <IoBagAdd />
+              Add Items
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/manageItems">
+              <FaList />
+              Manage Items
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/manageBookings">
+              <FaBook />
+              Manage Bookings
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/allUsers">
+              <FaUsers />
+              All Users
+            </NavLink>
+          </li>
+        </>
       ) : (
-      )} */}
-      <>
-        <li>
-          <NavLink to="/dashboard/adminHome">
-            <FaHome />
-            Admin Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard/addItems">
-            <IoBagAdd />
-            Add Items
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard/manageItems">
-            <FaList />
-            Manage Items
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard/manageBookings">
-            <FaBook />
-            Manage Bookings
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard/allUsers">
-            <FaUsers />
-            All Users
-          </NavLink>
-        </li>
-      </>
+        ""
+      )}
       <div className="divider dark:divider-primary"></div>
+
       <div className="border border-primary hidden lg:block mr-2"></div>
       <>
         <li>

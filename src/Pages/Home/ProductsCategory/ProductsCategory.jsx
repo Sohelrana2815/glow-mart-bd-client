@@ -16,7 +16,9 @@ const ProductsCategory = () => {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const res = await axios.get("https://glow-mart-bd-server.vercel.app/productsCategory");
+        const res = await axios.get(
+          "https://glow-mart-bd-server.vercel.app/productsCategory"
+        );
         setCategories(res.data);
       } catch (error) {
         setError("Failed to fetch categories");

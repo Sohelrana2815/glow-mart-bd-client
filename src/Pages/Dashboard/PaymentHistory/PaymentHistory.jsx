@@ -69,7 +69,7 @@ const PaymentHistory = () => {
           </div>
         </div>
         {/* This Code is for small devices */}
-        <div className="block md:hidden lg:hidden py-5">
+        <div className="block md:hidden lg:hidden space-y-4 py-5">
           {payments.map((payment) => (
             <div
               key={payment._id}
@@ -82,8 +82,8 @@ const PaymentHistory = () => {
               </p>
               <p>Price : ${payment.price}</p>
               <p className="flex items-center">
-                Price : {payment.status}{" "}
-                <LuClock2 className="ml-3 text-red-600 text-xl" />
+                Status : {payment.status}{" "}
+                <FaRegCheckCircle className="ml-3 text-green-500 text-xl" />
               </p>
             </div>
           ))}

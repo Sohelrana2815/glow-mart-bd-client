@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
+import AdminAccess from "../AdminAccessModal/AdminAccess";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -51,16 +52,18 @@ const Login = () => {
 
   return (
     <>
+      <AdminAccess />
       <Helmet>
         <title>Login Page</title>
       </Helmet>
 
-      <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 rounded-lg">
+      <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 rounded-lg lg:py-0 xs:py-20 md:py-20">
         <div className="hero-content flex-col lg:flex-row ">
           <div className="text-center lg:text-left">
             <img src={loginImg} alt="" />
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl lg:ml-20">
+
+          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl lg:ml-20 ">
             <h1 className="text-4xl dark:text-black p-4 mt-4 font-bold text-center">
               Login now!
             </h1>
@@ -68,7 +71,7 @@ const Login = () => {
               onSubmit={handleSubmit(onSubmit)}
               className="card-body dark:text-black"
             >
-              <div className="form-control">
+              <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>

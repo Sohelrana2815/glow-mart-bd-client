@@ -14,12 +14,7 @@ const Banner = () => {
   }
 
   return (
-    <AnimatedComponent
-      animation="zoom-in"
-      duration={2000}
-      delay={0}
-      offset={100}
-    >
+    <AnimatedComponent animation="zoom-in">
       <div className="mt-20">
         <Carousel infiniteLoop autoPlay interval={2000}>
           <div>
