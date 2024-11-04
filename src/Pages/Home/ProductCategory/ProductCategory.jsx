@@ -6,8 +6,8 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import { Autoplay } from "swiper/modules";
 const ProductCategory = () => {
   return (
-    <div className="my-56 md:mt-28 ">
-      <SectionTitle heading="Features Products" subHeading="Checkout" />
+    <div className="my-20 md:mt-28 ">
+      <SectionTitle heading="Featured Products" subHeading="Checkout" />
       <Swiper
         slidesPerView={2} // Default for small screens
         breakpoints={{

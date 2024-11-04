@@ -7,7 +7,10 @@ const ShopMap = () => {
   const position = [23.958888966845283, 90.27159732918626]; // position for shop
   return (
     <>
-      <SectionTitle heading="Shop Location" />
+      <div>
+        <SectionTitle heading="Shop Location" />
+      </div>
+
       <MapContainer
         center={position}
         zoom={13}

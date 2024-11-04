@@ -67,7 +67,7 @@ const Navbar = () => {
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <IoMenuSharp className="text-lg md:text-2xl" />
+            <IoMenuSharp className="text-2xl md:text-2xl" />
           </div>
           <ul
             tabIndex={0}
@@ -77,9 +77,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/">
-          <p className="btn btn-ghost text-sm sm:text-xl md:text-2xl xs:text-xs">
-            Glow Mart BD
-          </p>
+          <p className="md:text-2xl text-base">Glow Mart BD</p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -122,7 +120,7 @@ const Navbar = () => {
               </button>
             </Link>
             <Link to="/signUp">
-              <button className="btn dark:text-white lg:btn-md btn-outline  btn-sm ml-4">
+              <button className="btn hidden md:block dark:text-white lg:btn-md btn-outline  btn-sm ml-4">
                 Sign UP
               </button>
             </Link>
@@ -130,7 +128,7 @@ const Navbar = () => {
         )}
 
         {/* Synthwave Toggle Button */}
-        <label className="relative inline-flex items-center cursor-pointer">
+        <label className="relative inline-flex items-center cursor-pointer ml-2">
           <input
             type="checkbox"
             checked={isDarkMode}
