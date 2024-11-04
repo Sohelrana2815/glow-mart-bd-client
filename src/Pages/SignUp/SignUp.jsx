@@ -6,6 +6,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import AdminAccess from "../AdminAccessModal/AdminAccess";
 const SignUp = () => {
   const { createNewUser, updateUserProfile } = useAuth();
   const axiosPublic = useAxiosPublic();
@@ -56,7 +57,8 @@ const SignUp = () => {
       <Helmet>
         <title>Sign Up Page</title>
       </Helmet>
-      <div className="hero bg-base-200 min-h-screen dark:bg-gray-900">
+      <AdminAccess />
+      <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 py-20">
         <div className="hero-content flex-col lg:flex-row ">
           <div className="text-center lg:text-left">
             <img src={signUpImg} alt="" />

@@ -18,8 +18,7 @@ const ManageBookings = () => {
   const handleDelivered = (payment) => {
     console.log(payment);
     Swal.fire({
-      title: "Are you sure?",
-      text: `Make  new admin!`,
+      title: "Change status to delivered?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -50,7 +49,7 @@ const ManageBookings = () => {
           <table className="table ">
             {/* head */}
             <thead className="">
-              <tr className="dark:text-white"> 
+              <tr className="dark:text-white">
                 <th>#</th>
                 <th>Email</th>
                 <th>Price</th>
