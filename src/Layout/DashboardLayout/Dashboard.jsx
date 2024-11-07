@@ -3,7 +3,9 @@ import {
   FaHistory,
   FaHome,
   FaList,
+  FaMoon,
   FaShoppingCart,
+  FaSun,
   FaUsers,
 } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router-dom";
@@ -12,9 +14,12 @@ import { AiFillProduct } from "react-icons/ai";
 import { IoBagAdd } from "react-icons/io5";
 import useCart from "../../Hooks/useCart";
 import useAdmin from "../../Hooks/useAdmin";
+import useTheme from "../../Hooks/useTheme";
 const Dashboard = () => {
   const [cart] = useCart();
   const [isAdmin] = useAdmin();
+
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   const navLinks = (
     <>
@@ -110,6 +115,37 @@ const Dashboard = () => {
             <Link to="/">
               <div className="mx-2 flex-1 px-2 btn btn-ghost">Glow Mart BD</div>
             </Link>
+            {/* Dark mode toggle button */}
+            {/* Synthwave Toggle Button */}
+            <label className="relative inline-flex items-center cursor-pointer ml-2">
+              <input
+                type="checkbox"
+                checked={isDarkMode}
+                onChange={toggleDarkMode}
+                className="sr-only"
+              />
+              <div
+                className={`w-14 h-8  rounded-full p-1 flex items-center justify-between neon-border ${
+                  isDarkMode ? "bg-[#FF6500]" : "bg-green-500"
+                }`}
+              >
+                <FaSun
+                  className={`text-yellow-400 text-xl ${
+                    isDarkMode ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <FaMoon
+                  className={`text-blue-400 text-xl ${
+                    isDarkMode ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+                <div
+                  className={`absolute left-1 top-1 w-6 h-6 bg-white rounded-full transform ${
+                    isDarkMode ? "translate-x-6" : "translate-x-0"
+                  } transition-transform duration-300 shadow-neon`}
+                ></div>
+              </div>
+            </label>
             <div className="hidden flex-none lg:block">
               <ul className="menu menu-horizontal ">
                 {/* Navbar menu content here */}
