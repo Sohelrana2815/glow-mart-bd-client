@@ -62,23 +62,25 @@ const Dashboard = () => {
       <div className="divider dark:divider-primary"></div>
 
       <div className="border border-primary hidden lg:block mr-2"></div>
-      <>
-        <li>
-          <NavLink to="/dashboard/userHome">
-            <FaHome /> User Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard/cart">
-            <FaShoppingCart /> My Cart ({cart.length})
-          </NavLink>
-        </li>
-        <li className="pr-2">
-          <NavLink to="/dashboard/paymentHistory">
-            <FaHistory /> Payment History
-          </NavLink>
-        </li>
-      </>
+      {isAdmin ? null : (
+        <>
+          <li>
+            <NavLink to="/dashboard/userHome">
+              <FaHome /> User Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/cart">
+              <FaShoppingCart /> My Cart ({cart.length})
+            </NavLink>
+          </li>
+          <li className="pr-2">
+            <NavLink to="/dashboard/paymentHistory">
+              <FaHistory /> Payment History
+            </NavLink>
+          </li>
+        </>
+      )}
       {/* Shared navLinks */}
       <div className="divider dark:divider-primary"></div>
       <div className="border border-primary hidden lg:block"></div>

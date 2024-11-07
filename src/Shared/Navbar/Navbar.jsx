@@ -43,9 +43,11 @@ const Navbar = () => {
         <li>
           <NavLink to="/products">All Products</NavLink>
         </li>
-        <li>
-          <NavLink to="/dashboard/userHome">User Home</NavLink>
-        </li>
+        {isAdmin ? null : (
+          <li>
+            <NavLink to="/dashboard/userHome">User Home</NavLink>
+          </li>
+        )}
         {isAdmin ? (
           <li>
             <NavLink to="/dashboard/adminHome">Admin Home</NavLink>

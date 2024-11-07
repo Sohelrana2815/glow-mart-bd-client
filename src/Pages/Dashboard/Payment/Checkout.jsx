@@ -5,8 +5,11 @@ import useCart from "../../../Hooks/useCart";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import useTheme from "../../../Hooks/useTheme";
 
 const Checkout = () => {
+  const { isDarkMode } = useTheme();
+
   const [clientSecret, setClientSecret] = useState("");
   const [error, setError] = useState("");
   const [transactionId, setTransactionId] = useState("");
@@ -113,10 +116,10 @@ const Checkout = () => {
             options={{
               style: {
                 base: {
-                  fontSize: "16px",
-                  color: "#424770",
+                  fontSize: "18px",
+                  color: isDarkMode ? "#FFF" : "#003161",
                   "::placeholder": {
-                    color: "#aab7c4",
+                    color: isDarkMode ? "#FFF" : "#003161",
                   },
                 },
                 invalid: {

@@ -9,7 +9,9 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
+import useAdmin from "../../Hooks/useAdmin";
 const ProductsCard = ({ product }) => {
+  const { isAdmin } = useAdmin();
   const { name, price, image, _id } = product;
   const loading = useLoading();
   const axiosSecure = useAxiosSecure();
@@ -84,6 +86,7 @@ const ProductsCard = ({ product }) => {
               <Skeleton width={90} height={40} />
             ) : (
               <button
+                disabled={isAdmin}
                 className="btn md:btn-md btn-sm py-2 px-4 lg:btn-md dark:border-none bg-[#185519] md:py-0  text-white"
                 onClick={handleAddToCart}
               >

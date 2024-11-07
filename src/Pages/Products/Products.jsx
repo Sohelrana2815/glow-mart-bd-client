@@ -20,16 +20,15 @@ const Products = () => {
   const [cart] = useCart();
 
   const handleCategory = (e) => {
-    // console.log(e.target.value);
     setCategory(e.target.value);
     setCurrentPage(1);
   };
+
   const handleProductsPerPage = (e) => {
     const value = parseInt(e.target.value);
     setProductsPerPage(value);
     setCurrentPage(1);
   };
-
   return (
     <>
       <Helmet>
