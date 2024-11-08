@@ -6,6 +6,7 @@ import { FaMoon, FaShoppingCart, FaSun } from "react-icons/fa";
 import useAdmin from "../../Hooks/useAdmin";
 import { IoMenuSharp } from "react-icons/io5";
 import useTheme from "../../Hooks/useTheme";
+import logo_one from "../../assets/website logo/logo_one.png";
 const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useTheme();
 
@@ -86,7 +87,10 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/">
-          <p className="md:text-2xl text-base">Glow Mart BD</p>
+          <div className="flex items-center gap-2">
+            <p className="md:text-2xl text-base">Glow Mart BD</p>
+            <img src={logo_one} className="md:w-8 w-7 " alt="" />
+          </div>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex ">
