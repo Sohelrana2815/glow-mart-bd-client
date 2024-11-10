@@ -73,9 +73,7 @@ Server site :
 ● dotenv
 
 
-## Screenshot
 
-![App Screenshot](https://i.ibb.co.com/nw9rxjD/Screenshot-2024-10-12-193722.png)
 
 
 
