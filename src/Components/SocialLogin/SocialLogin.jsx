@@ -22,7 +22,7 @@ const SocialLogin = () => {
           email: result.user?.email,
         };
         axiosPublic.post("/users", userInfo).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.insertedId) {
             Swal.fire({
               position: "center",

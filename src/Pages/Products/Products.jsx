@@ -29,6 +29,7 @@ const Products = () => {
     setProductsPerPage(value);
     setCurrentPage(1);
   };
+  
   return (
     <>
       <Helmet>
