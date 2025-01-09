@@ -17,7 +17,7 @@ const ProductsCategory = () => {
     const fetchCategory = async () => {
       try {
         const res = await axios.get(
-          "https://glow-mart-bd-server.vercel.app/productsCategory"
+          "http://localhost:5000/productsCategory"
         );
         setCategories(res.data);
       } catch (error) {
