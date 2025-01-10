@@ -16,9 +16,7 @@ const ProductsCategory = () => {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/productsCategory"
-        );
+        const res = await axios.get("http://localhost:5000/productsCategory");
         setCategories(res.data);
       } catch (error) {
         setError("Failed to fetch categories");
@@ -45,7 +43,7 @@ const ProductsCategory = () => {
       <div>
         <SectionTitle subHeading="" heading="Product Categories" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-screen-2xl mx-auto">
         {/* {categories.length} */}
         {categories.map((singleCategory) => (
           <CategoryCard

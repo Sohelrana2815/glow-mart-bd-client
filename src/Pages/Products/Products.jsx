@@ -5,18 +5,30 @@ import { useState } from "react";
 import ProductsCard from "./ProductsCard";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Products = () => {
   const { totalProducts } = useLoaderData();
   // console.log(totalProducts);
   const [category, setCategory] = useState("");
+  const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(12);
+  const [productsPerPage, setProductsPerPage] = useState(8);
 
   const numberOfPages = Math.ceil(totalProducts / productsPerPage);
   const pages = [...Array(numberOfPages).keys()].map((num) => num + 1);
 
-  const [products] = useProducts(category, currentPage, productsPerPage);
+  const [products] = useProducts(
+    category,
+    search,
+    currentPage,
+    productsPerPage
+  );
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   const [cart] = useCart();
 
   const handleCategory = (e) => {
@@ -37,68 +49,88 @@ const Products = () => {
       </Helmet>
 
       {/*  Dropdown for Category */}
-      <div className="fixed  z-10 py-5">
-        <div className="flex gap-2">
-          <span className="font-bold hidden dark:text-[#00FF9C] md:block lg:block text-xl">
-            Filter by Category :{" "}
-          </span>
-
-          <select
-            onChange={handleCategory}
-            value={category}
-            className="select bg-[#1A1A19] dark:bg-white  text-white dark:text-black select-sm"
-          >
-            <option value="">All</option>
-            <option value="fragrance">Fragrance</option>
-            <option value="lotion">Lotion</option>
-            <option value="shampoo">Shampoo</option>
-            <option value="hairOil">Hair Oil</option>
-            <option value="lipCare">Lip Care</option>
-            <option value="soap">Soap</option>
-            <option value="bodyWash">Body Wash</option>
-          </select>
-        </div>
-        <Link to="/dashboard/cart">
-          <div className="flex items-center gap-2 py-5 fixed text-xl">
-            <FaShoppingCart className="text-[#091057] dark:text-[#00FF9C] text-2xl" />
-            {cart.length}
+      <div className="fixed top-1/4 left-0 z-10 p-3  bg-white shadow-md dark:bg-gray-900 rounded-lg">
+        <div className="flex flex-col items-center gap-4">
+          {/* Category Dropdown */}
+          <div className="flex items-center gap-4">
+            <select
+              onChange={handleCategory}
+              value={category}
+              className="select bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 mr-4 select-xs md:select-sm"
+            >
+              <option value="">All Category Products</option>
+              <option value="fragrance">Fragrance</option>
+              <option value="lotion">Lotion</option>
+              <option value="shampoo">Shampoo</option>
+              <option value="hairOil">Hair Oil</option>
+              <option value="lipCare">Lip Care</option>
+              <option value="soap">Soap</option>
+              <option value="bodyWash">Body Wash</option>
+            </select>
           </div>
-        </Link>
+
+          {/* Cart Link */}
+          <Link to="/dashboard/cart" className="flex items-center gap-2">
+            <FaShoppingCart className="text-pink-500 dark:text-pink-500 text-2xl hover:text-pink-300" />
+            <span className="text-gray-800 dark:text-gray-300 font-medium">
+              {cart.length}
+            </span>
+          </Link>
+        </div>
       </div>
 
+      {/* Search input */}
+      <SearchBar search={search} handleSearchChange={handleSearchChange} />
       {/* Show All Products using Card */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-40">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {products.map((product) => (
           <ProductsCard key={product._id} product={product} />
         ))}
       </div>
 
-      <div className="text-center my-8 space-x-8 space-y-8">
-        <p>Current Page : {currentPage}</p>
-        {pages.map((page) => (
-          <button
-            key={page}
-            className={
-              currentPage === page
-                ? "btn mx-2 bg-[#091057] text-white"
-                : "btn mx-2"
-            }
-            onClick={() => setCurrentPage(page)}
+      <div className="text-center my-8">
+        <p className="text-lg font-medium mb-4">
+          Page
+          <span className="text-pink-500 font-mono">
+            {" "}
+            {currentPage} <span className="text-white">of</span> {pages.length}
+          </span>
+        </p>
+        <div className="flex justify-center items-center flex-wrap gap-4 mb-6">
+          {pages.map((page) => (
+            <button
+              key={page}
+              className={`btn px-4 py-2 rounded-lg font-medium ${
+                currentPage === page
+                  ? "bg-pink-500 text-white shadow-md"
+                  : "bg-gray-100 text-pink-600 hover:bg-pink-100"
+              } transition-colors duration-300`}
+              onClick={() => setCurrentPage(page)}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+        <div className="flex justify-center items-center gap-4">
+          <label
+            htmlFor="productsPerPage"
+            className="text-gray-700 dark:text-gray-200 font-medium"
           >
-            {page}
-          </button>
-        ))}
-
-        <select
-          className="select text-[#091057] select-bordered bg-[#EEEEEE] select-sm"
-          value={productsPerPage}
-          onChange={handleProductsPerPage}
-        >
-          <option value="12">12</option>
-          <option value="18">18</option>
-          <option value="24">24</option>
-          <option value="30">30</option>
-        </select>
+            Products per page:
+          </label>
+          <select
+            id="productsPerPage"
+            className="select select-bordered select-sm px-3 py-3 rounded-lg bg-gray-100 text-pink-600 font-medium shadow-sm hover:bg-gray-200 transition-all duration-300"
+            value={productsPerPage}
+            onChange={handleProductsPerPage}
+          >
+            {[8, 16, 24, 32, 36, 40, 44, 48, 50].map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </>
   );

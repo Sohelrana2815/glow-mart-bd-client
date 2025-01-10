@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
-const useProducts = (category, currentPage, productsPerPage) => {
+const useProducts = (category, search, currentPage, productsPerPage) => {
   const axiosPublic = useAxiosPublic();
   const { data: products = [], refetch } = useQuery({
-    queryKey: ["product", category, currentPage, productsPerPage],
+    queryKey: ["product", category, search, currentPage, productsPerPage],
     queryFn: async () => {
       const res = await axiosPublic.get(
-        `/products?category=${category}&currentPage=${
+        `/products?category=${category}&search=${search}&currentPage=${
           currentPage - 1
         }&productsPerPage=${productsPerPage}`
       );

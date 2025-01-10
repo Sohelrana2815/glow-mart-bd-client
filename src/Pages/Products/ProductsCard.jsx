@@ -62,32 +62,36 @@ const ProductsCard = ({ product }) => {
 
   return (
     <>
-      <div className="card bg-base-100 w-72 mx-auto md:w-80 shadow-xl dark:bg-gray-900 dark:shadow-blue-600">
-        <figure className="px-10 pt-10">
+      <div className="card bg-white w-72 mx-auto md:w-80 shadow-lg rounded-lg overflow-hidden dark:bg-gray-900 dark:shadow-pink-500">
+        <figure className="px-6 pt-6">
           {loading ? (
             <Skeleton height={200} width={200} />
           ) : (
-            <img src={image} alt="product img" className="rounded-xl" />
+            <img
+              src={image}
+              alt="product img"
+              className="rounded-xl transition-transform duration-300 hover:scale-105"
+            />
           )}
         </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="md:card-title font-medium">
+        <div className="card-body text-center">
+          <h2 className="font-semibold text-lg text-gray-800 dark:text-gray-200">
             {loading ? <Skeleton width={150} /> : name}
           </h2>
           {loading ? (
             <Skeleton width={100} />
           ) : (
-            <p className="lg:card-title text-lg font-medium text-info">
+            <p className="text-xl font-semibold text-pink-500 mt-2">
               $ {price}
             </p>
           )}
-          <div className="card-actions">
+          <div className="card-actions flex justify-center gap-2 mt-4">
             {loading ? (
               <Skeleton width={90} height={40} />
             ) : (
               <button
                 disabled={isAdmin}
-                className="btn md:btn-md btn-sm py-2 px-4 lg:btn-md dark:border-none bg-[#185519] md:py-0  text-white"
+                className="btn py-2 px-6 rounded-full bg-pink-500 text-white hover:bg-pink-600 transition-all duration-300 dark:bg-pink-700"
                 onClick={handleAddToCart}
               >
                 Add to Cart
@@ -97,7 +101,7 @@ const ProductsCard = ({ product }) => {
               <Skeleton width={50} height={40} />
             ) : (
               <Link to={`/productInfo/${_id}`}>
-                <button className="btn md:btn-md btn-sm lg:btn-md bg-[#E8B86D] text-white dark:border-none">
+                <button className="btn py-2 px-4 rounded-full bg-gray-100 hover:bg-pink-200 text-pink-600 transition-all duration-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-pink-700">
                   <FaEye className="text-lg" />
                 </button>
               </Link>
