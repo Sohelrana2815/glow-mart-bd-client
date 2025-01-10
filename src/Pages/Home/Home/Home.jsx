@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import ShopMap from "../ShopMap/ShopMap";
 import AboutUs from "../AboutUs/AboutUs";
@@ -9,22 +8,20 @@ import FAQSection from "../FAQSection/FAQSection";
 import BarIndicator from "../../../Components/BarIndicator/BarIndicator";
 import NewProducts from "../NewProducts/NewProducts";
 import Services from "../Services/Services";
-
+import { Helmet } from "react-helmet-async";
 const Home = () => {
   return (
     <div>
+      {/* title helmet */}
+
       <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="This is the home page of my website"
-        />
+        <title>Glow Mart BD || Home</title>
       </Helmet>
       <BarIndicator />
       <Banner />
       <ProductsCategory />
       <NewProducts />
-      <Services/>
+      <Services />
       <FeaturedProducts />
       <AboutUs />
       <ReviewsSection />

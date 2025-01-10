@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import AdminAccess from "../AdminAccessModal/AdminAccess";
+import { Helmet } from "react-helmet-async";
 const SignUp = () => {
   const { createNewUser, updateUserProfile } = useAuth();
   const axiosPublic = useAxiosPublic();
@@ -55,7 +55,7 @@ const SignUp = () => {
   return (
     <>
       <Helmet>
-        <title>Sign Up Page</title>
+        <title>Glow Mart BD || Sign Up Page</title>
       </Helmet>
       <AdminAccess />
       <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 py-20">

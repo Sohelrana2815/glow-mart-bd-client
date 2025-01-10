@@ -39,7 +39,7 @@ const FeaturedProducts = () => {
 
   return (
     <>
-      <div className="my-20 md:mt-28 px-4 md:px-8">
+      <div className="my-20 md:mt-28 px-4 md:px-8 max-w-screen-2xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold dark:text-gray-200 text-gray-800">
             Featured Products

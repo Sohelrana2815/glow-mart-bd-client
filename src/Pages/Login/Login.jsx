@@ -5,9 +5,9 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Components/SocialLogin/SocialLogin";
-import { Helmet } from "react-helmet";
 import { useState } from "react";
 import AdminAccess from "../AdminAccessModal/AdminAccess";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -53,7 +53,7 @@ const Login = () => {
     <>
       <AdminAccess />
       <Helmet>
-        <title>Login Page</title>
+        <title>Glow Mart BD || Login Page</title>
       </Helmet>
 
       <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 rounded-lg lg:py-0 xs:py-20 md:py-20">

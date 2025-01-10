@@ -1,11 +1,11 @@
 import useProducts from "../../Hooks/useProducts";
 import useCart from "../../Hooks/useCart";
-import { Helmet } from "react-helmet";
 import { useState } from "react";
 import ProductsCard from "./ProductsCard";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { Helmet } from "react-helmet-async";
 
 const Products = () => {
   const { totalProducts } = useLoaderData();
@@ -45,7 +45,7 @@ const Products = () => {
   return (
     <>
       <Helmet>
-        <title>All Products Page</title>
+        <title>Glow Mart BD || All Products Page</title>
       </Helmet>
 
       {/*  Dropdown for Category */}
