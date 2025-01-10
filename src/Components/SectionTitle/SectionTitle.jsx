@@ -1,11 +1,15 @@
 import PropTypes from "prop-types";
+
 const SectionTitle = ({ heading, subHeading }) => {
   return (
-    <div className="text-center py-5 space-y-6">
-      <h3 className="md:text-lg text-xl lg:text-3xl xl:text-4xl font-normal">
+    <div className="text-center py-20 space-y-4">
+      <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-800 dark:text-gray-100">
         {heading}
       </h3>
-      <p className="dark:text-gray-200">{subHeading}</p>
+      <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        {subHeading}
+      </p>
+      <div className="w-20 h-1 mx-auto bg-gradient-to-r from-blue-500 to-purple-600"></div>
     </div>
   );
 };

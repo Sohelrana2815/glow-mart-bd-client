@@ -9,10 +9,13 @@ const ShopMap = () => {
   return (
     <>
       <div>
-        <SectionTitle subHeading="" heading="Shop Location" />
+        <SectionTitle
+          subHeading="Find our store or office location – we’d love to meet you in person."
+          heading="Visit Us"
+        />
       </div>
 
-      <div className="py-10 ">
+      <div>
         <AnimatedComponent animation="fade-right">
           <MapContainer
             center={position}

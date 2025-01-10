@@ -1,3 +1,4 @@
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import Review from "./Review";
 
 const reviewsData = [
@@ -10,10 +11,12 @@ const reviewsData = [
 const ReviewsSection = () => {
   return (
     <>
-      <h2 className="text-2xl font-semibold mb-4 text-center my-20">
-        Customer Reviews
-      </h2>
-      <section className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <SectionTitle
+        heading="What Our Customers Say"
+        subHeading="Real feedback from happy customers who love our products and services."
+      />
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-screen-xl mx-auto">
         {reviewsData.map((review, index) => (
           <Review key={index} review={review} />
         ))}

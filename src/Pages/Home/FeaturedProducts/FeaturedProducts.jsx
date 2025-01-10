@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const FeaturedProducts = () => {
   // Data
@@ -39,15 +40,11 @@ const FeaturedProducts = () => {
 
   return (
     <>
-      <div className="my-20 md:mt-28 px-4 md:px-8 max-w-screen-2xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold dark:text-gray-200 text-gray-800">
-            Featured Products
-          </h2>
-          <p className="text-gray-600 text-sm dark:text-gray-200">
-            Check out our bestsellers!
-          </p>
-        </div>
+      <SectionTitle
+        heading="Our Featured Picks"
+        subHeading="Handpicked products just for you – explore what’s trending now."
+      />
+      <div className="px-4 md:px-8 max-w-screen-2xl mx-auto">
         <Swiper
           slidesPerView={2}
           breakpoints={{

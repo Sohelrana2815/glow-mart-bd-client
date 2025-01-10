@@ -3,9 +3,12 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 const FAQSection = () => {
   return (
     <>
-      <SectionTitle heading="FAQ section" subHeading="" />
+      <SectionTitle
+        heading="Frequently Asked Questions"
+        subHeading="Got questions? We’ve got answers to help you make informed decisions."
+      />
       <AnimatedComponent animation="flip-right" duration={2000} offset={100}>
-        <div className="py-20 space-y-10">
+        <div className="space-y-10 max-w-screen-xl mx-auto">
           <div className="collapse bg-base-200 border dark:border-white border-black dark:bg-gray-700">
             <input type="radio" name="my-accordion-1" defaultChecked />
             <div className="collapse-title text-xl font-medium">
