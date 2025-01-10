@@ -11,7 +11,7 @@ const BarIndicator = () => {
         left: 0,
         width: "100%",
         height: "7px",
-        backgroundColor: "#FF6500",
+        backgroundColor: "#DA498D",
         scaleX: scrollYProgress,
         originX: 0,
         zIndex: 1000,

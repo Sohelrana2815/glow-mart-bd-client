@@ -8,6 +8,7 @@ import ProductsCategory from "../ProductsCategory/ProductsCategory";
 import FAQSection from "../FAQSection/FAQSection";
 import BarIndicator from "../../../Components/BarIndicator/BarIndicator";
 import NewProducts from "../NewProducts/NewProducts";
+import Services from "../Services/Services";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Banner />
       <ProductsCategory />
       <NewProducts />
+      <Services/>
       <FeaturedProducts />
       <AboutUs />
       <ReviewsSection />
