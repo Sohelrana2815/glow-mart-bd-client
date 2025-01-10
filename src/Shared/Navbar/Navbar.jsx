@@ -1,175 +1,176 @@
 import { Link, NavLink } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
-import Swal from "sweetalert2";
-import useCart from "../../Hooks/useCart";
-import { FaMoon, FaShoppingCart, FaSun } from "react-icons/fa";
-import useAdmin from "../../Hooks/useAdmin";
 import { IoMenuSharp } from "react-icons/io5";
+import { FaShoppingCart, FaSun, FaMoon } from "react-icons/fa";
+import Swal from "sweetalert2";
+import logoOne from "../../assets/website logo/logo_one.png";
+import useAuth from "../../Hooks/useAuth";
+import useCart from "../../Hooks/useCart";
+import useAdmin from "../../Hooks/useAdmin";
 import useTheme from "../../Hooks/useTheme";
-import logo_one from "../../assets/website logo/logo_one.png";
+
 const Navbar = () => {
+  const { user, logout } = useAuth();
+  const [cart] = useCart() || []; // Safely destructure the cart
+  const [isAdmin] = useAdmin();
   const { isDarkMode, toggleDarkMode } = useTheme();
 
-  const { user, logout, loading } = useAuth();
-  const [cart] = useCart();
-  const [isAdmin] = useAdmin();
   const handleLogout = () => {
     Swal.fire({
-      title: "Are you sure?",
+      title: "Are you sure you want to logout?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Logout",
+      confirmButtonText: "Logout",
+      cancelButtonText: "Cancel",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
     }).then((result) => {
       if (result.isConfirmed) {
         logout();
-        Swal.fire({
-          title: `${user.displayName} Logged out!`,
-          icon: "success",
-        });
+        Swal.fire("Logged Out", "You have successfully logged out.", "success");
       }
     });
   };
 
-  const navLinks = (
-    <>
-      <div
-        className="lg:flex gap-2  
-       lg:bg-[#3D5300] md:bg-[#3D5300] xs:bg-[#3D5300] dark:lg:bg-[#10375C] dark:md:bg-[#10375C] dark:xs:bg-[#10375C]  text-lg font-serif "
-      >
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/products">All Products</NavLink>
-        </li>
-        {isAdmin ? null : (
-          <li>
-            <NavLink to="/dashboard/userHome">User Home</NavLink>
-          </li>
-        )}
-        {isAdmin ? (
-          <li>
-            <NavLink to="/dashboard/adminHome">Admin Home</NavLink>
-          </li>
-        ) : (
-          ""
-        )}
+  const navLinks = [
+    { label: "Home", path: "/" },
+    { label: "Products", path: "/products" },
+    {
+      label: isAdmin ? "Admin Home" : "User Home",
+      path: isAdmin ? "/dashboard/adminHome" : "/dashboard/userHome",
+    },
+    { label: "Cart", path: "/dashboard/cart" },
+  ];
 
-        <li>
+  return (
+    <div className="mb-20">
+      <div className="navbar fixed bg-[#3D5300] dark:bg-[#10375C] text-white shadow-lg pl-4 py-3 pr-10 rounded-lg z-10">
+        {/* Navbar Start */}
+        <div className="navbar-start">
+          <div className="dropdown">
+            <button
+              tabIndex={0}
+              className="btn btn-ghost lg:hidden"
+              aria-label="Open Menu"
+            >
+              <IoMenuSharp className="text-2xl" />
+            </button>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 bg-base-100 dark:bg-gray-800 rounded-box shadow-lg w-52"
+            >
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <NavLink to={link.path} className="hover:text-yellow-400">
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logoOne} alt="Logo" className="w-8 h-8" />
+            <span className="text-xl font-semibold">Glow Mart BD</span>
+          </Link>
+        </div>
+
+        {/* Navbar Center */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal gap-4">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <NavLink
+                  to={link.path}
+                  className="hover:text-yellow-400 transition-colors duration-300"
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Navbar End */}
+        <div className="navbar-end flex items-center gap-4">
           <Link to="/dashboard/cart">
             <button className="btn btn-sm">
               <FaShoppingCart />
-              <div className="badge badge-secondary">+{cart.length}</div>
+              <div className="badge badge-secondary">+{cart?.length || 0}</div>
             </button>
           </Link>
-        </li>
-      </div>
-    </>
-  );
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-  return (
-    <div className="navbar px-5  bg-[#3D5300] text-white  dark:bg-[#10375C] rounded-lg mt-10">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <IoMenuSharp className="text-2xl md:text-2xl" />
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            {navLinks}
-          </ul>
-        </div>
-        <Link to="/">
-          <div className="flex items-center gap-2">
-            <p className="md:text-2xl text-base">Glow Mart BD</p>
-            <img src={logo_one} className="md:w-8 w-7 " alt="" />
-          </div>
-        </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex ">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
-      </div>
-      <div className="navbar-end">
-        {user ? (
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              {user.photoURL ? (
-                <div className="w-24 rounded-full">
-                  <img src={user.photoURL} />
-                </div>
-              ) : (
-                <div className="avatar placeholder">
-                  <div className="bg-neutral text-neutral-content w-10 rounded-full">
-                    <span>{user.displayName.slice(0, 1).toUpperCase()}</span>
-                  </div>
-                </div>
-              )}
+          {user ? (
+            <div className="dropdown dropdown-end">
+              <button
+                tabIndex={0}
+                className="btn btn-ghost btn-circle"
+                aria-label="User Menu"
+              >
+                <img
+                  src={user.photoURL || logoOne}
+                  alt="User Avatar"
+                  className="w-8 h-8 rounded-full"
+                />
+              </button>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 bg-base-100 dark:bg-gray-800 text-black dark:text-white rounded-box shadow-lg w-40"
+              >
+                <li>
+                  <button
+                    className="hover:text-red-500 transition-colors duration-300"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow  text-black"
-            >
-              <li>
-                <a onClick={handleLogout}>Logout</a>
-              </li>
-            </ul>
-          </div>
-        ) : (
-          <>
-            <Link to="/login">
-              <button className="btn text-white lg:btn-md btn-outline  btn-sm ">
-                Login
-              </button>
-            </Link>
-            <Link to="/signUp">
-              <button className="btn hidden md:block text-white lg:btn-md btn-outline  btn-sm ml-4">
-                Sign UP
-              </button>
-            </Link>
-          </>
-        )}
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="btn btn-sm bg-[#3D5300] dark:bg-[#10375C] text-white hover:bg-green-700 dark:hover:bg-blue-700 border-none">
+                  Login
+                </button>
+              </Link>
+              <Link to="/signUp">
+                <button className="btn btn-sm bg-yellow-500 dark:bg-pink-500 text-black dark:text-white hover:bg-yellow-600 dark:hover:bg-pink-600 border-none hidden md:inline-block">
+                  Sign Up
+                </button>
+              </Link>
+            </>
+          )}
 
-        {/* Synthwave Toggle Button */}
-        <label className="relative inline-flex items-center cursor-pointer ml-2">
-          <input
-            type="checkbox"
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-            className="sr-only"
-          />
-          <div
-            className={`w-14 h-8  rounded-full p-1 flex items-center justify-between neon-border ${
-              isDarkMode ? "bg-[#FF6500]" : "bg-green-500"
-            }`}
-          >
-            <FaSun
-              className={`text-yellow-400 text-xl ${
-                isDarkMode ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <FaMoon
-              className={`text-blue-400 text-xl ${
-                isDarkMode ? "opacity-100" : "opacity-0"
-              }`}
+          {/* Dark Mode Toggle */}
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only"
+              checked={isDarkMode}
+              onChange={toggleDarkMode}
             />
             <div
-              className={`absolute left-1 top-1 w-6 h-6 bg-white rounded-full transform ${
-                isDarkMode ? "translate-x-6" : "translate-x-0"
-              } transition-transform duration-300 shadow-neon`}
-            ></div>
-          </div>
-        </label>
+              className={`w-12 h-6 flex items-center rounded-full p-1 ${
+                isDarkMode ? "bg-yellow-500" : "bg-blue-600"
+              }`}
+            >
+              <FaSun
+                className={`text-yellow-400 ${
+                  isDarkMode ? "opacity-0" : "opacity-100"
+                } transition-opacity duration-300`}
+              />
+              <FaMoon
+                className={`text-blue-400 ${
+                  isDarkMode ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-300`}
+              />
+              <div
+                className={`absolute w-5 h-5 bg-white rounded-full transform transition-transform ${
+                  isDarkMode ? "translate-x-6" : "translate-x-0"
+                }`}
+              ></div>
+            </div>
+          </label>
+        </div>
       </div>
     </div>
   );
