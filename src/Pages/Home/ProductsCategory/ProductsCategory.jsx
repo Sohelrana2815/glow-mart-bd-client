@@ -41,7 +41,10 @@ const ProductsCategory = () => {
   return (
     <>
       <div>
-        <SectionTitle subHeading="" heading="Product Categories" />
+        <SectionTitle
+          subHeading="Get the skin you want to feel"
+          heading="Our Featured Products"
+        />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-screen-2xl mx-auto">
         {/* {categories.length} */}

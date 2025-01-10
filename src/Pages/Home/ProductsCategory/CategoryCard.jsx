@@ -2,7 +2,7 @@ import "aos/dist/aos.css";
 import AnimatedComponent from "../../../Components/AnimatedComponent/AnimatedComponent";
 import { Link } from "react-router-dom";
 const CategoryCard = ({ singleCategory }) => {
-  const { name, category, image } = singleCategory;
+  const { name, image } = singleCategory;
 
   return (
     <>

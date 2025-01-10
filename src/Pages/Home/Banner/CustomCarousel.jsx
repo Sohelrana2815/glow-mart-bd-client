@@ -40,7 +40,7 @@ const CustomCarousel = () => {
         <div className="relative">
           <img
             src={bannerImg1}
-            className="rounded-xl object-cover w-full h-[500px]"
+            className="rounded-xl object-cover w-full xl:h-[500px]"
           />
           <div className="absolute inset-0 flex flex-col justify-center items-start pl-10 md:pl-20 lg:pl-40 text-white bg-gradient-to-r from-black/70 to-transparent">
             <p className="text-sm uppercase tracking-wider">Essential items</p>
@@ -60,7 +60,7 @@ const CustomCarousel = () => {
         <div className="relative">
           <img
             src={bannerImg2}
-            className="rounded-xl object-cover w-full h-[500px]"
+            className="rounded-xl object-cover w-full xl:h-[500px]"
           />
           <div className="absolute inset-0 flex flex-col justify-center items-start pl-10 md:pl-20 lg:pl-40 text-white bg-gradient-to-r from-black/70 to-transparent">
             <p className="text-sm uppercase tracking-wider">Luxury Skincare</p>
@@ -80,7 +80,7 @@ const CustomCarousel = () => {
         <div className="relative">
           <img
             src={bannerImg3}
-            className="rounded-xl object-cover w-full h-[500px]"
+            className="rounded-xl object-cover w-full xl:h-[500px]"
           />
           <div className="absolute inset-0 flex flex-col justify-center items-start pl-10 md:pl-20 lg:pl-40 text-white bg-gradient-to-r from-black/70 to-transparent">
             <p className="text-sm uppercase tracking-wider">
