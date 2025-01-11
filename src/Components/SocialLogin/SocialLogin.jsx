@@ -39,7 +39,10 @@ const SocialLogin = () => {
       });
   };
   return (
-    <button className="btn btn-outline" onClick={handleGoogleLogin}>
+    <button
+      className="btn btn-outline dark:border-white dark:text-white"
+      onClick={handleGoogleLogin}
+    >
       <FcGoogle className="text-lg " /> Sign in with Google
     </button>
   );

@@ -56,66 +56,101 @@ const Login = () => {
         <title>Glow Mart BD || Login Page</title>
       </Helmet>
 
-      <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 rounded-lg lg:py-0 xs:py-20 md:py-20">
-        <div className="hero-content flex-col lg:flex-row ">
-          <div className="text-center lg:text-left">
-            <img src={loginImg} alt="" />
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-gray-200 to-blue-300 dark:from-gray-800 dark:via-gray-900 dark:to-black">
+        <div className="flex flex-col lg:flex-row items-center bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden max-w-5xl w-full mx-4 px-8">
+          {/* Left Section (Image) */}
+          <div className="lg:w-1/2 w-full relative hidden lg:block">
+            <img
+              src={loginImg}
+              alt="Login Visual"
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30"></div>
           </div>
 
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl lg:ml-20 ">
-            <h1 className="text-4xl dark:text-black p-4 mt-4 font-bold text-center">
-              Login now!
+          {/* Right Section (Form) */}
+          <div className="lg:w-1/2 w-full flex flex-col items-center px-8 py-12 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+              Welcome Back!
             </h1>
+            <p className="text-center text-sm md:text-base mb-6">
+              Login to access your account and continue exploring.
+            </p>
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="card-body dark:text-black"
+              className="w-full max-w-md space-y-4"
             >
-              <div className="form-control ">
-                <label className="label">
+              {/* Email Field */}
+              <div className="form-control">
+                <label className="label font-medium">
                   <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
                   {...register("email", { required: true })}
-                  className="input input-bordered"
+                  className="input input-bordered w-full dark:text-black"
+                  placeholder="Enter your email"
                 />
                 {errors.email && (
-                  <span className="text-red-600">Email field is required</span>
+                  <span className="text-red-500 text-sm">
+                    Email is required
+                  </span>
                 )}
               </div>
+
+              {/* Password Field */}
               <div className="form-control">
-                <label className="label">
+                <label className="label font-medium">
                   <span className="label-text">Password</span>
                 </label>
                 <input
                   type="password"
                   {...register("password", { required: true })}
-                  className="input input-bordered"
+                  className="input input-bordered w-full dark:text-black"
+                  placeholder="Enter your password"
                 />
                 {errors.password && (
-                  <span className="text-red-600">
-                    Password field is required
+                  <span className="text-red-500 text-sm">
+                    Password is required
                   </span>
                 )}
-                {error && <p className="text-red-500">{error}</p>}
+                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
               </div>
-              <div className="form-control mt-6">
-                <input
-                  type="submit"
-                  value="Login"
-                  className="btn btn-primary"
-                />
-              </div>
-              <p className="text-center">-----OR------</p>
-              <SocialLogin />
 
-              <p className="text-center font-medium">
-                Don't have an account ?{" "}
-                <Link to="/signUp">
-                  <span className="text-primary">Sign up</span>
+              {/* Login Button */}
+              <div className="form-control mt-6">
+                <button
+                  type="submit"
+                  className="btn btn-primary w-full py-2 text-lg font-medium bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 transition duration-200"
+                >
+                  Login
+                </button>
+              </div>
+
+              {/* Divider */}
+              <div className="flex items-center justify-center space-x-2 mt-4">
+                <span className="h-px w-1/4 bg-gray-300 dark:bg-gray-600"></span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  OR
+                </span>
+                <span className="h-px w-1/4 bg-gray-300 dark:bg-gray-600"></span>
+              </div>
+
+              {/* Signup Link */}
+              <p className="text-center text-sm mt-6">
+                Don't have an account?{" "}
+                <Link
+                  to="/signUp"
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  Sign up
                 </Link>
               </p>
             </form>
+            {/* Social Login */}
+            <div className="mt-4">
+              <SocialLogin />
+            </div>
           </div>
         </div>
       </div>
