@@ -7,37 +7,40 @@ import { useState } from "react";
 import useLoading from "../../../Hooks/useLoading";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import SearchBar from "../../Products/SearchBar";
 
 const ManageItems = () => {
+  const axiosSecure = useAxiosSecure();
   const { totalProducts } = useLoaderData();
   const loading = useLoading();
-  // console.log(totalProducts);
   const [category, setCategory] = useState("");
+  const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(12);
+  const [productsPerPage, setProductsPerPage] = useState(8);
+
   const numberOfPages = Math.ceil(totalProducts / productsPerPage);
   const pages = [...Array(numberOfPages).keys()].map((num) => num + 1);
   const [products, refetch] = useProducts(
     category,
+    search,
     currentPage,
     productsPerPage
   );
 
-  console.log(products);
-  const handleCategory = (e) => {
-    refetch();
-    // console.log(e.target.value);
-    setCategory(e.target.value);
-    setCurrentPage(1);
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
   };
+
+  const handleCategory = (e) => {
+    setCategory(e.target.value);
+  };
+
   const handleProductsPerPage = (e) => {
-    refetch();
     const value = parseInt(e.target.value);
     setProductsPerPage(value);
     setCurrentPage(1);
   };
 
-  const axiosSecure = useAxiosSecure();
   const handleDeleteProduct = (product) => {
     Swal.fire({
       title: "Are you sure?",
@@ -50,7 +53,6 @@ const ManageItems = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/products/${product._id}`);
-        console.log(res.data);
         if (res.data.deletedCount > 0) {
           refetch();
           Swal.fire({
@@ -64,113 +66,126 @@ const ManageItems = () => {
   };
 
   return (
-    <>
-      <div className="dark:bg-black">
-        <div className="fixed z-10 mt-40 px-20">
-          <span className="font-semibold dark:text-green-500">Filter by Category : </span>
+    <div className="min-h-screen bg-gray-100 dark:bg-black py-10 px-6">
+      {/* Header */}
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+        {/* Category Dropdown */}
+        <select
+          onChange={handleCategory}
+          value={category}
+          className="select select-bordered bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg shadow-md w-full sm:w-auto"
+        >
+          <option value="">All Categories</option>
+          <option value="fragrance">Fragrance</option>
+          <option value="lotion">Lotion</option>
+          <option value="shampoo">Shampoo</option>
+          <option value="hairOil">Hair Oil</option>
+          <option value="lipCare">Lip Care</option>
+          <option value="soap">Soap</option>
+          <option value="bodyWash">Body Wash</option>
+        </select>
 
-          <select
-            onChange={handleCategory}
-            value={category}
-            className="select bg-[#1A1A19] text-white select-sm"
-          >
-            <option value="">All</option>
-            <option value="fragrance">Fragrance</option>
-            <option value="lotion">Lotion</option>
-            <option value="shampoo">Shampoo</option>
-            <option value="hairOil">Hair Oil</option>
-            <option value="lipCare">Lip Care</option>
-            <option value="soap">Soap</option>
-            <option value="bodyWash">Body Wash</option>
-          </select>
-        </div>
-        <div className="max-w-screen-xl mx-auto dark:bg-black">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {products.map((product) => (
-              <div
-                key={product._id}
-                className="card bg-base-100 shadow-xl dark:bg-black dark:shadow-blue-600 dark:text-white"
-              >
-                <figure className="px-10 pt-10">
-                  {loading ? (
-                    <Skeleton height={200} width={200} />
-                  ) : (
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="rounded-xl"
-                    />
-                  )}
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">
-                    {loading ? <Skeleton width={150} /> : product.name}
-                  </h2>
-                  {loading ? (
-                    <Skeleton width={100} />
-                  ) : (
-                    <p className="text-lg font-bold text-center">
-                      ${product.price}
-                    </p>
-                  )}
-                  <div className="card-actions justify-between">
-                    <Link to={`/dashboard/updateProducts/${product._id}`}>
-                      {loading ? (
-                        <Skeleton width={90} height={40} />
-                      ) : (
-                        <button className="btn bg-gradient-to-r from-[#0d6efd]  to-black text-white">
-                          <FaPen />
-                          Edit
-                        </button>
-                      )}
-                    </Link>
+        {/* Search Bar */}
+        <SearchBar search={search} handleSearchChange={handleSearchChange} />
+      </div>
+
+      {/* Products Grid */}
+      <div className="max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <div
+              key={product._id}
+              className="card bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition duration-300 rounded-lg overflow-hidden"
+            >
+              {/* Product Image */}
+              <figure className="px-6 pt-6 flex justify-center">
+                {loading ? (
+                  <Skeleton height={200} width={200} />
+                ) : (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="rounded-lg w-48 h-48 object-cover"
+                  />
+                )}
+              </figure>
+
+              {/* Product Info */}
+              <div className="card-body p-6">
+                <h2 className="card-title text-lg font-bold dark:text-white">
+                  {loading ? <Skeleton width={150} /> : product.name}
+                </h2>
+                <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
+                  {loading ? <Skeleton width={100} /> : `$${product.price}`}
+                </p>
+
+                {/* Actions */}
+                <div className="card-actions flex justify-between mt-4">
+                  <Link to={`/dashboard/updateProducts/${product._id}`}>
                     {loading ? (
-                      <Skeleton width={50} height={40} />
+                      <Skeleton width={90} height={40} />
                     ) : (
-                      <button
-                        onClick={() => handleDeleteProduct(product)}
-                        className="btn bg-gradient-to-r from-[#C62E2E] to-black text-white"
-                      >
+                      <button className="btn bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2">
                         <FaPen />
-                        Delete
+                        Edit
                       </button>
                     )}
-                  </div>
+                  </Link>
+                  {loading ? (
+                    <Skeleton width={90} height={40} />
+                  ) : (
+                    <button
+                      onClick={() => handleDeleteProduct(product)}
+                      className="btn bg-gradient-to-r from-red-500 to-red-700 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                    >
+                      <FaPen />
+                      Delete
+                    </button>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <p>Current Page : {currentPage}</p>
-            {pages.map((page) => (
-              <button
-                key={page}
-                className={
-                  currentPage === page
-                    ? "btn mx-2 bg-[#091057] text-white"
-                    : "btn mx-2"
-                }
-                onClick={() => setCurrentPage(page)}
-              >
-                {page}
-              </button>
-            ))}
-
-            <select
-              className="select text-[#091057] select-bordered bg-[#EEEEEE] select-sm"
-              value={productsPerPage}
-              onChange={handleProductsPerPage}
-            >
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="30">30</option>
-              <option value="40">40</option>
-            </select>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </>
+
+      {/* Pagination */}
+      <div className="mt-8 text-center">
+        <p className="mb-4 text-lg font-medium dark:text-white">
+          Current Page: {currentPage}
+        </p>
+        <div className="flex justify-center gap-2 mb-6">
+          {pages.map((page) => (
+            <button
+              key={page}
+              className={`btn px-4 py-2 rounded-lg ${
+                currentPage === page
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white"
+              }`}
+              onClick={() => setCurrentPage(page)}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+        <div className="flex justify-center items-center gap-4">
+          <span className="font-medium text-gray-700 dark:text-white">
+            Items Per Page:
+          </span>
+          <select
+            className="select select-bordered bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg"
+            value={productsPerPage}
+            onChange={handleProductsPerPage}
+          >
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="24">24</option>
+            <option value="32">32</option>
+          </select>
+        </div>
+      </div>
+    </div>
   );
 };
 

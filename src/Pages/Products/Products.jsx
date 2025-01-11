@@ -9,7 +9,6 @@ import { Helmet } from "react-helmet-async";
 
 const Products = () => {
   const { totalProducts } = useLoaderData();
-  // console.log(totalProducts);
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

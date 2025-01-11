@@ -59,61 +59,63 @@ const AddItems = () => {
 
   return (
     <>
-      <div className="min-h-screen dark:bg-black dark:text-white">
-        <div>
-          <SectionTitle heading="Add An Item" subHeading="Wat's New?" />
-        </div>
-
-        <div className="w-full md:w-3/4 mx-auto p-4 ">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="space-y-4 dark:text-black"
-          >
-            {/* Grid */}
+      <div>
+        <SectionTitle heading="Add An Item" subHeading="Wat's New?" />
+      </div>
+      <div className="min-h-screen dark:bg-gray-900 dark:text-gray-200 py-10 px-4">
+        <div className="w-full md:w-3/4 lg:w-2/3 mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8">
+          <h1 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">
+            Add New Product
+          </h1>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Grid for Inputs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* 1st */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text dark:text-white">
-                    Product name*
-                  </span>
+              {/* Product Name */}
+              <div>
+                <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                  Product Name*
                 </label>
                 <input
                   type="text"
                   {...register("name", { required: true })}
-                  placeholder="Product name"
-                  className="input input-bordered w-full"
+                  placeholder="Enter product name"
+                  className="input input-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
                 />
                 {errors.name && (
-                  <span className="text-red-600">Product name is required</span>
+                  <span className="text-sm text-red-500">
+                    Product name is required
+                  </span>
                 )}
               </div>
-              {/* 2nd */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text dark:text-white">Price*</span>
+
+              {/* Price */}
+              <div>
+                <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                  Price*
                 </label>
                 <input
                   type="number"
                   step="any"
                   min="0"
                   {...register("price", { required: true })}
-                  placeholder="Enter Price"
-                  className="input input-bordered w-full"
+                  placeholder="Enter price"
+                  className="input input-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
                 />
                 {errors.price && (
-                  <span className="text-red-600">Price field is required</span>
+                  <span className="text-sm text-red-500">
+                    Price field is required
+                  </span>
                 )}
               </div>
 
-              {/* 5th */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text dark:text-white">Category*</span>
+              {/* Category */}
+              <div>
+                <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                  Category*
                 </label>
                 <select
                   {...register("category", { required: true })}
-                  className="select select-bordered w-full"
+                  className="select select-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -128,37 +130,49 @@ const AddItems = () => {
                   <option value="bodyWash">Body Wash</option>
                 </select>
                 {errors.category && (
-                  <span className="text-red-600">
+                  <span className="text-sm text-red-500">
                     Category field is required
                   </span>
                 )}
               </div>
             </div>
-            {/* Text area */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text dark:text-white">Description*</span>
+
+            {/* Description */}
+            <div>
+              <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                Description*
               </label>
               <textarea
-                {...register("description")}
-                placeholder="Enter short description"
-                className="textarea textarea-bordered w-full"
+                {...register("description", { required: true })}
+                placeholder="Enter a short description"
+                className="textarea textarea-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
               ></textarea>
               {errors.description && (
-                <span className="text-red-600">Description is required</span>
+                <span className="text-sm text-red-500">
+                  Description is required
+                </span>
               )}
+            </div>
+
+            {/* Image Upload */}
+            <div>
+              <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                Product Image
+              </label>
               <input
                 type="file"
                 {...register("image")}
-                className="file-input file-input-bordered w-full my-4"
+                className="file-input file-input-bordered w-full rounded-lg dark:text-black"
               />
             </div>
-            <div>
+
+            {/* Submit Button */}
+            <div className="text-center">
               <button
                 type="submit"
-                className="btn btn-primary w-full md:w-auto"
+                className="btn bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 rounded-lg text-lg font-medium inline-flex items-center gap-2 transition duration-300"
               >
-                Add Item
+                Add Product
                 <FaUtensils />
               </button>
             </div>

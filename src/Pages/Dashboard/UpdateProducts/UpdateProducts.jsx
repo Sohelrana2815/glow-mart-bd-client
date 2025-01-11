@@ -65,35 +65,38 @@ const UpdateProducts = () => {
 
   return (
     <>
-      <div className="min-h-screen dark:bg-black">
-        <div className="dark:text-white">
-          <SectionTitle heading="Update Product" subHeading="What's New?" />
-        </div>
-        <div className="w-3/4 mx-auto">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            {/* Grid */}
+      <SectionTitle heading="Update Product" subHeading="What's New?" />
+      <div className="min-h-screen dark:bg-gray-900 dark:text-gray-200 py-10 px-4">
+        <div className="w-full md:w-3/4 lg:w-2/3 mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8">
+          <h1 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">
+            Update Product
+          </h1>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Grid Layout for Inputs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* 1st */}
+              {/* Product Name */}
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Product name*</span>
+                <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                  Product Name*
                 </label>
                 <input
                   type="text"
                   defaultValue={name}
                   {...register("name", { required: true })}
-                  placeholder="Product name"
-                  className="input input-bordered"
+                  placeholder="Enter product name"
+                  className="input input-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
                 />
                 {errors.name && (
-                  <span className="text-red-600">Product name is required</span>
+                  <span className="text-sm text-red-500">
+                    Product name is required
+                  </span>
                 )}
               </div>
 
-              {/* 3rd */}
+              {/* Price */}
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Price*</span>
+                <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                  Price*
                 </label>
                 <input
                   type="number"
@@ -101,22 +104,24 @@ const UpdateProducts = () => {
                   min="0"
                   defaultValue={price}
                   {...register("price", { required: true })}
-                  placeholder="Enter Price"
-                  className="input input-bordered"
+                  placeholder="Enter price"
+                  className="input input-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
                 />
-                {errors.name && (
-                  <span className="text-red-600">Price field is required</span>
+                {errors.price && (
+                  <span className="text-sm text-red-500">
+                    Price field is required
+                  </span>
                 )}
               </div>
 
-              {/* 5th */}
+              {/* Category */}
               <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Category*</span>
+                <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                  Category*
                 </label>
                 <select
                   {...register("category", { required: true })}
-                  className="select select-bordered"
+                  className="select select-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
                   defaultValue={category}
                 >
                   <option value="" disabled>
@@ -130,37 +135,51 @@ const UpdateProducts = () => {
                   <option value="bodyWash">Body Wash</option>
                   <option value="soap">Soap</option>
                 </select>
-                {errors.name && (
-                  <span className="text-red-600">
+                {errors.category && (
+                  <span className="text-sm text-red-500">
                     Category field is required
                   </span>
                 )}
               </div>
             </div>
-            {/* Text area */}
+
+            {/* Description */}
             <div className="form-control">
-              <label className="label">
-                <span className="label-text">Description*</span>
+              <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                Description*
               </label>
               <textarea
                 defaultValue={description}
-                {...register("description")}
-                placeholder="Enter short description"
-                className="textarea textarea-bordered textarea-md w-full"
+                {...register("description", { required: true })}
+                placeholder="Enter a short description"
+                className="textarea textarea-bordered w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-black"
               ></textarea>
-              {errors.name && (
-                <span className="text-red-600">Description is required</span>
+              {errors.description && (
+                <span className="text-sm text-red-500">
+                  Description is required
+                </span>
               )}
+            </div>
+
+            {/* Image Upload */}
+            <div className="form-control">
+              <label className="block text-sm font-medium mb-2 dark:text-gray-300">
+                Upload Product Image
+              </label>
               <input
                 type="file"
-                // defaultValue={image}
                 {...register("image")}
-                className="file-input file-input-bordered w-full max-w-xs my-4"
+                className="file-input file-input-bordered w-full dark:text-black rounded-lg"
               />
             </div>
-            <div>
-              <button type="submit" className="btn btn-primary">
-                Update Item
+
+            {/* Update Button */}
+            <div className="text-center">
+              <button
+                type="submit"
+                className="btn bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 rounded-lg text-lg font-medium inline-flex items-center gap-2 transition duration-300"
+              >
+                Update Product
                 <FaPen />
               </button>
             </div>
