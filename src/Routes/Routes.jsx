@@ -18,11 +18,13 @@ import UpdateProducts from "../Pages/Dashboard/UpdateProducts/UpdateProducts";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import ManageBookings from "../Pages/Dashboard/ManageBookings/ManageBookings";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -31,8 +33,7 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
-        loader: () =>
-          fetch(" http://localhost:5000/totalProducts"),
+        loader: () => fetch(" http://localhost:5000/totalProducts"),
       },
       {
         path: "login",
@@ -50,9 +51,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            ` http://localhost:5000/getSpecificProduct/${params.id}`
-          ),
+          fetch(` http://localhost:5000/getSpecificProduct/${params.id}`),
       },
     ],
   },
@@ -108,8 +107,7 @@ const router = createBrowserRouter([
             <ManageItems />
           </AdminRoute>
         ),
-        loader: () =>
-          fetch(" http://localhost:5000/totalProducts"),
+        loader: () => fetch(" http://localhost:5000/totalProducts"),
       },
       {
         path: "manageBookings",
@@ -123,9 +121,7 @@ const router = createBrowserRouter([
         path: "updateProducts/:id",
         element: <UpdateProducts />,
         loader: ({ params }) =>
-          fetch(
-            ` http://localhost:5000/getSpecificProduct/${params.id}`
-          ),
+          fetch(` http://localhost:5000/getSpecificProduct/${params.id}`),
       },
       {
         path: "allUsers",
