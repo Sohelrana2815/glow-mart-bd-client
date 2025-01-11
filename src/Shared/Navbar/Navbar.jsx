@@ -76,9 +76,11 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-1">
             <img src={logoOne} alt="Logo" className="w-8 h-8" />
-            <span className="text-xl font-semibold">Glow Mart BD</span>
+            <span className="md:text-xl font-semibold text-sm">
+              Glow Mart BD
+            </span>
           </Link>
         </div>
 
@@ -100,7 +102,7 @@ const Navbar = () => {
 
         {/* Navbar End */}
         <div className="navbar-end flex items-center gap-4">
-          <Link to="/dashboard/cart">
+          <Link to="/dashboard/cart" className="hidden md:flex">
             <button className="btn btn-sm">
               <FaShoppingCart />
               <div className="badge badge-secondary">+{cart?.length || 0}</div>
@@ -168,7 +170,7 @@ const Navbar = () => {
                 } transition-opacity duration-300`}
               />
               <FaMoon
-                className={`text-blue-400 ${
+                className={`text-blue-400 mr-5 ${
                   isDarkMode ? "opacity-100" : "opacity-0"
                 } transition-opacity duration-300`}
               />
