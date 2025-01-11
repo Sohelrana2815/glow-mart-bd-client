@@ -25,31 +25,31 @@ const Dashboard = () => {
     <>
       {isAdmin ? (
         <>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/adminHome">
               <FaHome />
               Admin Home
             </NavLink>
           </li>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/addItems">
               <IoBagAdd />
               Add Items
             </NavLink>
           </li>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/manageItems">
               <FaList />
               Manage Items
             </NavLink>
           </li>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/manageBookings">
               <FaBook />
               Manage Bookings
             </NavLink>
           </li>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/allUsers">
               <FaUsers />
               All Users

@@ -16,11 +16,8 @@ const AdminAccessModal = ({ toggleModal }) => {
   return (
     <div className="fixed inset-0 dark:text-black flex z-10 items-center justify-center bg-gray-800 bg-opacity-75">
       <div className="modal-box bg-white p-6 rounded-lg shadow-lg max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-4">
-        <h2 className="text-xl font-semibold mb-4 text-center">
-          Wanna Try Admin?
-        </h2>
         <p className="mb-6 text-lg text-center">
-          Copy the keys to unlock admin access!
+          Copy pest to unlock admin access!
         </p>
 
         <div className="space-y-4">
