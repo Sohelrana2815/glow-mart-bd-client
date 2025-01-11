@@ -26,15 +26,15 @@ const Cart = () => {
             Total Price: ${totalPrice}
           </h2>
           {cart.length ? (
-            <Link to="/dashboard/payment" className="w-full md:w-auto">
-              <button className="w-full bg-blue-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+            <Link to="/dashboard/payment">
+              <button className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
                 Pay Now
               </button>
             </Link>
           ) : (
             <button
               disabled
-              className="w-full bg-gray-400 text-white py-2 px-6 rounded-lg shadow-lg cursor-not-allowed"
+              className="bg-gray-400 text-white py-2 px-6 rounded-lg shadow-lg cursor-not-allowed"
             >
               Pay Now
             </button>

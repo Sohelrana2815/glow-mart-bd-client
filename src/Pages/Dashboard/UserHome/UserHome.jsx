@@ -17,7 +17,7 @@ const UserHome = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl px-6 py-10 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 rounded-xl shadow-lg">
+      <div className="relative  text-center max-w-4xl px-6 py-10 bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 rounded-xl shadow-lg">
         {/* User Profile Image */}
         <div className="flex justify-center mb-6">
           <img

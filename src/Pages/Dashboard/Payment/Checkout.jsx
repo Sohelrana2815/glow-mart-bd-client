@@ -107,38 +107,59 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="min-h-screen dark:bg-black ">
+      <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white">
+        {/* Form Container */}
         <form
-          className="lg:w-3/4 md:w-4/5 py-20 px-4  mx-auto "
+          className="lg:w-1/2 md:w-3/4 w-full py-12 px-6 mx-auto bg-white dark:bg-gray-700 rounded-lg shadow-lg"
           onSubmit={handleSubmit}
         >
-          <CardElement
-            options={{
-              style: {
-                base: {
-                  fontSize: "18px",
-                  color: isDarkMode ? "#FFF" : "#003161",
-                  "::placeholder": {
+          {/* Payment Form Header */}
+          <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">
+            Checkout
+          </h2>
+
+          {/* Card Element */}
+          <div className="mb-6">
+            <CardElement
+              options={{
+                style: {
+                  base: {
+                    fontSize: "18px",
                     color: isDarkMode ? "#FFF" : "#003161",
+                    lineHeight: "2",
+                    padding: "20px",
+                    borderRadius: "8px", // Rounded corners
+                    backgroundColor: isDarkMode ? "#212121" : "#f9f9f9", // Light background for the card input
+                    "::placeholder": {
+                      color: isDarkMode ? "#AAA" : "#003161", // Lighter placeholder text
+                    },
+                  },
+                  invalid: {
+                    color: "#9e2146", // Red color for invalid input
+                    iconColor: "#9e2146", // Red color for invalid icon
                   },
                 },
-                invalid: {
-                  color: "#9e2146",
-                },
-              },
-            }}
-          />
+              }}
+            />
+          </div>
+
+          {/* Pay Button */}
           <button
-            className="btn btn-sm btn-primary mt-4"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 disabled:bg-gray-400"
             type="submit"
             disabled={!stripe || !clientSecret}
           >
-            Pay
+            Pay Now
           </button>
-          <p className="text-red-600">{error}</p>
+
+          {/* Error Message */}
+          {error && <p className="text-red-600 text-center mt-4">{error}</p>}
+
+          {/* Success Message with Transaction ID */}
           {transactionId && (
-            <p className="text-green-600 my-5">
-              Transaction Id : {transactionId}
+            <p className="text-green-600 text-center mt-4">
+              Transaction Successful! <br />
+              Transaction Id: {transactionId}
             </p>
           )}
         </form>
