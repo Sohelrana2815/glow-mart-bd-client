@@ -83,7 +83,7 @@ const Login = () => {
               {/* Email Field */}
               <div className="form-control">
                 <label className="label font-medium">
-                  <span className="label-text">Email</span>
+                  <span className="label-text dark:text-white">Email</span>
                 </label>
                 <input
                   type="email"
@@ -101,7 +101,7 @@ const Login = () => {
               {/* Password Field */}
               <div className="form-control">
                 <label className="label font-medium">
-                  <span className="label-text">Password</span>
+                  <span className="label-text dark:text-white">Password</span>
                 </label>
                 <input
                   type="password"

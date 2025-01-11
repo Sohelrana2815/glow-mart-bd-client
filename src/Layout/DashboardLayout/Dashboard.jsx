@@ -64,17 +64,17 @@ const Dashboard = () => {
       <div className="border border-primary hidden lg:block mr-2"></div>
       {isAdmin ? null : (
         <>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/userHome">
               <FaHome /> User Home
             </NavLink>
           </li>
-          <li>
+          <li className="lg:text-base">
             <NavLink to="/dashboard/cart">
               <FaShoppingCart /> My Cart ({cart.length})
             </NavLink>
           </li>
-          <li className="pr-2">
+          <li className="pr-2 lg:text-base">
             <NavLink to="/dashboard/paymentHistory">
               <FaHistory /> Payment History
             </NavLink>
@@ -84,13 +84,13 @@ const Dashboard = () => {
       {/* Shared navLinks */}
       <div className="divider dark:divider-primary"></div>
       <div className="border border-primary hidden lg:block"></div>
-      <li className="pl-2">
+      <li className="pl-2 lg:text-base">
         <NavLink to="/">
           <FaHome />
           Home
         </NavLink>
       </li>
-      <li>
+      <li className="lg:text-base">
         <NavLink to="/products">
           <AiFillProduct /> All Products
         </NavLink>
@@ -100,25 +100,33 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="drawer">
+      <div className="drawer min-h-screen">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+
+        {/* Main Content */}
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="navbar bg-base-300 w-full dark:bg-black dark:text-white">
+          <nav className="navbar bg-base-300 dark:bg-gray-900 dark:text-white shadow-lg">
+            {/* Mobile Menu Toggle */}
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-3"
-                aria-label="open sidebar"
+                aria-label="Open Sidebar"
                 className="btn btn-square btn-ghost"
               >
                 <IoMenuSharp className="text-3xl" />
               </label>
             </div>
-            <Link to="/">
-              <div className="mx-2 flex-1 px-2 btn btn-ghost">Glow Mart BD</div>
+
+            {/* Logo */}
+            <Link
+              to="/"
+              className="mx-2 flex-1 px-2 btn btn-ghost text-xl font-bold"
+            >
+              Glow Mart BD
             </Link>
-            {/* Dark mode toggle button */}
-            {/* Synthwave Toggle Button */}
+
+            {/* Dark Mode Toggle */}
             <label className="relative inline-flex items-center cursor-pointer ml-2">
               <input
                 type="checkbox"
@@ -127,49 +135,53 @@ const Dashboard = () => {
                 className="sr-only"
               />
               <div
-                className={`w-14 h-8  rounded-full p-1 flex items-center justify-between neon-border ${
-                  isDarkMode ? "bg-[#FF6500]" : "bg-green-500"
+                className={`w-14 h-8 flex items-center rounded-full p-1 ${
+                  isDarkMode ? "bg-gray-600" : "bg-yellow-400"
                 }`}
               >
                 <FaSun
-                  className={`text-yellow-400 text-xl ${
+                  className={`text-white text-lg ${
                     isDarkMode ? "opacity-0" : "opacity-100"
-                  }`}
+                  } transition-opacity duration-300 absolute left-8`}
                 />
                 <FaMoon
-                  className={`text-blue-400 text-xl ${
+                  className={`text-blue-400 text-lg ${
                     isDarkMode ? "opacity-100" : "opacity-0"
-                  }`}
+                  } transition-opacity duration-300 absolute`}
                 />
                 <div
-                  className={`absolute left-1 top-1 w-6 h-6 bg-white rounded-full transform ${
+                  className={`absolute w-6 h-6 bg-white rounded-full shadow-md transform transition-transform ${
                     isDarkMode ? "translate-x-6" : "translate-x-0"
-                  } transition-transform duration-300 shadow-neon`}
+                  }`}
                 ></div>
               </div>
             </label>
+
+            {/* Desktop Menu */}
             <div className="hidden flex-none lg:block">
-              <ul className="menu menu-horizontal ">
-                {/* Navbar menu content here */}
+              <ul className="menu menu-horizontal space-x-4 text-lg font-medium">
                 {navLinks}
               </ul>
             </div>
-          </div>
-          {/* Page content here */}
-          <div>
+          </nav>
+
+          {/* Page Content */}
+          <main className="flex-1 p-6 bg-gray-100 dark:bg-gray-800">
             <Outlet />
-          </div>
+          </main>
         </div>
+
+        {/* Sidebar */}
         <div className="drawer-side">
           <label
             htmlFor="my-drawer-3"
-            aria-label="close sidebar"
+            aria-label="Close Sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu bg-base-200 dark:bg-black dark:text-white min-h-full w-80 p-4">
-            {/* Sidebar content here */}
-            {navLinks}
-          </ul>
+          <aside className="menu bg-base-200 dark:bg-gray-900 dark:text-white w-80 p-6 space-y-4">
+            <h2 className="text-xl font-bold">Dashboard Menu</h2>
+            <ul className="space-y-3">{navLinks}</ul>
+          </aside>
         </div>
       </div>
     </>

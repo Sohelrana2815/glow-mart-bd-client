@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <div className="mb-20">
-      <div className="navbar fixed bg-[#3D5300] dark:bg-[#10375C] text-white shadow-lg pl-4 py-3 pr-10 rounded-lg z-10">
+      <div className="navbar fixed bg-[#3D5300] dark:bg-[#10375C]  shadow-lg pl-4 py-3 pr-10 rounded-lg z-10">
         {/* Navbar Start */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -61,7 +61,7 @@ const Navbar = () => {
               className="btn btn-ghost lg:hidden"
               aria-label="Open Menu"
             >
-              <IoMenuSharp className="text-2xl" />
+              <IoMenuSharp className="text-2xl text-white" />
             </button>
             <ul
               tabIndex={0}
@@ -69,7 +69,10 @@ const Navbar = () => {
             >
               {navLinks.map((link, index) => (
                 <li key={index}>
-                  <NavLink to={link.path} className="hover:text-yellow-400">
+                  <NavLink
+                    to={link.path}
+                    className="dark:hover:text-yellow-400"
+                  >
                     {link.label}
                   </NavLink>
                 </li>
@@ -78,7 +81,7 @@ const Navbar = () => {
           </div>
           <Link to="/" className="flex items-center gap-1">
             <img src={logoOne} alt="Logo" className="w-8 h-8" />
-            <span className="md:text-xl font-semibold text-sm">
+            <span className="md:text-xl text-white font-semibold text-sm">
               Glow Mart BD
             </span>
           </Link>
