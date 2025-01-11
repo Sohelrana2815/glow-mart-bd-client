@@ -18,7 +18,7 @@ const Navbar = () => {
     Swal.fire({
       title: "Are you sure you want to logout?",
       icon: "warning",
-      showCancelButton: true,
+      showCancelButton: "true",
       confirmButtonText: "Logout",
       cancelButtonText: "Cancel",
       confirmButtonColor: "#d33",
@@ -26,19 +26,28 @@ const Navbar = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         logout();
-        Swal.fire("Logged Out", "You have successfully logged out.", "success");
+        Swal.fire("Log Out", "You have successfully logged out.", "success");
       }
     });
   };
 
   const navLinks = [
-    { label: "Home", path: "/" },
-    { label: "Products", path: "/products" },
+    {
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "Products",
+      path: "/products",
+    },
     {
       label: isAdmin ? "Admin Home" : "User Home",
       path: isAdmin ? "/dashboard/adminHome" : "/dashboard/userHome",
     },
-    { label: "Cart", path: "/dashboard/cart" },
+    {
+      label: "Cart",
+      path: "/dashboard/cart",
+    },
   ];
 
   return (
