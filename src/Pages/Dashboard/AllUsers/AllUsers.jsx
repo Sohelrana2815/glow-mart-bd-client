@@ -39,123 +39,98 @@ const AllUsers = () => {
     });
   };
 
-  const handleDeleteUser = (user) => {
-    // console.log(user);
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axiosSecure.delete(`/users/${user._id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            refetch();
-            Swal.fire({
-              title: "Deleted!",
-              text: `${user.name} has been deleted!`,
-              icon: "success",
-            });
-          }
-        });
-      }
-    });
-  };
-
   return (
     <>
-      <div className="dark:bg-black dark:text-white min-h-screen">
-        <div className="hidden md:block lg:block dark:bg-black">
-          <h2 className="text-4xl">Total Users : {users.length}</h2>
-          <div className="px-5 mt-10">
-            <div className="overflow-x-auto">
-              <table className="table">
-                {/* head */}
-                <thead>
-                  <tr className="text-base dark:text-white">
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Delete</th>
+      <div className="dark:bg-black dark:text-white min-h-screen py-10">
+        <div className="container mx-auto">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:justify-between items-center mb-8 px-4">
+            <h2 className="text-2xl md:text-4xl font-bold">
+              Total Users: <span className="text-blue-500">{users.length}</span>
+            </h2>
+          </div>
+
+          {/* Table for Desktop */}
+          <div className="hidden md:block lg:block">
+            <div className="overflow-x-auto shadow-lg rounded-lg bg-white dark:bg-gray-900">
+              <table className="table-auto w-full text-left border-collapse">
+                {/* Table Header */}
+                <thead className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
+                  <tr>
+                    <th className="px-6 py-4">#</th>
+                    <th className="px-6 py-4">Name</th>
+                    <th className="px-6 py-4">Email</th>
+                    <th className="px-6 py-4">Role</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {/* row 1 */}
+
+                {/* Table Body */}
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                   {users.map((user, index) => (
-                    <tr key={user._id}>
-                      <th className="text-lg">{index + 1}</th>
-                      <th className="text-lg">
-                        <p>{user.name}</p>
-                      </th>
-                      <th className="text-lg">{user.email}</th>
-                      <th>
+                    <tr
+                      key={user._id}
+                      className="hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-200"
+                    >
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">
+                        {index + 1}
+                      </td>
+                      <td className="px-6 py-4 text-gray-800 dark:text-gray-100 font-medium">
+                        {user.name}
+                      </td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">
+                        {user.email}
+                      </td>
+                      <td className="px-6 py-4">
                         {user.role === "admin" ? (
-                          <span className="text-green-500 font-medium text-base">
+                          <span className="inline-block px-3 py-1 text-sm font-medium text-green-600 bg-green-100 dark:bg-green-900 dark:text-green-300 rounded-full">
                             Admin
                           </span>
                         ) : (
                           <button
                             onClick={() => handleMakeAdmin(user)}
-                            className="btn bg-[#d1a054] "
+                            className="btn btn-sm border-none bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg flex items-center gap-2"
                           >
-                            <FaUsers className="text-white text-lg" />
+                            <FaUsers className="text-white" />
+                            Make Admin
                           </button>
                         )}
-                      </th>
-                      <th>
-                        <button
-                          onClick={() => handleDeleteUser(user)}
-                          className="btn border-none bg-red-600 "
-                        >
-                          <FaTrashCan className="text-white text-lg" />
-                        </button>
-                      </th>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
-        {/* for small devices */}
-        <div className="px-2 block md:hidden dark:bg-black lg:hidden">
-          <p className="py-4 font-medium text-lg">
-            Total Users : {users.length}
-          </p>
-          <div className="my-4">
-            {users.map((user) => (
-              <div
-                className="p-3 space-y-5 border-2 my-4 rounded-lg "
-                key={user._id}
-              >
-                <p>Username : {user.name}</p>
-                <p>Email : {user.email}</p>
 
-                <p className="flex items-center gap-2">
-                  <p className="text-primary font-medium">Role : </p>
+          {/* Cards for Small Devices */}
+          <div className="block md:hidden lg:hidden px-4 space-y-6">
+            {users.map((user, index) => (
+              <div
+                key={user._id}
+                className="bg-white dark:bg-gray-900 shadow-md rounded-lg p-4 space-y-4"
+              >
+                <p className="text-gray-800 dark:text-gray-100 font-bold">
+                  User #{index + 1}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  <span className="font-medium">Name:</span> {user.name}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  <span className="font-medium">Email:</span> {user.email}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 flex items-center gap-2">
+                  <span className="font-medium">Role:</span>
                   {user.role === "admin" ? (
                     <span className="text-green-500 font-medium">Admin</span>
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-sm dark:border-none bg-[#d1a054] "
+                      className="btn bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                     >
                       <FaUsers className="text-white" />
+                      Make Admin
                     </button>
                   )}
-                </p>
-                <p className="flex items-center gap-2">
-                  <p className="font-medium">Delete User : </p>
-                  <button
-                    onClick={() => handleDeleteUser(user)}
-                    className="btn btn-sm border-none  bg-red-600 "
-                  >
-                    <FaTrashCan className="text-white" />
-                  </button>
                 </p>
               </div>
             ))}
