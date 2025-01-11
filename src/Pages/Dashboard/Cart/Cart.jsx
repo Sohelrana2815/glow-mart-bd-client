@@ -17,75 +17,63 @@ const Cart = () => {
   return (
     <>
       <div className="dark:bg-black min-h-screen dark:text-white">
-        <div className="flex justify-evenly">
-          <h2 className="text-center md:text-xl my-4 lg:text-4xl">
-            Total Cart Items : {cart.length}
+        {/* Cart Summary Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center px-5 py-5 md:py-10 space-y-4 md:space-y-0">
+          <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
+            Total Cart Items: {cart.length}
           </h2>
-          <h2 className="text-center md:text-xl my-4 lg:text-4xl">
-            Total Price : {totalPrice}$
+          <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
+            Total Price: ${totalPrice}
           </h2>
           {cart.length ? (
-            <Link to="/dashboard/payment">
-              <button className="btn btn-primary btn-sm my-3 md:btn-md lg:btn-md">
-                Pay
+            <Link to="/dashboard/payment" className="w-full md:w-auto">
+              <button className="w-full bg-blue-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+                Pay Now
               </button>
             </Link>
           ) : (
             <button
               disabled
-              className="btn btn-sm btn-primary my-3   md:btn-md lg:btn-md"
+              className="w-full bg-gray-400 text-white py-2 px-6 rounded-lg shadow-lg cursor-not-allowed"
             >
-              Pay
+              Pay Now
             </button>
           )}
         </div>
-        <div className="px-5 mt-10 ">
-          <div className="overflow-x-auto ">
-            <table className="table  ">
-              {/* head */}
-              <thead>
-                <tr className="text-base dark:text-white">
-                  <th>#</th>
-                  <th className="text-xs md:text-base lg:text-lg">Image</th>
-                  <th className="text-xs md:text-base lg:text-lg">Name</th>
-                  <th className="text-xs md:text-base lg:text-lg">Price</th>
-                  <th className="text-xs md:text-base lg:text-lg">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* row 1 */}
-                {cart.map((product, index) => (
-                  <tr key={product._id}>
-                    <td className="text-base text-secondary font-bold md:text-lg ">
-                      {index + 1}
-                    </td>
-                    <td>
-                      <img
-                        className="md:max-w-16 lg:max-w-24 max-w-12 rounded-lg"
-                        src={product.ProductImg}
-                        alt=""
-                      />
-                    </td>
-                    <th>
-                      <p className="text-xs block md:hidden lg:hidden md:text-base lg:text-lg">
-                        {product.productName.length > 7
-                          ? `${product.productName.slice(0, 7)}...`
-                          : product.productName}
-                      </p>
-                      <p className="text-xs hidden sm:hidden lg:block md:block md:text-base lg:text-lg">
-                        {product.productName}
-                      </p>
-                    </th>
-                    <th className="text-base">$ {product.productPrice}</th>
-                    <th>
-                      <button onClick={() => handleDelete(product._id)}>
-                        <FaTrashCan className=" text-red-600 text-lg" />
-                      </button>
-                    </th>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+        {/* Cart Items Section */}
+        <div className="px-5 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cart.map((product) => (
+              <div
+                key={product._id}
+                className="bg-white dark:bg-gray-600 p-5 rounded-lg shadow-md shadow-pink-400 hover:shadow-pink-500 transition duration-300 hover:shadow-lg"
+              >
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                  <img
+                    className="w-24 h-24 object-cover rounded-lg mb-4 md:mb-0"
+                    src={product.ProductImg}
+                    alt={product.productName}
+                  />
+                  <div className="ml-4 flex-1 text-center md:text-left">
+                    <h3 className="text-lg dark:text-white font-semibold text-gray-800 truncate">
+                      {product.productName.length > 20
+                        ? `${product.productName.slice(0, 20)}...`
+                        : product.productName}
+                    </h3>
+                    <p className="text-gray-600 dark:text-white">
+                      ${product.productPrice}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="text-red-600 hover:text-red-800 mt-2 md:mt-0"
+                  >
+                    <FaTrashCan className="text-2xl" />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
