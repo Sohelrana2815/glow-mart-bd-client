@@ -8,7 +8,7 @@ const AdminAccess = () => {
 
   return (
     <>
-      <div className="absolute inset-x-0 z-10 py-5">
+      <div className="absolute inset-x-0  py-5">
         <div className="flex flex-col items-center">
           <button className="btn btn-info" onClick={toggleModal}>
             Reveal Admin Keys

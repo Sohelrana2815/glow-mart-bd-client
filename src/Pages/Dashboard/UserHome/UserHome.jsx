@@ -50,7 +50,7 @@ const UserHome = () => {
               Explore Products
             </button>
           </Link>
-          <Link to="/profile">
+          <Link to="/profileUpdate">
             <button className="btn btn-lg bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-all">
               View Profile
             </button>

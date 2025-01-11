@@ -121,6 +121,7 @@ const Navbar = () => {
               >
                 <img
                   src={user.photoURL || logoOne}
+                  title={user?.displayName}
                   alt="User Avatar"
                   className="w-8 h-8 rounded-full"
                 />

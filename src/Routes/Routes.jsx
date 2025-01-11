@@ -19,6 +19,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import ManageBookings from "../Pages/Dashboard/ManageBookings/ManageBookings";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ProfileUpdate from "../Pages/ProfileUpdate/ProfileUpdate";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
         path: "signUp",
         element: <SignUp />,
       },
+
       {
         path: "productInfo/:id",
         element: (
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(` http://localhost:5000/getSpecificProduct/${params.id}`),
+      },
+      {
+        path: "profileUpdate",
+        element: <ProfileUpdate />,
       },
     ],
   },
