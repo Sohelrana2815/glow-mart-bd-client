@@ -8,8 +8,6 @@ const ProfileUpdate = () => {
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
 
-
-  
   const handleUpdateProfile = (e) => {
     e.preventDefault();
 
@@ -32,7 +30,6 @@ const ProfileUpdate = () => {
         });
       });
   };
-
   return (
     <>
       <div className="flex flex-col items-center min-h-screen bg-gray-100 dark:bg-gray-800">
