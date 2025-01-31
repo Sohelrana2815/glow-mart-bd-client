@@ -9,6 +9,7 @@ import BarIndicator from "../../../Components/BarIndicator/BarIndicator";
 import NewProducts from "../NewProducts/NewProducts";
 import Services from "../Services/Services";
 import { Helmet } from "react-helmet-async";
+
 const Home = () => {
   return (
     <div>

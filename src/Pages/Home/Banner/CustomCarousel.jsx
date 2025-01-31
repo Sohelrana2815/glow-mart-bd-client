@@ -1,8 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import bannerImg1 from "../../../assets/Banner/img1.jpg";
-import bannerImg2 from "../../../assets/Banner/img2.jpg";
-import bannerImg3 from "../../../assets/Banner/img3.jpg";
+import bannerImg1 from "../../../assets/Banner/img1.webp";
+import bannerImg2 from "../../../assets/Banner/img2.webp";
+import bannerImg3 from "../../../assets/Banner/img3.webp";
 
 const CustomCarousel = () => {
   const arrowStyles =

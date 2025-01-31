@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-import shopImg from "../../../assets/Parallax/shop.jpg";
+import shopImg from "../../../assets/Parallax/shop.webp";
 const UserHome = () => {
   const { user } = useAuth();
 
