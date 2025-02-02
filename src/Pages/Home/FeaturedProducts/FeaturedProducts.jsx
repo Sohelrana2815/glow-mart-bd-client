@@ -14,12 +14,13 @@ const FeaturedProducts = () => {
       name: "Hydrating Cream",
     },
     {
-      image: "https://i.ibb.co/XzqVhq3/ploreX.jpg",
+      image:
+        "https://i.ibb.co.com/TKd3nqX/19y8mrf7-LD8w-Pucx-M5-YSf-G2-Gfjp8-E1r-H5-Nbb-Ap8e.png",
       name: "Natural Foundation",
     },
     {
       image:
-        "https://i.ibb.co/3B0cQ3b/V4-Rsl-MXBKMOJUg-R96xiqv5l-JDdn-JRo1-VRd-Ebgrn-O.jpg",
+        "https://i.ibb.co.com/pz4P9Bx/hage1-Kyybz6-FVre-Wq-LQ2u3l-Jsc-YY6wse-Jg-XXy-JPt.png",
       name: "Glow Serum",
     },
     {
@@ -33,7 +34,7 @@ const FeaturedProducts = () => {
       name: "Compact Powder",
     },
     {
-      image: "https://i.ibb.co/9vN2D7Z/adidas-pure.jpg",
+      image: "https://i.ibb.co.com/mVV145cg/al-haramain.jpg",
       name: "Organic Mascara",
     },
   ];

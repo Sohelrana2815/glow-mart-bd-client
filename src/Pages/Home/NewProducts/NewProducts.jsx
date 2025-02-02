@@ -13,7 +13,7 @@ const NewProducts = () => {
           className="relative h-96 bg-cover bg-center rounded-lg overflow-hidden group transform transition-transform duration-500 ease-in-out hover:scale-105"
           style={{
             backgroundImage:
-              "url('https://i.ibb.co.com/d5Jrvv3/Lf8mc-WGVM72-EZ76-X83n8c-Fw-MSQFvk-UNfv9d-Ry6b1.png')",
+              "url('https://i.ibb.co.com/BKnQ7V48/Lf8mc-WGVM72-EZ76-X83n8c-Fw-MSQFvk-UNfv9d-Ry6b1.webp')",
             backgroundSize: "contain",
           }}
         >
@@ -34,7 +34,7 @@ const NewProducts = () => {
           className="relative h-96 bg-cover bg-center rounded-lg overflow-hidden group transform transition-transform duration-500 ease-in-out hover:scale-105"
           style={{
             backgroundImage:
-              "url('https://i.ibb.co.com/SccPP4D/Mensfragrances.jpg')",
+              "url('https://i.ibb.co.com/ycFKnn6j/Mensfragrances.webp')",
           }}
         >
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-6 text-white">
