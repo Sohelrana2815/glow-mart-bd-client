@@ -94,7 +94,7 @@ const Navbar = () => {
               <li key={index}>
                 <NavLink
                   to={link.path}
-                  className="hover:text-yellow-400 transition-colors duration-300"
+                  className="hover:text-pink-400 transition-colors duration-300 text-white"
                 >
                   {link.label}
                 </NavLink>
