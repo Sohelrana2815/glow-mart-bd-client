@@ -25,12 +25,12 @@ const FeaturedProducts = () => {
     },
     {
       image:
-        "https://i.ibb.co/jMB2G7P/s6e4-Ib5ej-Ox6-Rncj-Av0w-K4-XJd-EYxt-IUg-Hg-IB8-Krc.jpg",
+        "https://i.ibb.co.com/4ZLwDpRb/2.webp",
       name: "Lip Gloss Set",
     },
     {
       image:
-        "https://i.ibb.co/6njr5FS/w0zin92vt8-HITis-WL04acr7-MRYK6668giqi-P2l52.png",
+        "https://i.ibb.co.com/BKnQ7V48/Lf8mc-WGVM72-EZ76-X83n8c-Fw-MSQFvk-UNfv9d-Ry6b1.webp",
       name: "Compact Powder",
     },
     {
